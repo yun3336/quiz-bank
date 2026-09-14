@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["es2022"],
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": ".tmp-test",
+    "rootDir": ".",
+    "noEmit": false,
+    "isolatedModules": true,
+    "types": ["node"]
+  },
+  "include": [
+    "lib/grade.ts",
+    "lib/types.ts",
+    "lib/wrongBook.ts",
+    "lib/progress.ts",
+    "lib/todayPlan.ts",
+    "lib/session.ts",
+    "lib/questionSearch.ts",
+    "lib/heatmap.ts",
+    "lib/remind.ts",
+    "lib/labMatch.ts",
+    "lib/vendor.ts",
+    "lib/questions.ts",
+    "lib/access.ts",
+    "lib/questionPublic.ts",
+    "tests/**/*.ts"
+  ]
+}

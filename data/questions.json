@@ -1,0 +1,857 @@
+[
+  {
+    "id": "n01",
+    "chapter": "計算機網路",
+    "tags": ["OSI", "分層"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "在 OSI 七層模型中，負責可靠傳輸、流量控制與連線管理的是哪一層？",
+    "options": [
+      { "id": "A", "text": "網路層" },
+      { "id": "B", "text": "傳輸層" },
+      { "id": "C", "text": "資料連結層" },
+      { "id": "D", "text": "應用層" }
+    ],
+    "answer": ["B"],
+    "explanation": "傳輸層（Transport）提供端到端傳輸。TCP 的連線管理、確認與流量控制都在這一層；網路層負責尋路，資料連結層負責相鄰節點傳輸。"
+  },
+  {
+    "id": "n02",
+    "chapter": "計算機網路",
+    "tags": ["TCP", "UDP"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "下列關於 TCP 與 UDP 的敘述，哪一項正確？",
+    "options": [
+      { "id": "A", "text": "UDP 保證封包順序，TCP 不保證" },
+      { "id": "B", "text": "TCP 是連線導向且可靠，UDP 是無連線且不保證送達" },
+      { "id": "C", "text": "兩者都需要三次交握才能開始傳資料" },
+      { "id": "D", "text": "HTTP 預設使用 UDP 傳輸" }
+    ],
+    "answer": ["B"],
+    "explanation": "TCP 先建立連線再傳資料，有確認與重傳；UDP 直接送資料，延遲較低但不保證到達與順序。HTTP 一般跑在 TCP 上。"
+  },
+  {
+    "id": "n03",
+    "chapter": "計算機網路",
+    "tags": ["IP", "私有位址"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "下列哪一個是 RFC 1918 定義的私有 IPv4 位址？",
+    "options": [
+      { "id": "A", "text": "8.8.8.8" },
+      { "id": "B", "text": "1.1.1.1" },
+      { "id": "C", "text": "192.168.1.1" },
+      { "id": "D", "text": "223.5.5.5" }
+    ],
+    "answer": ["C"],
+    "explanation": "私有網段包含 10.0.0.0/8、172.16.0.0/12、192.168.0.0/16。192.168.1.1 屬第三段；其餘多為公開 DNS，不可當區網私有位址。"
+  },
+  {
+    "id": "n04",
+    "chapter": "計算機網路",
+    "tags": ["HTTP", "狀態碼"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "HTTP 狀態碼 404 代表什麼？",
+    "options": [
+      { "id": "A", "text": "伺服器內部錯誤" },
+      { "id": "B", "text": "需要重新導向" },
+      { "id": "C", "text": "找不到資源" },
+      { "id": "D", "text": "請求成功" }
+    ],
+    "answer": ["C"],
+    "explanation": "4xx 是客戶端錯誤。404 Not Found 表示伺服器找不到該 URL 對應的資源。500 才是伺服器內部錯誤，200 是成功。"
+  },
+  {
+    "id": "n05",
+    "chapter": "計算機網路",
+    "tags": ["DNS"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "DNS 的主要功能是什麼？",
+    "options": [
+      { "id": "A", "text": "把網域名稱解析成 IP 位址" },
+      { "id": "B", "text": "加密瀏覽器與網站之間的流量" },
+      { "id": "C", "text": "分配區網中的 MAC 位址" },
+      { "id": "D", "text": "壓縮網頁圖片" }
+    ],
+    "answer": ["A"],
+    "explanation": "DNS 把人類可讀的網域（如 example.com）對應到機器使用的 IP。加密是 TLS/HTTPS 的工作，MAC 由網卡與協定處理。"
+  },
+  {
+    "id": "n06",
+    "chapter": "計算機網路",
+    "tags": ["TCP", "交握"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "TCP 三次交握的正確順序是？",
+    "options": [
+      { "id": "A", "text": "SYN → SYN-ACK → ACK" },
+      { "id": "B", "text": "ACK → SYN → SYN-ACK" },
+      { "id": "C", "text": "SYN-ACK → SYN → FIN" },
+      { "id": "D", "text": "FIN → ACK → SYN" }
+    ],
+    "answer": ["A"],
+    "explanation": "用戶端先送 SYN，伺服器回 SYN-ACK，用戶端再送 ACK，連線才建立。FIN 用於結束連線，不是交握步驟。"
+  },
+  {
+    "id": "n07",
+    "chapter": "計算機網路",
+    "tags": ["OSI", "MAC"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "MAC 位址主要在 OSI 哪一層使用？",
+    "options": [
+      { "id": "A", "text": "應用層" },
+      { "id": "B", "text": "網路層" },
+      { "id": "C", "text": "傳輸層" },
+      { "id": "D", "text": "資料連結層" }
+    ],
+    "answer": ["D"],
+    "explanation": "MAC 是區網內識別網卡的實體位址，由資料連結層（如乙太網路）使用。IP 位址則屬於網路層。"
+  },
+  {
+    "id": "n08",
+    "chapter": "計算機網路",
+    "tags": ["HTTPS", "連接埠"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "HTTPS 預設使用的連接埠是？",
+    "options": [
+      { "id": "A", "text": "80" },
+      { "id": "B", "text": "22" },
+      { "id": "C", "text": "443" },
+      { "id": "D", "text": "25" }
+    ],
+    "answer": ["C"],
+    "explanation": "HTTPS 預設 443，HTTP 預設 80，SSH 是 22，SMTP 郵件是 25。"
+  },
+  {
+    "id": "n09",
+    "chapter": "計算機網路",
+    "tags": ["IPv6"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "IPv6 位址長度是多少位元？",
+    "options": [
+      { "id": "A", "text": "32" },
+      { "id": "B", "text": "64" },
+      { "id": "C", "text": "128" },
+      { "id": "D", "text": "256" }
+    ],
+    "answer": ["C"],
+    "explanation": "IPv4 是 32 位元，IPv6 擴充為 128 位元，以解決位址耗盡，並簡化部分標頭設計。"
+  },
+  {
+    "id": "n10",
+    "chapter": "計算機網路",
+    "tags": ["交換器", "集線器"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "交換器（Switch）相較於集線器（Hub）的主要優點是？",
+    "options": [
+      { "id": "A", "text": "會把收到的資料廣播到所有埠" },
+      { "id": "B", "text": "可依 MAC 位址把資料轉到目標埠，減少碰撞" },
+      { "id": "C", "text": "運作在應用層，能理解 HTTP 內容" },
+      { "id": "D", "text": "只能連接兩台電腦" }
+    ],
+    "answer": ["B"],
+    "explanation": "Hub 是共用媒介、幾乎全埠廣播；Switch 學習 MAC 表後單播轉送，頻寬利用較好，碰撞網域也較小。"
+  },
+  {
+    "id": "n11",
+    "chapter": "計算機網路",
+    "tags": ["CIDR", "子網路"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "IPv4 位址 192.168.10.0/24 大約可提供多少個主機位址？（扣除網路與廣播位址）",
+    "options": [
+      { "id": "A", "text": "24" },
+      { "id": "B", "text": "254" },
+      { "id": "C", "text": "256" },
+      { "id": "D", "text": "1024" }
+    ],
+    "answer": ["B"],
+    "explanation": "/24 代表主機位元有 8 位，共 2^8=256 個位址。扣掉網路位址與廣播位址，可用主機約 254 個。"
+  },
+  {
+    "id": "n12",
+    "chapter": "計算機網路",
+    "tags": ["ARP"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "ARP 協定的用途是？",
+    "options": [
+      { "id": "A", "text": "把 IP 位址對應到 MAC 位址" },
+      { "id": "B", "text": "把網域名稱對應到 IP 位址" },
+      { "id": "C", "text": "自動分配 IP 位址給主機" },
+      { "id": "D", "text": "在路由器之間交換路由表" }
+    ],
+    "answer": ["A"],
+    "explanation": "同一區網傳送乙太封包需要對方 MAC。ARP 詢問「這個 IP 對應哪張網卡」。DNS 解網域，DHCP 配 IP，路由協定才交換路由。"
+  },
+  {
+    "id": "n13",
+    "chapter": "計算機網路",
+    "tags": ["TCP"],
+    "difficulty": 2,
+    "type": "multiple",
+    "stem": "下列哪些是 TCP 具備、UDP 通常不保證的特性？（多選）",
+    "options": [
+      { "id": "A", "text": "可靠送達（遺失可重傳）" },
+      { "id": "B", "text": "連線導向" },
+      { "id": "C", "text": "較低的標頭開銷" },
+      { "id": "D", "text": "位元組串流的順序控制" }
+    ],
+    "answer": ["A", "B", "D"],
+    "explanation": "TCP 連線導向、有序、可重傳。UDP 標頭更精簡、開銷較低，這反而是 UDP 的特點，不是 TCP 相對 UDP 的保證。"
+  },
+  {
+    "id": "n14",
+    "chapter": "計算機網路",
+    "tags": ["HTTP"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "關於 HTTP GET 與 POST，下列哪項較正確？",
+    "options": [
+      { "id": "A", "text": "GET 適合用來上傳大量敏感表單且藏在網址裡" },
+      { "id": "B", "text": "GET 主要用來讀取資源，POST 常用來提交會改變伺服器狀態的資料" },
+      { "id": "C", "text": "兩者語意完全相同，只是瀏覽器顯示不同" },
+      { "id": "D", "text": "POST 一定比 GET 安全，因為一定有加密" }
+    ],
+    "answer": ["B"],
+    "explanation": "GET 應具冪等、用來取得資源；POST 用來建立或提交資料。安全性取決於是否走 HTTPS，不是方法名稱本身。"
+  },
+  {
+    "id": "n15",
+    "chapter": "計算機網路",
+    "tags": ["DHCP"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "DHCP 的主要工作是？",
+    "options": [
+      { "id": "A", "text": "把郵件轉寄到正確信箱" },
+      { "id": "B", "text": "自動分配 IP、閘道與 DNS 等網路設定" },
+      { "id": "C", "text": "掃描區網中的病毒" },
+      { "id": "D", "text": "把 IPv4 翻譯成 IPv6" }
+    ],
+    "answer": ["B"],
+    "explanation": "DHCP 讓主機開機後自動取得 IP、子網路遮罩、預設閘道與 DNS，不必每台手動設定。"
+  },
+  {
+    "id": "n16",
+    "chapter": "計算機網路",
+    "tags": ["ICMP", "Ping"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "Ping 工具主要使用 ICMP 來測試主機是否可達。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "常見的 ping 送出 ICMP Echo Request，對方回 Echo Reply。防火牆可能封鎖 ICMP，所以 ping 不到不代表服務一定掛了。"
+  },
+  {
+    "id": "n17",
+    "chapter": "計算機網路",
+    "tags": ["子網路遮罩"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "子網路遮罩 255.255.255.0 對應的 CIDR 前置長度是 /16。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["B"],
+    "explanation": "255.255.255.0 表示前 24 個位元是網路部分，對應 /24。/16 的遮罩是 255.255.0.0。"
+  },
+  {
+    "id": "a01",
+    "chapter": "計算機組成",
+    "tags": ["CPU", "ALU"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "CPU 中負責算術與邏輯運算的單元是？",
+    "options": [
+      { "id": "A", "text": "ALU" },
+      { "id": "B", "text": "CU 只負責運算加總" },
+      { "id": "C", "text": "I/O 控制器" },
+      { "id": "D", "text": "電源供應器" }
+    ],
+    "answer": ["A"],
+    "explanation": "ALU（Arithmetic Logic Unit）做加減與 AND/OR 等運算。控制單元（CU）負責解碼指令與指揮資料路徑，不做主要數值運算。"
+  },
+  {
+    "id": "a02",
+    "chapter": "計算機組成",
+    "tags": ["記憶體"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "關於 RAM 與 ROM，下列哪項正確？",
+    "options": [
+      { "id": "A", "text": "RAM 斷電後資料仍永久保存，ROM 一關機就消失" },
+      { "id": "B", "text": "RAM 通常作為主記憶體，斷電資料會消失；ROM 多用來存放開機韌體" },
+      { "id": "C", "text": "兩者速度都遠慢於硬碟" },
+      { "id": "D", "text": "ROM 容量一定比 RAM 大" }
+    ],
+    "answer": ["B"],
+    "explanation": "主記憶體用 DRAM，揮發性；開機程式常放在 ROM/Flash。RAM 比磁碟快很多，不是比較慢。"
+  },
+  {
+    "id": "a03",
+    "chapter": "計算機組成",
+    "tags": ["快取"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "CPU Cache 存在的主要原因是？",
+    "options": [
+      { "id": "A", "text": "讓硬碟容量看起來比較大" },
+      { "id": "B", "text": "彌平 CPU 與主記憶體之間的速度差距" },
+      { "id": "C", "text": "專門用來長期備份檔案" },
+      { "id": "D", "text": "取代作業系統" }
+    ],
+    "answer": ["B"],
+    "explanation": "CPU 很快、DRAM 相對慢。快取放最近用到的資料，命中時不必每次都等主記憶體，整體延遲下降。"
+  },
+  {
+    "id": "a04",
+    "chapter": "計算機組成",
+    "tags": ["馮紐曼"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "馮紐曼架構的核心概念是？",
+    "options": [
+      { "id": "A", "text": "程式與資料存放在同一記憶體空間，由 CPU 依序取出執行" },
+      { "id": "B", "text": "每種運算都必須用不同的專用電腦完成" },
+      { "id": "C", "text": "指令永遠不能修改" },
+      { "id": "D", "text": "沒有匯流排，元件兩兩專線連接" }
+    ],
+    "answer": ["A"],
+    "explanation": "Stored-program：指令與資料都在記憶體，CPU 取出後解碼執行。這讓同一硬體可跑不同軟體。"
+  },
+  {
+    "id": "a05",
+    "chapter": "計算機組成",
+    "tags": ["指令週期"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "一般指令週期的基本順序是？",
+    "options": [
+      { "id": "A", "text": "執行 → 解碼 → 擷取" },
+      { "id": "B", "text": "擷取 → 解碼 → 執行" },
+      { "id": "C", "text": "解碼 → 關機 → 擷取" },
+      { "id": "D", "text": "寫回磁碟 → 擷取 → 解碼" }
+    ],
+    "answer": ["B"],
+    "explanation": "Fetch-Decode-Execute：先從記憶體取指令，解碼後才執行，必要時再寫回暫存器或記憶體。"
+  },
+  {
+    "id": "a06",
+    "chapter": "計算機組成",
+    "tags": ["儲存"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "SSD 相較傳統 HDD 的主要優勢通常是？",
+    "options": [
+      { "id": "A", "text": "一定比較便宜且容量無限" },
+      { "id": "B", "text": "沒有機械讀寫頭，隨機存取延遲較低、較耐震" },
+      { "id": "C", "text": "完全不會損壞" },
+      { "id": "D", "text": "只能用來當虛擬記憶體" }
+    ],
+    "answer": ["B"],
+    "explanation": "SSD 用快閃記憶體，沒有馬達與磁頭，隨機讀寫快、抗震。仍有寫入壽命，不是永不損壞。"
+  },
+  {
+    "id": "a07",
+    "chapter": "計算機組成",
+    "tags": ["位元寬度"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "64 位元 CPU 相較 32 位元，最直接的差異之一是？",
+    "options": [
+      { "id": "A", "text": "螢幕解析度一定比較高" },
+      { "id": "B", "text": "通用暫存器與可定址空間通常更大" },
+      { "id": "C", "text": "不能執行任何 32 位元程式" },
+      { "id": "D", "text": "硬碟轉速會自動加倍" }
+    ],
+    "answer": ["B"],
+    "explanation": "64 位元架構暫存器更寬，理論可定址空間遠大於 4GB 限制。這與螢幕、硬碟轉速無直接關係。"
+  },
+  {
+    "id": "a08",
+    "chapter": "計算機組成",
+    "tags": ["中斷"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "硬體中斷（Interrupt）的主要用途是？",
+    "options": [
+      { "id": "A", "text": "讓 CPU 忙等到週邊完成才去做別的事" },
+      { "id": "B", "text": "在事件發生時通知 CPU，避免不斷輪詢裝置" },
+      { "id": "C", "text": "把程式永遠暫停" },
+      { "id": "D", "text": "只用來顯示錯誤訊息" }
+    ],
+    "answer": ["B"],
+    "explanation": "裝置完成 I/O 或有資料時發出中斷，CPU 可先做其他工作。比起一直 polling，較省運算資源。"
+  },
+  {
+    "id": "a09",
+    "chapter": "計算機組成",
+    "tags": ["管線"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "指令管線（Pipeline）想達到的效果是？",
+    "options": [
+      { "id": "A", "text": "讓一條指令的總步驟變少" },
+      { "id": "B", "text": "重疊執行不同指令的不同階段，提高吞吐率" },
+      { "id": "C", "text": "完全消除資料相依" },
+      { "id": "D", "text": "讓程式不必編譯" }
+    ],
+    "answer": ["B"],
+    "explanation": "單條指令延遲未必變短，但多條指令可同時處於擷取、解碼、執行等不同階段，單位時間完成數上升。仍可能有 hazard。"
+  },
+  {
+    "id": "a10",
+    "chapter": "計算機組成",
+    "tags": ["RISC", "CISC"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "RISC 架構常見的設計取向是？",
+    "options": [
+      { "id": "A", "text": "指令少而規則，強調暫存器運算與管線化" },
+      { "id": "B", "text": "一條指令盡量做完很複雜的記憶體到記憶體操作" },
+      { "id": "C", "text": "不使用暫存器" },
+      { "id": "D", "text": "只能執行直譯語言" }
+    ],
+    "answer": ["A"],
+    "explanation": "RISC 傾向精簡、固定格式指令，load/store 與 ALU 分開，方便管線。CISC 則常有較複雜、對記憶體直接運算的指令。"
+  },
+  {
+    "id": "a11",
+    "chapter": "計算機組成",
+    "tags": ["匯流排"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "系統匯流排通常用來傳遞什麼？",
+    "options": [
+      { "id": "A", "text": "僅電源電壓" },
+      { "id": "B", "text": "資料、位址與控制訊號" },
+      { "id": "C", "text": "僅散熱空氣" },
+      { "id": "D", "text": "僅音訊類比訊號" }
+    ],
+    "answer": ["B"],
+    "explanation": "資料匯流排搬數值，位址匯流排指出位置，控制匯流排傳遞讀寫與時序等訊號，讓 CPU、記憶體與 I/O 溝通。"
+  },
+  {
+    "id": "a12",
+    "chapter": "計算機組成",
+    "tags": ["補數"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "在 8 位元二補數表示法中，1111 1111 代表哪個十進位值？",
+    "options": [
+      { "id": "A", "text": "255" },
+      { "id": "B", "text": "-1" },
+      { "id": "C", "text": "127" },
+      { "id": "D", "text": "0" }
+    ],
+    "answer": ["B"],
+    "explanation": "二補數中全 1 是 -1。若當成無號數才是 255。有號 8 位元範圍約為 -128 到 127。"
+  },
+  {
+    "id": "a13",
+    "chapter": "計算機組成",
+    "tags": ["浮點數"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "IEEE 754 浮點數把一個數拆成哪幾個主要部分？",
+    "options": [
+      { "id": "A", "text": "僅整數與小數點符號" },
+      { "id": "B", "text": "正負號、指數、尾數（有效數字）" },
+      { "id": "C", "text": "紅、綠、藍三通道" },
+      { "id": "D", "text": "檔名、副檔名、校驗碼" }
+    ],
+    "answer": ["B"],
+    "explanation": "單精度等格式包含 sign、exponent、mantissa。用科學記號概念表示很大或很小的實數，但會有捨入誤差。"
+  },
+  {
+    "id": "a14",
+    "chapter": "計算機組成",
+    "tags": ["GPU"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "GPU 相較 CPU，較擅長哪類工作？",
+    "options": [
+      { "id": "A", "text": "少量複雜的分支邏輯與作業系統排程" },
+      { "id": "B", "text": "大量可平行的數值運算，例如繪圖與矩陣運算" },
+      { "id": "C", "text": "取代 BIOS 開機" },
+      { "id": "D", "text": "直接執行所有系統呼叫" }
+    ],
+    "answer": ["B"],
+    "explanation": "GPU 有大量較簡單的核心，適合 SIMD/平行吞吐量高的工作。複雜控制流與系統任務仍多由 CPU 負責。"
+  },
+  {
+    "id": "a15",
+    "chapter": "計算機組成",
+    "tags": ["虛擬記憶體"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "虛擬記憶體的主要好處是？",
+    "options": [
+      { "id": "A", "text": "讓行程以為自己有連續且夠用的位址空間，並隔離彼此" },
+      { "id": "B", "text": "讓 CPU 時脈自動提高一倍" },
+      { "id": "C", "text": "完全不需要實體 RAM" },
+      { "id": "D", "text": "讓硬碟變成暫存器" }
+    ],
+    "answer": ["A"],
+    "explanation": "OS 把虛擬位址對應到實體頁框，可把暫時不用的頁換到磁碟。程式不必知道實際 RAM 配置，行程間也較安全。"
+  },
+  {
+    "id": "a16",
+    "chapter": "計算機組成",
+    "tags": ["暫存器"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "CPU 暫存器的存取速度通常快於主記憶體 RAM。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "暫存器做在 CPU 晶片內，延遲最低；再來是快取，然後才是 DRAM。這也是編譯器盡量把熱資料放暫存器的原因。"
+  },
+  {
+    "id": "a17",
+    "chapter": "計算機組成",
+    "tags": ["快取"],
+    "difficulty": 2,
+    "type": "boolean",
+    "stem": "快取命中率為 100% 時，仍然每次都必須存取主記憶體才能取得資料。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["B"],
+    "explanation": "命中表示資料已在快取，可直接回傳給 CPU，不必再等 DRAM。未命中（miss）才需要去主記憶體（或下一層快取）。"
+  },
+  {
+    "id": "p01",
+    "chapter": "程式設計",
+    "tags": ["複雜度", "搜尋"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "在已排序陣列上做二分搜尋，時間複雜度是？",
+    "options": [
+      { "id": "A", "text": "O(1)" },
+      { "id": "B", "text": "O(log n)" },
+      { "id": "C", "text": "O(n)" },
+      { "id": "D", "text": "O(n²)" }
+    ],
+    "answer": ["B"],
+    "explanation": "每次把搜尋區間對半切，比較次數約 log₂ n。線性搜尋才是 O(n)。前提是資料已經排序。"
+  },
+  {
+    "id": "p02",
+    "chapter": "程式設計",
+    "tags": ["資料結構", "堆疊"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "堆疊（Stack）的存取順序是？",
+    "options": [
+      { "id": "A", "text": "FIFO（先進先出）" },
+      { "id": "B", "text": "LIFO（後進先出）" },
+      { "id": "C", "text": "依數值大小自動排序" },
+      { "id": "D", "text": "隨機取出" }
+    ],
+    "answer": ["B"],
+    "explanation": "堆疊只在頂端 push/pop，最後放進去的最先出來，像疊盤子。佇列才是 FIFO。"
+  },
+  {
+    "id": "p03",
+    "chapter": "程式設計",
+    "tags": ["資料結構", "佇列"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "佇列（Queue）適合模擬哪種情境？",
+    "options": [
+      { "id": "A", "text": "瀏覽器的復原（undo）" },
+      { "id": "B", "text": "印表機工作依送來順序排隊" },
+      { "id": "C", "text": "遞迴呼叫的返回位址" },
+      { "id": "D", "text": "編譯器的運算子優先權堆疊" }
+    ],
+    "answer": ["B"],
+    "explanation": "佇列 FIFO，先到先服務，適合工作排程。Undo 與函式呼叫堆則是堆疊。"
+  },
+  {
+    "id": "p04",
+    "chapter": "程式設計",
+    "tags": ["遞迴"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "寫遞迴函式時，最需要確保的是？",
+    "options": [
+      { "id": "A", "text": "一定要使用全域變數" },
+      { "id": "B", "text": "要有能結束的基底條件，且每次呼叫問題規模要縮小" },
+      { "id": "C", "text": "絕不能回傳值" },
+      { "id": "D", "text": "只能用來排序" }
+    ],
+    "answer": ["B"],
+    "explanation": "沒有 base case 或規模不變小，就會無限遞迴直到堆疊溢位。遞迴本質是把大問題拆成較小的同類問題。"
+  },
+  {
+    "id": "p05",
+    "chapter": "程式設計",
+    "tags": ["OOP"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "物件導向中的封裝（Encapsulation）主要是指？",
+    "options": [
+      { "id": "A", "text": "把資料與操作它的方法放在一起，並限制外部隨意存取內部狀態" },
+      { "id": "B", "text": "讓所有欄位都是公開全域變數" },
+      { "id": "C", "text": "程式只能有一個類別" },
+      { "id": "D", "text": "禁止使用函式" }
+    ],
+    "answer": ["A"],
+    "explanation": "封裝把實作藏在介面後面，外面只透過公開方法互動，降低耦合、保護不變量。"
+  },
+  {
+    "id": "p06",
+    "chapter": "程式設計",
+    "tags": ["Git"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "Git 最核心的用途是？",
+    "options": [
+      { "id": "A", "text": "編譯 C++ 程式" },
+      { "id": "B", "text": "追蹤原始碼變更並支援分支與合併" },
+      { "id": "C", "text": "把網站部署到 CDN" },
+      { "id": "D", "text": "掃描病毒" }
+    ],
+    "answer": ["B"],
+    "explanation": "Git 是分散式版本控制系統，記錄誰在何時改了什麼，能開分支實驗再合併，方便協作與回溯。"
+  },
+  {
+    "id": "p07",
+    "chapter": "程式設計",
+    "tags": ["陣列", "鏈結串列"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "陣列相較單向鏈結串列，通常較擅長？",
+    "options": [
+      { "id": "A", "text": "在中間插入元素且不必搬移後續元素" },
+      { "id": "B", "text": "以索引 O(1) 隨機存取" },
+      { "id": "C", "text": "記憶體可以完全不連續也能用下標直達" },
+      { "id": "D", "text": "長度永遠自動無限且無成本" }
+    ],
+    "answer": ["B"],
+    "explanation": "陣列連續存放，下標可常數時間定位。中間插入常要搬移元素；鏈結串列插入較靈活，但循序走訪才能到第 k 個。"
+  },
+  {
+    "id": "p08",
+    "chapter": "程式設計",
+    "tags": ["雜湊"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "雜湊表在平均情況下的查找時間複雜度接近？",
+    "options": [
+      { "id": "A", "text": "O(1)" },
+      { "id": "B", "text": "O(n log n)" },
+      { "id": "C", "text": "O(n²)" },
+      { "id": "D", "text": "O(2ⁿ)" }
+    ],
+    "answer": ["A"],
+    "explanation": "好的雜湊與適當負載因子下，平均插入/查找接近常數。最壞情況（大量碰撞）可能退化成線性，實務上要處理碰撞。"
+  },
+  {
+    "id": "p09",
+    "chapter": "程式設計",
+    "tags": ["SQL"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "SQL 中用來查詢資料列的主要語句是？",
+    "options": [
+      { "id": "A", "text": "INSERT" },
+      { "id": "B", "text": "DELETE" },
+      { "id": "C", "text": "SELECT" },
+      { "id": "D", "text": "DROP" }
+    ],
+    "answer": ["C"],
+    "explanation": "SELECT 讀取資料。INSERT 新增、UPDATE 修改、DELETE 刪列、DROP 刪除資料表或資料庫物件。"
+  },
+  {
+    "id": "p10",
+    "chapter": "程式設計",
+    "tags": ["布林"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "布林運算 true AND false 的結果是？",
+    "options": [
+      { "id": "A", "text": "true" },
+      { "id": "B", "text": "false" },
+      { "id": "C", "text": "1" },
+      { "id": "D", "text": "未定義" }
+    ],
+    "answer": ["B"],
+    "explanation": "AND 要兩邊都為真才是真。true AND false 為 false。OR 則有一邊為真即為真。"
+  },
+  {
+    "id": "p11",
+    "chapter": "程式設計",
+    "tags": ["溢位"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "整數溢位（overflow）是指？",
+    "options": [
+      { "id": "A", "text": "硬碟空間用完" },
+      { "id": "B", "text": "運算結果超出該型別能表示的範圍" },
+      { "id": "C", "text": "網路封包遺失" },
+      { "id": "D", "text": "函式回傳值被忽略" }
+    ],
+    "answer": ["B"],
+    "explanation": "例如 8 位元無號數最大 255，再加 1 可能繞回 0。這會造成邏輯錯誤，安全上也可能被利用，需注意範圍。"
+  },
+  {
+    "id": "p12",
+    "chapter": "程式設計",
+    "tags": ["編譯", "直譯"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "編譯與直譯最主要的差異是？",
+    "options": [
+      { "id": "A", "text": "編譯會先把原始碼翻譯成可執行形式再跑；直譯則邊讀邊執行" },
+      { "id": "B", "text": "直譯語言不能有變數" },
+      { "id": "C", "text": "編譯只能用在網頁" },
+      { "id": "D", "text": "兩者完全沒有差異" }
+    ],
+    "answer": ["A"],
+    "explanation": "C/Go 等常先編譯；Python、JavaScript 常由直譯器或 VM 執行。實務上很多語言是混合（先編譯成位元組碼再執行）。"
+  },
+  {
+    "id": "p13",
+    "chapter": "程式設計",
+    "tags": ["REST", "API"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "RESTful API 常見慣例中，用 HTTP GET /users/42 較適合表達？",
+    "options": [
+      { "id": "A", "text": "刪除編號 42 的使用者" },
+      { "id": "B", "text": "取得編號 42 的使用者資料" },
+      { "id": "C", "text": "建立一個新使用者且編號必須是 42" },
+      { "id": "D", "text": "關閉資料庫連線" }
+    ],
+    "answer": ["B"],
+    "explanation": "REST 用資源 URL 加上 HTTP 方法。GET 讀取、POST 建立、PUT/PATCH 更新、DELETE 刪除。GET 不應有副作用。"
+  },
+  {
+    "id": "p14",
+    "chapter": "程式設計",
+    "tags": ["進位"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "二進位 1010 等於十進位多少？",
+    "options": [
+      { "id": "A", "text": "8" },
+      { "id": "B", "text": "10" },
+      { "id": "C", "text": "12" },
+      { "id": "D", "text": "20" }
+    ],
+    "answer": ["B"],
+    "explanation": "1×8 + 0×4 + 1×2 + 0×1 = 10。這也是十六進位 A 的值。"
+  },
+  {
+    "id": "p15",
+    "chapter": "程式設計",
+    "tags": ["排序"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "氣泡排序在最壞情況下的時間複雜度是？",
+    "options": [
+      { "id": "A", "text": "O(n)" },
+      { "id": "B", "text": "O(n log n)" },
+      { "id": "C", "text": "O(n²)" },
+      { "id": "D", "text": "O(log n)" }
+    ],
+    "answer": ["C"],
+    "explanation": "相鄰比較並交換，兩層迴圈，最壞與平均多為 O(n²)。高效排序如合併排序、堆排序可達 O(n log n)。"
+  },
+  {
+    "id": "p16",
+    "chapter": "程式設計",
+    "tags": ["複雜度", "資料結構"],
+    "difficulty": 2,
+    "type": "multiple",
+    "stem": "下列哪些敘述正確？（多選）",
+    "options": [
+      { "id": "A", "text": "雜湊表平均查找可接近 O(1)" },
+      { "id": "B", "text": "二元搜尋樹若平衡，查找約 O(log n)" },
+      { "id": "C", "text": "單向鏈結串列可以用下標保證 O(1) 隨機存取" },
+      { "id": "D", "text": "堆疊的 push 與 pop 通常是 O(1)" }
+    ],
+    "answer": ["A", "B", "D"],
+    "explanation": "鏈結串列要走到第 k 個需 O(k)，不是隨機存取。平衡 BST 與堆疊頂端操作、雜湊平均情況都符合其餘選項。"
+  },
+  {
+    "id": "n-o01",
+    "chapter": "計算機網路",
+    "tags": ["TCP", "排序"],
+    "difficulty": 1,
+    "type": "order",
+    "stem": "排出 TCP 三次交握的順序。",
+    "tokens": [
+      { "id": "1", "text": "Client 送 SYN" },
+      { "id": "2", "text": "Server 回 SYN-ACK" },
+      { "id": "3", "text": "Client 送 ACK" }
+    ],
+    "explanation": "先請求連線（SYN），對端同意並帶自己的序號（SYN-ACK），最後確認（ACK），連線才建立。"
+  },
+  {
+    "id": "n-o02",
+    "chapter": "計算機網路",
+    "tags": ["IOS", "排序"],
+    "difficulty": 1,
+    "type": "order",
+    "stem": "Cisco IOS 進入介面設定的常見順序。",
+    "tokens": [
+      { "id": "1", "text": "enable" },
+      { "id": "2", "text": "configure terminal" },
+      { "id": "3", "text": "interface gigabitethernet 0/1" }
+    ],
+    "explanation": "先特權模式，再全域設定，最後進入指定介面。少了 enable 通常進不了 conf t。"
+  },
+  {
+    "id": "n-c01",
+    "chapter": "計算機網路",
+    "tags": ["子網路", "填空"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "IPv4 位址 192.168.1.10/24 的預設子網路遮罩是 ____。",
+    "blanks": [["255.255.255.0"]],
+    "explanation": "/24 代表前 24 個位元為網路位元，遮罩即 255.255.255.0。"
+  },
+  {
+    "id": "p-o01",
+    "chapter": "程式設計",
+    "tags": ["排序"],
+    "difficulty": 2,
+    "type": "order",
+    "stem": "由慢到快，排出常見時間複雜度（就一般情況）。",
+    "tokens": [
+      { "id": "1", "text": "O(n²)" },
+      { "id": "2", "text": "O(n log n)" },
+      { "id": "3", "text": "O(n)" },
+      { "id": "4", "text": "O(1)" }
+    ],
+    "explanation": "平方最慢，線性對數次之，線性再次，常數最快。這裡指成長速度，不是絕對執行時間。"
+  },
+  {
+    "id": "p-s01",
+    "chapter": "程式設計",
+    "tags": ["簡答"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "先進後出（LIFO）的資料結構名稱？",
+    "aliases": ["堆疊", "stack", "Stack"],
+    "explanation": "堆疊（stack）後進先出；佇列才是先進先出。"
+  }
+]

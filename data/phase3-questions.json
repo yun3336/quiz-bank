@@ -1,0 +1,450 @@
+[
+  {
+    "id": "hs-en-apple",
+    "chapter": "英語看圖",
+    "tags": ["看圖", "詞彙"],
+    "difficulty": 1,
+    "type": "hotspot",
+    "stem": "點選圖中的蘋果（apple）。",
+    "image": "/images/classroom.svg",
+    "hotspots": [
+      { "id": "door", "x": 5, "y": 21, "w": 13, "h": 67, "label": "門 door" },
+      { "id": "window", "x": 25, "y": 12, "w": 25, "h": 31, "label": "窗 window" },
+      { "id": "apple", "x": 52, "y": 47, "w": 9, "h": 14, "label": "蘋果 apple" },
+      { "id": "book", "x": 66, "y": 57, "w": 12, "h": 10, "label": "書 book" },
+      { "id": "clock", "x": 85, "y": 10, "w": 10, "h": 18, "label": "鐘 clock" }
+    ],
+    "answer": ["apple"],
+    "explanation": "紅色圓形在桌上的是蘋果。"
+  },
+  {
+    "id": "hs-en-window",
+    "chapter": "英語看圖",
+    "tags": ["看圖", "詞彙"],
+    "difficulty": 1,
+    "type": "hotspot",
+    "stem": "點選圖中的窗戶（window）。",
+    "image": "/images/classroom.svg",
+    "hotspots": [
+      { "id": "door", "x": 5, "y": 21, "w": 13, "h": 67, "label": "門 door" },
+      { "id": "window", "x": 25, "y": 12, "w": 25, "h": 31, "label": "窗 window" },
+      { "id": "apple", "x": 52, "y": 47, "w": 9, "h": 14, "label": "蘋果 apple" },
+      { "id": "book", "x": 66, "y": 57, "w": 12, "h": 10, "label": "書 book" },
+      { "id": "clock", "x": 85, "y": 10, "w": 10, "h": 18, "label": "鐘 clock" }
+    ],
+    "answer": ["window"],
+    "explanation": "牆上藍色格子是窗戶。"
+  },
+  {
+    "id": "hs-en-door",
+    "chapter": "英語看圖",
+    "tags": ["看圖", "詞彙"],
+    "difficulty": 1,
+    "type": "hotspot",
+    "stem": "點選圖中的門（door）。",
+    "image": "/images/classroom.svg",
+    "hotspots": [
+      { "id": "door", "x": 5, "y": 21, "w": 13, "h": 67, "label": "門 door" },
+      { "id": "window", "x": 25, "y": 12, "w": 25, "h": 31, "label": "窗 window" },
+      { "id": "apple", "x": 52, "y": 47, "w": 9, "h": 14, "label": "蘋果 apple" },
+      { "id": "book", "x": 66, "y": 57, "w": 12, "h": 10, "label": "書 book" },
+      { "id": "clock", "x": 85, "y": 10, "w": 10, "h": 18, "label": "鐘 clock" }
+    ],
+    "answer": ["door"],
+    "explanation": "左側長方形是門。"
+  },
+  {
+    "id": "hs-en-clock",
+    "chapter": "英語看圖",
+    "tags": ["看圖", "詞彙"],
+    "difficulty": 1,
+    "type": "hotspot",
+    "stem": "點選圖中的時鐘（clock）。",
+    "image": "/images/classroom.svg",
+    "hotspots": [
+      { "id": "door", "x": 5, "y": 21, "w": 13, "h": 67, "label": "門 door" },
+      { "id": "window", "x": 25, "y": 12, "w": 25, "h": 31, "label": "窗 window" },
+      { "id": "apple", "x": 52, "y": 47, "w": 9, "h": 14, "label": "蘋果 apple" },
+      { "id": "book", "x": 66, "y": 57, "w": 12, "h": 10, "label": "書 book" },
+      { "id": "clock", "x": 85, "y": 10, "w": 10, "h": 18, "label": "鐘 clock" }
+    ],
+    "answer": ["clock"],
+    "explanation": "右上角圓形是時鐘。"
+  },
+  {
+    "id": "hs-osi-trans",
+    "chapter": "計算機看圖",
+    "tags": ["OSI", "看圖"],
+    "difficulty": 2,
+    "type": "hotspot",
+    "stem": "點選 OSI 模型中負責可靠傳輸（如 TCP）的那一層。",
+    "image": "/images/osi-layers.svg",
+    "hotspots": [
+      { "id": "l7", "x": 8, "y": 3.5, "w": 84, "h": 12, "label": "應用層" },
+      { "id": "l6", "x": 8, "y": 16, "w": 84, "h": 12, "label": "表現層" },
+      { "id": "l5", "x": 8, "y": 28.5, "w": 84, "h": 12, "label": "會議層" },
+      { "id": "l4", "x": 8, "y": 41, "w": 84, "h": 12, "label": "傳輸層" },
+      { "id": "l3", "x": 8, "y": 53.5, "w": 84, "h": 12, "label": "網路層" },
+      { "id": "l2", "x": 8, "y": 66, "w": 84, "h": 12, "label": "資料連結層" },
+      { "id": "l1", "x": 8, "y": 78.5, "w": 84, "h": 12, "label": "實體層" }
+    ],
+    "answer": ["l4"],
+    "explanation": "TCP／UDP 在傳輸層。這是看圖辨識，設定交換器請走 LAB。"
+  },
+  {
+    "id": "hs-osi-net",
+    "chapter": "計算機看圖",
+    "tags": ["OSI", "看圖"],
+    "difficulty": 1,
+    "type": "hotspot",
+    "stem": "點選負責尋路、IP 位址的那一層。",
+    "image": "/images/osi-layers.svg",
+    "hotspots": [
+      { "id": "l7", "x": 8, "y": 3.5, "w": 84, "h": 12, "label": "應用層" },
+      { "id": "l6", "x": 8, "y": 16, "w": 84, "h": 12, "label": "表現層" },
+      { "id": "l5", "x": 8, "y": 28.5, "w": 84, "h": 12, "label": "會議層" },
+      { "id": "l4", "x": 8, "y": 41, "w": 84, "h": 12, "label": "傳輸層" },
+      { "id": "l3", "x": 8, "y": 53.5, "w": 84, "h": 12, "label": "網路層" },
+      { "id": "l2", "x": 8, "y": 66, "w": 84, "h": 12, "label": "資料連結層" },
+      { "id": "l1", "x": 8, "y": 78.5, "w": 84, "h": 12, "label": "實體層" }
+    ],
+    "answer": ["l3"],
+    "explanation": "IP 與路由在網路層。實作指令請走 LAB，不必背成選擇題。"
+  },
+  {
+    "id": "hs-sw-gi01",
+    "chapter": "計算機看圖",
+    "tags": ["介面", "看圖"],
+    "difficulty": 1,
+    "type": "hotspot",
+    "stem": "點選面板上的 GigabitEthernet0/1。",
+    "image": "/images/switch-panel.svg",
+    "hotspots": [
+      { "id": "con", "x": 8, "y": 46, "w": 8, "h": 18, "label": "Console" },
+      { "id": "fa01", "x": 18, "y": 46, "w": 9, "h": 18, "label": "Fa0/1" },
+      { "id": "gi01", "x": 28, "y": 46, "w": 9, "h": 18, "label": "Gi0/1" },
+      { "id": "gi02", "x": 38, "y": 46, "w": 9, "h": 18, "label": "Gi0/2" },
+      { "id": "pwr", "x": 88, "y": 34, "w": 8, "h": 18, "label": "電源指示" }
+    ],
+    "answer": ["gi01"],
+    "explanation": "標示 Gi0/1 的藍色埠。設定 VLAN 等操作請走 IOS LAB。"
+  },
+  {
+    "id": "hs-sw-con",
+    "chapter": "計算機看圖",
+    "tags": ["介面", "看圖"],
+    "difficulty": 1,
+    "type": "hotspot",
+    "stem": "點選用來做終端連線的 Console 埠。",
+    "image": "/images/switch-panel.svg",
+    "hotspots": [
+      { "id": "con", "x": 8, "y": 46, "w": 8, "h": 18, "label": "Console" },
+      { "id": "fa01", "x": 18, "y": 46, "w": 9, "h": 18, "label": "Fa0/1" },
+      { "id": "gi01", "x": 28, "y": 46, "w": 9, "h": 18, "label": "Gi0/1" },
+      { "id": "gi02", "x": 38, "y": 46, "w": 9, "h": 18, "label": "Gi0/2" },
+      { "id": "pwr", "x": 88, "y": 34, "w": 8, "h": 18, "label": "電源指示" }
+    ],
+    "answer": ["con"],
+    "explanation": "左側較小、標 Con 的是 console。連線與設定請走 LAB。"
+  },
+  {
+    "id": "hs-cell-nucleus",
+    "chapter": "生物入門",
+    "tags": ["細胞", "看圖"],
+    "difficulty": 1,
+    "type": "hotspot",
+    "stem": "點選含遺傳物質的細胞核。",
+    "image": "/images/plant-cell.svg",
+    "hotspots": [
+      { "id": "nucleus", "x": 38, "y": 36, "w": 24, "h": 28, "label": "細胞核" },
+      { "id": "chloro", "x": 15, "y": 31, "w": 17, "h": 16, "label": "葉綠體" },
+      { "id": "mito", "x": 67, "y": 56, "w": 16, "h": 12, "label": "粒線體" },
+      { "id": "vacuole", "x": 65, "y": 17, "w": 14, "h": 25, "label": "液胞" }
+    ],
+    "answer": ["nucleus"],
+    "explanation": "中央較圓、顏色較深的是細胞核。"
+  },
+  {
+    "id": "hs-cell-chloro",
+    "chapter": "生物入門",
+    "tags": ["細胞", "看圖"],
+    "difficulty": 1,
+    "type": "hotspot",
+    "stem": "點選進行光合作用的葉綠體。",
+    "image": "/images/plant-cell.svg",
+    "hotspots": [
+      { "id": "nucleus", "x": 38, "y": 36, "w": 24, "h": 28, "label": "細胞核" },
+      { "id": "chloro", "x": 15, "y": 31, "w": 17, "h": 16, "label": "葉綠體" },
+      { "id": "mito", "x": 67, "y": 56, "w": 16, "h": 12, "label": "粒線體" },
+      { "id": "vacuole", "x": 65, "y": 17, "w": 14, "h": 25, "label": "液胞" }
+    ],
+    "answer": ["chloro"],
+    "explanation": "左側綠色橢圓是葉綠體。"
+  },
+  {
+    "id": "sp-en01",
+    "chapter": "英語口說",
+    "tags": ["口說"],
+    "difficulty": 1,
+    "type": "speak",
+    "stem": "請朗讀下面的句子。辨識結果可能不穩，接近即可。",
+    "prompt": "Good morning.",
+    "speakLang": "en-US",
+    "aliases": ["Good morning", "good morning", "Good morning."],
+    "explanation": "重音在 mor-ning。沒有麥克風時可改打出你說的內容。"
+  },
+  {
+    "id": "sp-en02",
+    "chapter": "英語口說",
+    "tags": ["口說"],
+    "difficulty": 1,
+    "type": "speak",
+    "stem": "請朗讀下面的句子。辨識結果可能不穩，接近即可。",
+    "prompt": "Thank you very much.",
+    "speakLang": "en-US",
+    "aliases": ["Thank you very much", "thank you very much", "Thanks very much"],
+    "explanation": "very much 加強感謝。辨識常漏字，練習模式從寬。"
+  },
+  {
+    "id": "sp-en03",
+    "chapter": "英語口說",
+    "tags": ["口說"],
+    "difficulty": 2,
+    "type": "speak",
+    "stem": "請朗讀下面的句子。",
+    "prompt": "Please sit down.",
+    "speakLang": "en-US",
+    "aliases": ["Please sit down", "please sit down", "Sit down please"],
+    "explanation": "祈使句 Please + 動詞。"
+  },
+  {
+    "id": "sp-zh01",
+    "chapter": "中文口說",
+    "tags": ["口說"],
+    "difficulty": 1,
+    "type": "speak",
+    "stem": "請朗讀下面的句子。",
+    "prompt": "今天天氣很好。",
+    "speakLang": "zh-TW",
+    "aliases": ["今天天氣很好", "今天天氣很好。"],
+    "explanation": "請用完整句。辨識引擎對中文支援因瀏覽器而異。"
+  },
+  {
+    "id": "sp-ja01",
+    "chapter": "日語口說",
+    "tags": ["口說"],
+    "difficulty": 1,
+    "type": "speak",
+    "stem": "請朗讀下面的句子。",
+    "prompt": "おはようございます。",
+    "speakLang": "ja-JP",
+    "aliases": ["おはようございます", "おはよう", "おはようございます。"],
+    "explanation": "日語辨識需系統有日文語音套件，不穩時可改打出。"
+  },
+  {
+    "id": "au-en-lib",
+    "chapter": "英語錄音聽力",
+    "tags": ["錄音", "聽力"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "聽完錄音，選出最接近的意思。",
+    "prompt": "Where is the library?",
+    "audioSrc": "/audio/en-library.wav",
+    "speakLang": "en-US",
+    "options": [
+      { "id": "A", "text": "圖書館在哪裡？" },
+      { "id": "B", "text": "現在幾點？" },
+      { "id": "C", "text": "這是誰的書？" },
+      { "id": "D", "text": "請關門。" }
+    ],
+    "answer": ["A"],
+    "explanation": "Where is the library? 問地點。"
+  },
+  {
+    "id": "au-en-thx",
+    "chapter": "英語錄音聽力",
+    "tags": ["錄音", "聽力"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "聽完錄音，選出最接近的意思。",
+    "prompt": "Thank you very much.",
+    "audioSrc": "/audio/en-thanks.wav",
+    "speakLang": "en-US",
+    "options": [
+      { "id": "A", "text": "對不起。" },
+      { "id": "B", "text": "非常感謝。" },
+      { "id": "C", "text": "再見。" },
+      { "id": "D", "text": "請坐。" }
+    ],
+    "answer": ["B"],
+    "explanation": "Thank you very much.＝非常感謝。"
+  },
+  {
+    "id": "au-en-sit",
+    "chapter": "英語錄音聽力",
+    "tags": ["錄音", "聽力"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "聽完錄音，選出最接近的意思。",
+    "prompt": "Please sit down.",
+    "audioSrc": "/audio/en-sit.wav",
+    "speakLang": "en-US",
+    "options": [
+      { "id": "A", "text": "請站起來。" },
+      { "id": "B", "text": "請開門。" },
+      { "id": "C", "text": "請坐下。" },
+      { "id": "D", "text": "請小聲。" }
+    ],
+    "answer": ["C"],
+    "explanation": "Please sit down.＝請坐下。"
+  },
+  {
+    "id": "au-en-bye",
+    "chapter": "英語錄音聽力",
+    "tags": ["錄音", "聽力"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "聽完錄音，選出最接近的意思。",
+    "prompt": "See you tomorrow.",
+    "audioSrc": "/audio/en-goodbye.wav",
+    "speakLang": "en-US",
+    "options": [
+      { "id": "A", "text": "明天見。" },
+      { "id": "B", "text": "好久不見。" },
+      { "id": "C", "text": "請慢走。" },
+      { "id": "D", "text": "晚安。" }
+    ],
+    "answer": ["A"],
+    "explanation": "See you tomorrow.＝明天見。"
+  },
+  {
+    "id": "au-zh-lib",
+    "chapter": "中文錄音聽力",
+    "tags": ["錄音", "聽力"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "聽完錄音，選出最接近的意思。",
+    "prompt": "圖書館在哪裡？",
+    "audioSrc": "/audio/zh-library.wav",
+    "speakLang": "zh-TW",
+    "options": [
+      { "id": "A", "text": "What time is it?" },
+      { "id": "B", "text": "Where is the library?" },
+      { "id": "C", "text": "Please sit down." },
+      { "id": "D", "text": "This is my book." }
+    ],
+    "answer": ["B"],
+    "explanation": "問圖書館的位置。"
+  },
+  {
+    "id": "au-ja-book",
+    "chapter": "日語錄音聽力",
+    "tags": ["錄音", "聽力"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "聽完錄音，選出最接近的意思。",
+    "prompt": "これは本です。",
+    "audioSrc": "/audio/ja-book.wav",
+    "speakLang": "ja-JP",
+    "options": [
+      { "id": "A", "text": "這是書。" },
+      { "id": "B", "text": "那是筆。" },
+      { "id": "C", "text": "請坐。" },
+      { "id": "D", "text": "早安。" }
+    ],
+    "answer": ["A"],
+    "explanation": "これ は 本 です＝這是書。"
+  },
+  {
+    "id": "au-ja-hi",
+    "chapter": "日語錄音聽力",
+    "tags": ["錄音", "聽力"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "聽完錄音，選出最接近的意思。",
+    "prompt": "おはようございます。",
+    "audioSrc": "/audio/ja-morning.wav",
+    "speakLang": "ja-JP",
+    "options": [
+      { "id": "A", "text": "晚安。" },
+      { "id": "B", "text": "謝謝。" },
+      { "id": "C", "text": "早安。" },
+      { "id": "D", "text": "對不起。" }
+    ],
+    "answer": ["C"],
+    "explanation": "おはようございます＝早安（禮貌體）。"
+  },
+  {
+    "id": "au-ja-thx",
+    "chapter": "日語錄音聽力",
+    "tags": ["錄音", "聽力"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "聽完錄音，選出最接近的意思。",
+    "prompt": "ありがとうございます。",
+    "audioSrc": "/audio/ja-thanks.wav",
+    "speakLang": "ja-JP",
+    "options": [
+      { "id": "A", "text": "對不起。" },
+      { "id": "B", "text": "謝謝。" },
+      { "id": "C", "text": "再見。" },
+      { "id": "D", "text": "請開門。" }
+    ],
+    "answer": ["B"],
+    "explanation": "ありがとうございます＝謝謝。"
+  },
+  {
+    "id": "hs-hw-ge1",
+    "chapter": "華為看圖",
+    "tags": ["介面", "看圖"],
+    "difficulty": 1,
+    "type": "hotspot",
+    "stem": "點選面板上的 GigabitEthernet0/0/1。",
+    "image": "/images/vrp-panel.svg",
+    "hotspots": [
+      { "id": "con", "x": 8, "y": 46, "w": 8, "h": 18, "label": "Console" },
+      { "id": "ge1", "x": 18, "y": 46, "w": 10, "h": 18, "label": "GE0/0/1" },
+      { "id": "ge2", "x": 30, "y": 46, "w": 10, "h": 18, "label": "GE0/0/2" },
+      { "id": "ge3", "x": 41, "y": 46, "w": 10, "h": 18, "label": "GE0/0/3" },
+      { "id": "sys", "x": 88, "y": 34, "w": 8, "h": 18, "label": "SYS 指示" }
+    ],
+    "answer": ["ge1"],
+    "explanation": "標示 GE0/0/1 的埠。設定 VLAN 請走 VRP LAB。"
+  },
+  {
+    "id": "hs-hw-con",
+    "chapter": "華為看圖",
+    "tags": ["介面", "看圖"],
+    "difficulty": 1,
+    "type": "hotspot",
+    "stem": "點選用來做終端連線的 Console 埠。",
+    "image": "/images/vrp-panel.svg",
+    "hotspots": [
+      { "id": "con", "x": 8, "y": 46, "w": 8, "h": 18, "label": "Console" },
+      { "id": "ge1", "x": 18, "y": 46, "w": 10, "h": 18, "label": "GE0/0/1" },
+      { "id": "ge2", "x": 30, "y": 46, "w": 10, "h": 18, "label": "GE0/0/2" },
+      { "id": "ge3", "x": 41, "y": 46, "w": 10, "h": 18, "label": "GE0/0/3" },
+      { "id": "sys", "x": 88, "y": 34, "w": 8, "h": 18, "label": "SYS 指示" }
+    ],
+    "answer": ["con"],
+    "explanation": "左側標 CON 的是 console。連線與設定請走 LAB。"
+  },
+  {
+    "id": "hs-hw-sys",
+    "chapter": "華為看圖",
+    "tags": ["介面", "看圖"],
+    "difficulty": 1,
+    "type": "hotspot",
+    "stem": "點選系統運行指示燈（SYS）。",
+    "image": "/images/vrp-panel.svg",
+    "hotspots": [
+      { "id": "con", "x": 8, "y": 46, "w": 8, "h": 18, "label": "Console" },
+      { "id": "ge1", "x": 18, "y": 46, "w": 10, "h": 18, "label": "GE0/0/1" },
+      { "id": "ge2", "x": 30, "y": 46, "w": 10, "h": 18, "label": "GE0/0/2" },
+      { "id": "ge3", "x": 41, "y": 46, "w": 10, "h": 18, "label": "GE0/0/3" },
+      { "id": "sys", "x": 88, "y": 34, "w": 8, "h": 18, "label": "SYS 指示" }
+    ],
+    "answer": ["sys"],
+    "explanation": "右側綠燈是 SYS。這是辨識面板，設定請走 LAB。"
+  }
+]

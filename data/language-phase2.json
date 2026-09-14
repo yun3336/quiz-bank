@@ -1,0 +1,443 @@
+[
+  {
+    "id": "tr-ze01",
+    "chapter": "英語翻譯",
+    "tags": ["中英", "日常"],
+    "difficulty": 1,
+    "type": "translate",
+    "direction": "zh-en",
+    "stem": "把下面的中文翻成英文。",
+    "source": "我每天搭火車上班。",
+    "aliases": [
+      "I go to work by train every day",
+      "I take the train to work every day",
+      "I commute to work by train every day",
+      "I go to work by train everyday"
+    ],
+    "explanation": "everyday 當形容詞用；作「每天」時較常用 every day。模考會把標點與空白算進去，請寫完整句子。"
+  },
+  {
+    "id": "tr-ze02",
+    "chapter": "英語翻譯",
+    "tags": ["中英", "祈使"],
+    "difficulty": 1,
+    "type": "translate",
+    "direction": "zh-en",
+    "stem": "把下面的中文翻成英文。",
+    "source": "請把門關上。",
+    "aliases": [
+      "Please close the door",
+      "Please shut the door",
+      "Close the door please",
+      "Please close the door."
+    ],
+    "explanation": "祈使句常用 Please + 動詞。close / shut 都可接受。"
+  },
+  {
+    "id": "tr-ze03",
+    "chapter": "英語翻譯",
+    "tags": ["中英", "過去"],
+    "difficulty": 2,
+    "type": "translate",
+    "direction": "zh-en",
+    "stem": "把下面的中文翻成英文。",
+    "source": "她昨天沒有來學校。",
+    "aliases": [
+      "She did not come to school yesterday",
+      "She didn't come to school yesterday",
+      "She did not go to school yesterday",
+      "She didn't go to school yesterday"
+    ],
+    "explanation": "過去否定用 did not / didn't + 原形動詞，不要寫 did not came。"
+  },
+  {
+    "id": "tr-ze04",
+    "chapter": "英語翻譯",
+    "tags": ["中英", "描述"],
+    "difficulty": 1,
+    "type": "translate",
+    "direction": "zh-en",
+    "stem": "把下面的中文翻成英文。",
+    "source": "這個圖書館很大。",
+    "aliases": [
+      "This library is very big",
+      "This library is big",
+      "The library is very big",
+      "This library is large"
+    ],
+    "explanation": "This / The library is (very) big / large 都算合理譯法。"
+  },
+  {
+    "id": "tr-ej01",
+    "chapter": "日語翻譯",
+    "tags": ["英日", "問候"],
+    "difficulty": 1,
+    "type": "translate",
+    "direction": "en-ja",
+    "stem": "把下面的英文翻成日文。",
+    "source": "Good morning.",
+    "aliases": ["おはようございます", "おはよう", "おはよう。", "おはようございます。"],
+    "explanation": "較正式用 おはようございます；對熟人可用 おはよう。"
+  },
+  {
+    "id": "tr-ej02",
+    "chapter": "日語翻譯",
+    "tags": ["英日", "自我介紹"],
+    "difficulty": 1,
+    "type": "translate",
+    "direction": "en-ja",
+    "stem": "把下面的英文翻成日文。",
+    "source": "I am a student.",
+    "aliases": ["私は学生です", "わたしは学生です", "僕は学生です", "ぼくは学生です", "私は学生です。"],
+    "explanation": "A は B です。學生寫 学生。我／僕皆可。"
+  },
+  {
+    "id": "tr-ej03",
+    "chapter": "日語翻譯",
+    "tags": ["英日", "指示"],
+    "difficulty": 1,
+    "type": "translate",
+    "direction": "en-ja",
+    "stem": "把下面的英文翻成日文。",
+    "source": "This is a book.",
+    "aliases": ["これは本です", "これはほんです", "これは本です。"],
+    "explanation": "これ 指近處物品。本です 是判斷句。"
+  },
+  {
+    "id": "tr-ej04",
+    "chapter": "日語翻譯",
+    "tags": ["英日", "感謝"],
+    "difficulty": 1,
+    "type": "translate",
+    "direction": "en-ja",
+    "stem": "把下面的英文翻成日文。",
+    "source": "Thank you very much.",
+    "aliases": [
+      "どうもありがとうございます",
+      "ありがとうございます",
+      "どうもありがとう",
+      "ありがとう",
+      "どうもありがとうございます。"
+    ],
+    "explanation": "very much 對應 どうも。禮貌體用 ありがとうございます。"
+  },
+  {
+    "id": "dic-en01",
+    "chapter": "英語聽寫",
+    "tags": ["聽寫"],
+    "difficulty": 1,
+    "type": "dictation",
+    "stem": "聽寫朗讀的句子（請開聲音）。",
+    "prompt": "Please sit down.",
+    "speakLang": "en-US",
+    "audioSrc": "/audio/en-sit.wav",
+    "aliases": ["Please sit down.", "Please sit down", "please sit down"],
+    "explanation": "祈使句 Please + 動詞。模考請連標點一併寫對。"
+  },
+  {
+    "id": "dic-en02",
+    "chapter": "英語聽寫",
+    "tags": ["聽寫"],
+    "difficulty": 1,
+    "type": "dictation",
+    "stem": "聽寫朗讀的句子（請開聲音）。",
+    "prompt": "The weather is nice today.",
+    "speakLang": "en-US",
+    "audioSrc": "/audio/en-weather.wav",
+    "aliases": ["The weather is nice today.", "The weather is nice today", "the weather is nice today"],
+    "explanation": "weather 不可數，前面用 The weather。"
+  },
+  {
+    "id": "dic-en03",
+    "chapter": "英語聽寫",
+    "tags": ["聽寫"],
+    "difficulty": 2,
+    "type": "dictation",
+    "stem": "聽寫朗讀的句子（請開聲音）。",
+    "prompt": "I like to read books in the morning.",
+    "speakLang": "en-US",
+    "audioSrc": "/audio/en-morning.wav",
+    "aliases": [
+      "I like to read books in the morning.",
+      "I like to read books in the morning",
+      "i like to read books in the morning"
+    ],
+    "explanation": "in the morning 表時段。模考不要漏掉 the。"
+  },
+  {
+    "id": "dic-en04",
+    "chapter": "英語聽寫",
+    "tags": ["聽寫"],
+    "difficulty": 2,
+    "type": "dictation",
+    "stem": "聽寫朗讀的句子（請開聲音）。",
+    "prompt": "Could you open the window, please?",
+    "speakLang": "en-US",
+    "audioSrc": "/audio/en-window.wav",
+    "aliases": [
+      "Could you open the window, please?",
+      "Could you open the window please?",
+      "Could you open the window, please",
+      "Could you open the window please"
+    ],
+    "explanation": "Could you ... please? 是客氣請求。模考盡量保留逗號與問號。"
+  },
+  {
+    "id": "dic-ja01",
+    "chapter": "日語聽寫",
+    "tags": ["聽寫"],
+    "difficulty": 1,
+    "type": "dictation",
+    "stem": "聽寫朗讀的句子（請開聲音）。",
+    "prompt": "これは本です。",
+    "speakLang": "ja-JP",
+    "audioSrc": "/audio/ja-book.wav",
+    "aliases": ["これは本です。", "これは本です", "これはほんです。", "これはほんです"],
+    "explanation": "これ は 本 です。模考建議寫出句號。"
+  },
+  {
+    "id": "dic-ja02",
+    "chapter": "日語聽寫",
+    "tags": ["聽寫"],
+    "difficulty": 1,
+    "type": "dictation",
+    "stem": "聽寫朗讀的句子（請開聲音）。",
+    "prompt": "おはようございます。",
+    "speakLang": "ja-JP",
+    "audioSrc": "/audio/ja-morning.wav",
+    "aliases": ["おはようございます。", "おはようございます"],
+    "explanation": "早晨問候的禮貌體。練習可接受沒有句號；模考較嚴。"
+  },
+  {
+    "id": "dic-zh01",
+    "chapter": "中文聽寫",
+    "tags": ["聽寫"],
+    "difficulty": 1,
+    "type": "dictation",
+    "stem": "聽寫朗讀的句子（請開聲音）。",
+    "prompt": "今天天氣很好。",
+    "speakLang": "zh-TW",
+    "audioSrc": "/audio/zh-weather.wav",
+    "aliases": ["今天天氣很好。", "今天天氣很好"],
+    "explanation": "完整句含句號。模考請一併寫上。"
+  },
+  {
+    "id": "dic-zh02",
+    "chapter": "中文聽寫",
+    "tags": ["聽寫"],
+    "difficulty": 1,
+    "type": "dictation",
+    "stem": "聽寫朗讀的句子（請開聲音）。",
+    "prompt": "請把窗戶打開。",
+    "speakLang": "zh-TW",
+    "audioSrc": "/audio/zh-window.wav",
+    "aliases": ["請把窗戶打開。", "請把窗戶打開", "請把窗子打開。", "請把窗子打開"],
+    "explanation": "把字句：請 + 把 + 受詞 + 動詞。窗戶／窗子皆可。"
+  },
+  {
+    "id": "rd-park-1",
+    "chapter": "英語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 1,
+    "type": "single",
+    "passageId": "en-park",
+    "passage": "Mia walks in the park every Sunday. She brings a small bag with water and an apple. Last week she saw two dogs playing near the lake. She sat on a bench and read a book for one hour.",
+    "stem": "How often does Mia walk in the park?",
+    "options": [
+      { "id": "A", "text": "Every day" },
+      { "id": "B", "text": "Every Sunday" },
+      { "id": "C", "text": "Once a month" },
+      { "id": "D", "text": "Only in summer" }
+    ],
+    "answer": ["B"],
+    "explanation": "第一句 every Sunday 說明頻率。"
+  },
+  {
+    "id": "rd-park-2",
+    "chapter": "英語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 1,
+    "type": "single",
+    "passageId": "en-park",
+    "passage": "Mia walks in the park every Sunday. She brings a small bag with water and an apple. Last week she saw two dogs playing near the lake. She sat on a bench and read a book for one hour.",
+    "stem": "What did Mia see last week?",
+    "options": [
+      { "id": "A", "text": "Two cats in a tree" },
+      { "id": "B", "text": "A boat on the river" },
+      { "id": "C", "text": "Two dogs playing near the lake" },
+      { "id": "D", "text": "A soccer game" }
+    ],
+    "answer": ["C"],
+    "explanation": "文中 last week she saw two dogs playing near the lake。"
+  },
+  {
+    "id": "rd-park-3",
+    "chapter": "英語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 2,
+    "type": "cloze",
+    "passageId": "en-park",
+    "passage": "Mia walks in the park every Sunday. She brings a small bag with water and an apple. Last week she saw two dogs playing near the lake. She sat on a bench and read a book for one hour.",
+    "stem": "She sat on a ____ and read a book for one hour.",
+    "blanks": [["bench"]],
+    "explanation": "sat on a bench。bench 是長椅。"
+  },
+  {
+    "id": "rd-rain-1",
+    "chapter": "英語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 1,
+    "type": "single",
+    "passageId": "en-rain",
+    "passage": "Yesterday it rained all afternoon. Anna forgot her umbrella at home. She waited in a coffee shop until the rain became lighter, then she walked home slowly.",
+    "stem": "When did it rain?",
+    "options": [
+      { "id": "A", "text": "Yesterday morning" },
+      { "id": "B", "text": "Yesterday afternoon" },
+      { "id": "C", "text": "Last night" },
+      { "id": "D", "text": "This morning" }
+    ],
+    "answer": ["B"],
+    "explanation": "all afternoon 搭配 yesterday。"
+  },
+  {
+    "id": "rd-rain-2",
+    "chapter": "英語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 1,
+    "type": "single",
+    "passageId": "en-rain",
+    "passage": "Yesterday it rained all afternoon. Anna forgot her umbrella at home. She waited in a coffee shop until the rain became lighter, then she walked home slowly.",
+    "stem": "What did Anna forget?",
+    "options": [
+      { "id": "A", "text": "Her keys" },
+      { "id": "B", "text": "Her phone" },
+      { "id": "C", "text": "Her umbrella" },
+      { "id": "D", "text": "Her bag" }
+    ],
+    "answer": ["C"],
+    "explanation": "forgot her umbrella at home。"
+  },
+  {
+    "id": "rd-rain-3",
+    "chapter": "英語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 2,
+    "type": "boolean",
+    "passageId": "en-rain",
+    "passage": "Yesterday it rained all afternoon. Anna forgot her umbrella at home. She waited in a coffee shop until the rain became lighter, then she walked home slowly.",
+    "stem": "Anna waited in a coffee shop before she went home.",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "She waited in a coffee shop until the rain became lighter, then walked home。"
+  },
+  {
+    "id": "rd-rain-4",
+    "chapter": "英語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 2,
+    "type": "short",
+    "passageId": "en-rain",
+    "passage": "Yesterday it rained all afternoon. Anna forgot her umbrella at home. She waited in a coffee shop until the rain became lighter, then she walked home slowly.",
+    "stem": "How did Anna go home at the end?（請用英文，如 walked home slowly）",
+    "aliases": ["walked home slowly", "she walked home slowly", "walked slowly", "walked home"],
+    "explanation": "then she walked home slowly。"
+  },
+  {
+    "id": "rd-shop-1",
+    "chapter": "日語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 1,
+    "type": "single",
+    "passageId": "ja-shop",
+    "passage": "ゆいさんは毎日店で働きます。店は駅の近くです。週末はとても忙しいです。ゆいさんはお茶が好きです。",
+    "stem": "ゆいさんはどこで働きますか。",
+    "options": [
+      { "id": "A", "text": "学校" },
+      { "id": "B", "text": "店" },
+      { "id": "C", "text": "病院" },
+      { "id": "D", "text": "図書館" }
+    ],
+    "answer": ["B"],
+    "explanation": "毎日店で働きます。"
+  },
+  {
+    "id": "rd-shop-2",
+    "chapter": "日語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 1,
+    "type": "single",
+    "passageId": "ja-shop",
+    "passage": "ゆいさんは毎日店で働きます。店は駅の近くです。週末はとても忙しいです。ゆいさんはお茶が好きです。",
+    "stem": "店はどこにありますか。",
+    "options": [
+      { "id": "A", "text": "海の近く" },
+      { "id": "B", "text": "山の上" },
+      { "id": "C", "text": "駅の近く" },
+      { "id": "D", "text": "公園の中" }
+    ],
+    "answer": ["C"],
+    "explanation": "店は駅の近くです。"
+  },
+  {
+    "id": "rd-shop-3",
+    "chapter": "日語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 2,
+    "type": "cloze",
+    "passageId": "ja-shop",
+    "passage": "ゆいさんは毎日店で働きます。店は駅の近くです。週末はとても忙しいです。ゆいさんはお茶が好きです。",
+    "stem": "週末はとても ____ です。",
+    "blanks": [["忙しい", "いそがしい"]],
+    "explanation": "週末はとても忙しいです。"
+  },
+  {
+    "id": "rd-lib-1",
+    "chapter": "中文閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 1,
+    "type": "single",
+    "passageId": "zh-lib",
+    "passage": "小陳每週三晚上到圖書館念書。他常坐靠窗的位子，因為光線比較亮。上週他借了兩本歷史書，打算這個週末讀完其中一本。",
+    "stem": "小陳通常哪一天去圖書館？",
+    "options": [
+      { "id": "A", "text": "週一早上" },
+      { "id": "B", "text": "週三晚上" },
+      { "id": "C", "text": "週五下午" },
+      { "id": "D", "text": "每天中午" }
+    ],
+    "answer": ["B"],
+    "explanation": "每週三晚上到圖書館念書。"
+  },
+  {
+    "id": "rd-lib-2",
+    "chapter": "中文閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 1,
+    "type": "boolean",
+    "passageId": "zh-lib",
+    "passage": "小陳每週三晚上到圖書館念書。他常坐靠窗的位子，因為光線比較亮。上週他借了兩本歷史書，打算這個週末讀完其中一本。",
+    "stem": "小陳常坐靠窗位子，是因為光線比較亮。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "文中直接說明因為光線比較亮。"
+  },
+  {
+    "id": "rd-lib-3",
+    "chapter": "中文閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 2,
+    "type": "short",
+    "passageId": "zh-lib",
+    "passage": "小陳每週三晚上到圖書館念書。他常坐靠窗的位子，因為光線比較亮。上週他借了兩本歷史書，打算這個週末讀完其中一本。",
+    "stem": "上週小陳借了什麼主題的書？",
+    "aliases": ["歷史", "歷史書", "兩本歷史書"],
+    "explanation": "借了兩本歷史書。"
+  }
+]

@@ -1,0 +1,407 @@
+[
+  {
+    "id": "n21",
+    "chapter": "計算機網路",
+    "tags": ["Trunk", "VLAN"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "802.1Q trunk 上沒有打標籤的訊框，會被歸到哪一個 VLAN？",
+    "options": [
+      { "id": "A", "text": "永遠是 VLAN 1，無法更改" },
+      { "id": "B", "text": "Native VLAN（未標籤 VLAN）" },
+      { "id": "C", "text": "編號最大的 VLAN" },
+      { "id": "D", "text": "所有 VLAN 各複製一份" }
+    ],
+    "answer": ["B"],
+    "explanation": "未打 802.1Q 標籤的訊框走 native VLAN。兩端 native 不一致會造成 VLAN 錯置。設定請走 LAB 7。"
+  },
+  {
+    "id": "n-c04",
+    "chapter": "計算機網路",
+    "tags": ["子網路", "填空"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "IPv4 前綴 /27 對應的子網路遮罩是 ____。",
+    "blanks": [["255.255.255.224"]],
+    "explanation": "/27 是 27 個 1：最後八位元 11100000，即 224。"
+  },
+  {
+    "id": "n22",
+    "chapter": "計算機網路",
+    "tags": ["子網路"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "一個 /27 的 IPv4 子網，不含網路位址與廣播，可用主機數是？",
+    "options": [
+      { "id": "A", "text": "14" },
+      { "id": "B", "text": "30" },
+      { "id": "C", "text": "32" },
+      { "id": "D", "text": "62" }
+    ],
+    "answer": ["B"],
+    "explanation": "剩 5 個主機位元：2^5−2=30。"
+  },
+  {
+    "id": "n23",
+    "chapter": "計算機網路",
+    "tags": ["VLAN"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "Access 埠通常只屬於一個 VLAN，接到該埠的電腦封包進出時一般不帶 802.1Q 標籤。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "終端多半不懂 VLAN 標籤，由交換器在 access 埠幫它歸屬到指定 VLAN。"
+  },
+  {
+    "id": "n-o04",
+    "chapter": "計算機網路",
+    "tags": ["IOS", "排序"],
+    "difficulty": 2,
+    "type": "order",
+    "stem": "樓層交換器：先改名，再建 VLAN，再把埠劃進去（概念順序）。實際指令請在 LAB 打。",
+    "tokens": [
+      { "id": "1", "text": "configure terminal" },
+      { "id": "2", "text": "hostname SW-FL2" },
+      { "id": "3", "text": "vlan 10 並 name SALES" },
+      { "id": "4", "text": "interface fa0/1 再 switchport access vlan 10" }
+    ],
+    "explanation": "先進入設定模式並改名，VLAN 存在後才能把 access 埠劃進去。請到 LAB 8 實作。"
+  },
+  {
+    "id": "n24",
+    "chapter": "計算機網路",
+    "tags": ["SVI"],
+    "difficulty": 2,
+    "type": "short",
+    "stem": "在 IOS 交換器上，要給 VLAN 10 設定三層位址，常用的介面名稱是？（如 Vlan10）",
+    "aliases": ["Vlan10", "vlan 10", "interface vlan 10", "int vlan 10", "SVI 10"],
+    "explanation": "交換器的 VLAN 介面（SVI）寫成 interface vlan 10。位址與 no shutdown 請在 LAB 練習。"
+  },
+  {
+    "id": "hcia21",
+    "chapter": "HCIA 數通",
+    "tags": ["VLAN"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "華為交換器把 GE0/0/1 設成 access 並劃入 VLAN 10，對應指令較接近？",
+    "options": [
+      { "id": "A", "text": "switchport access vlan 10" },
+      { "id": "B", "text": "port default vlan 10" },
+      { "id": "C", "text": "vlan mapping 10" },
+      { "id": "D", "text": "ip vlan 10" }
+    ],
+    "answer": ["B"],
+    "explanation": "VRP 用 port link-type access 與 port default vlan。A 是 IOS 寫法。請走 HCIA LAB。"
+  },
+  {
+    "id": "hcia22",
+    "chapter": "HCIA 數通",
+    "tags": ["安全"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "把長時間空接的交換器埠 shutdown，有助於降低被人亂插設備的風險。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "未使用埠關掉是常見加固。請到「關閉未使用埠」LAB 實際下指令。"
+  },
+  {
+    "id": "hcia-c03",
+    "chapter": "HCIA 數通",
+    "tags": ["VLAN", "填空"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "VRP 一次建立 VLAN 10 與 20，常用 ____ batch 10 20。",
+    "blanks": [["vlan"]],
+    "explanation": "vlan batch 可一次建多個 VLAN，不必進出多次 vlan 檢視。"
+  },
+  {
+    "id": "hcip16",
+    "chapter": "HCIP 數通",
+    "tags": ["路由"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "IPv4 預設路由的目的網段通常寫成？",
+    "options": [
+      { "id": "A", "text": "255.255.255.255/32" },
+      { "id": "B", "text": "127.0.0.1/8" },
+      { "id": "C", "text": "0.0.0.0/0" },
+      { "id": "D", "text": "192.168.0.0/16" }
+    ],
+    "answer": ["C"],
+    "explanation": "0.0.0.0/0 涵蓋所有 IPv4。VRP：ip route-static 0.0.0.0 0.0.0.0 下一跳。請走 LAB。"
+  },
+  {
+    "id": "hcip17",
+    "chapter": "HCIP 數通",
+    "tags": ["OSPF"],
+    "difficulty": 2,
+    "type": "boolean",
+    "stem": "單區域 OSPF 最常見是把介面宣告在 area 0（骨幹區域）。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "多區域時非骨幹區域也要能連到 area 0。設定請走 OSPF LAB。"
+  },
+  {
+    "id": "hcie13",
+    "chapter": "HCIE 數通",
+    "tags": ["BGP"],
+    "difficulty": 3,
+    "type": "single",
+    "stem": "本端 AS 65001，對等體也是 AS 65001，這條 BGP 會話稱為？",
+    "options": [
+      { "id": "A", "text": "eBGP" },
+      { "id": "B", "text": "iBGP" },
+      { "id": "C", "text": "OSPF 鄰居" },
+      { "id": "D", "text": "靜態預設路由" }
+    ],
+    "answer": ["B"],
+    "explanation": "同一 AS 內是 iBGP；不同 AS 是 eBGP。請到 eBGP 與 iBGP LAB 建立兩種 peer。"
+  },
+  {
+    "id": "en-c05",
+    "chapter": "英語文法",
+    "tags": ["完成式", "填空"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "She has ____ in Taipei since 2020.（住）",
+    "blanks": [["lived", "been living"]],
+    "explanation": "since 2020 常用現在完成式或完成進行式：has lived / has been living。"
+  },
+  {
+    "id": "rd-cafe-1",
+    "chapter": "英語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 1,
+    "type": "single",
+    "passageId": "en-cafe",
+    "passage": "Mina works in a small cafe near the station. She starts at seven in the morning. Many people buy coffee before they catch the train. On rainy days the cafe is quieter, so she reads a book behind the counter.",
+    "stem": "Where does Mina work?",
+    "options": [
+      { "id": "A", "text": "In a school" },
+      { "id": "B", "text": "In a cafe near the station" },
+      { "id": "C", "text": "On the train" },
+      { "id": "D", "text": "At home" }
+    ],
+    "answer": ["B"],
+    "explanation": "第一句：a small cafe near the station。"
+  },
+  {
+    "id": "rd-cafe-2",
+    "chapter": "英語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 1,
+    "type": "single",
+    "passageId": "en-cafe",
+    "passage": "Mina works in a small cafe near the station. She starts at seven in the morning. Many people buy coffee before they catch the train. On rainy days the cafe is quieter, so she reads a book behind the counter.",
+    "stem": "What time does she start work?",
+    "options": [
+      { "id": "A", "text": "At seven in the morning" },
+      { "id": "B", "text": "At seven in the evening" },
+      { "id": "C", "text": "At noon" },
+      { "id": "D", "text": "At midnight" }
+    ],
+    "answer": ["A"],
+    "explanation": "She starts at seven in the morning。"
+  },
+  {
+    "id": "rd-cafe-3",
+    "chapter": "英語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 1,
+    "type": "boolean",
+    "passageId": "en-cafe",
+    "passage": "Mina works in a small cafe near the station. She starts at seven in the morning. Many people buy coffee before they catch the train. On rainy days the cafe is quieter, so she reads a book behind the counter.",
+    "stem": "On rainy days Mina sometimes reads a book at work.",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "On rainy days … she reads a book behind the counter。"
+  },
+  {
+    "id": "zh-c02",
+    "chapter": "中文語文",
+    "tags": ["成語", "填空"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "比喻做事有條理、一步一步來，可用成語「按部就____」。",
+    "blanks": [["班"]],
+    "explanation": "按部就班。不要寫成「按步就班」（雖常見但仍以「部」為正）。"
+  },
+  {
+    "id": "jp-c02",
+    "chapter": "日語入門",
+    "tags": ["敬體", "填空"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "這是書：これは本____。",
+    "blanks": [["です", "だ"]],
+    "explanation": "禮貌體用 です；較隨便可用 だ。入門課多練 です。"
+  },
+  {
+    "id": "kr-c02",
+    "chapter": "韓語入門",
+    "tags": ["填空"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "這是水：이것은 물____。",
+    "blanks": [["입니다", "이에요", "예요"]],
+    "explanation": "입니다 是較正式的「是」。口語也常用 이에요／예요。"
+  },
+  {
+    "id": "ar15",
+    "chapter": "算術與分數",
+    "tags": ["應用", "百分率"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "原價 250 元的文具，打八折後應付 ____ 元。",
+    "blanks": [["200"]],
+    "explanation": "八折是 80%。250×0.8=200。"
+  },
+  {
+    "id": "al13",
+    "chapter": "代數入門",
+    "tags": ["方程式"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "若 3x＋5＝20，x 等於多少？",
+    "aliases": ["5", "x=5", "x＝5"],
+    "explanation": "3x＝15，x＝5。"
+  },
+  {
+    "id": "ge12",
+    "chapter": "幾何入門",
+    "tags": ["面積"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "邊長 6 公分的正方形，面積是？",
+    "options": [
+      { "id": "A", "text": "12 平方公分" },
+      { "id": "B", "text": "24 平方公分" },
+      { "id": "C", "text": "36 平方公分" },
+      { "id": "D", "text": "72 平方公分" }
+    ],
+    "answer": ["C"],
+    "explanation": "正方形面積＝邊長×邊長＝6×6＝36。"
+  },
+  {
+    "id": "pr12",
+    "chapter": "機率與統計",
+    "tags": ["平均"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "三次考試分數 60、80、100，算術平均是 ____ 分。",
+    "blanks": [["80"]],
+    "explanation": "(60＋80＋100)÷3＝80。"
+  },
+  {
+    "id": "ph11",
+    "chapter": "物理入門",
+    "tags": ["重力"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "地球表面重力加速度 g 大約是？",
+    "options": [
+      { "id": "A", "text": "9.8 m/s²" },
+      { "id": "B", "text": "3×10⁸ m/s" },
+      { "id": "C", "text": "100 °C" },
+      { "id": "D", "text": "1 大氣壓整數倍" }
+    ],
+    "answer": ["A"],
+    "explanation": "近地表 g≈9.8 m/s²。3×10⁸ m/s 是光速數量級。"
+  },
+  {
+    "id": "ch11",
+    "chapter": "化學入門",
+    "tags": ["分子式"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "水的化學式是 ____。",
+    "blanks": [["H2O", "H₂O"]],
+    "explanation": "一個氧原子鍵結兩個氫原子。"
+  },
+  {
+    "id": "bi11",
+    "chapter": "生物入門",
+    "tags": ["光合作用"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "綠色植物進行光合作用時，通常會釋放氧氣。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "光反應分解水並釋放 O₂，同時把光能轉成化學能。"
+  },
+  {
+    "id": "ea11",
+    "chapter": "地球科學",
+    "tags": ["板塊"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "地震與火山較常出現在？",
+    "options": [
+      { "id": "A", "text": "板塊內部最平坦的穩定地塊，幾乎從不活動" },
+      { "id": "B", "text": "板塊交界帶附近" },
+      { "id": "C", "text": "只有赤道" },
+      { "id": "D", "text": "只有南北極" }
+    ],
+    "answer": ["B"],
+    "explanation": "板塊互相推擠、張裂或錯動的邊界，能量容易釋放成地震，岩漿也較易上升。"
+  },
+  {
+    "id": "cv11",
+    "chapter": "履歷面試",
+    "tags": ["誠信"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "履歷上誇大職稱或偽造證照，被查到時可能直接失去錄取或工作。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "經歷可整理重點，但不能造假。面試常會追問細節。"
+  },
+  {
+    "id": "et11",
+    "chapter": "職場倫理",
+    "tags": ["機密"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "同事把未公開的客戶名單傳到私人雲端，較適當的作法是？",
+    "options": [
+      { "id": "A", "text": "覺得方便就一起存一份" },
+      { "id": "B", "text": "依公司規定提醒或向主管／權責單位反映，不要跟著外傳" },
+      { "id": "C", "text": "立刻發到社群讓大家都有" },
+      { "id": "D", "text": "把名單賣給競爭對手" }
+    ],
+    "answer": ["B"],
+    "explanation": "客戶資料多屬營業機密或個資。不要複製外流，依內部管道處理。"
+  },
+  {
+    "id": "cf11",
+    "chapter": "證照規劃",
+    "tags": ["期待"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "考到一張證照，就保證一定錄取對應職缺。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["B"],
+    "explanation": "證照證明你通過該測驗範圍，錄取還看經驗、作品與面試。把它當能力證明，而非錄取保單。"
+  }
+]

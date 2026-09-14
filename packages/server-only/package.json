@@ -1,0 +1,11 @@
+{
+  "name": "server-only",
+  "version": "0.0.1",
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "react-server": "./empty.js",
+      "default": "./index.js"
+    }
+  }
+}

@@ -1,0 +1,270 @@
+[
+  {
+    "id": "n-c02",
+    "chapter": "計算機網路",
+    "tags": ["子網路", "填空"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "IPv4 前綴 /26 對應的子網路遮罩是 ____。",
+    "blanks": [["255.255.255.192"]],
+    "explanation": "/26 表示 26 個 1：前三個八位元全 1，最後八位元是 11000000，即 192。"
+  },
+  {
+    "id": "n-c03",
+    "chapter": "計算機網路",
+    "tags": ["ACL", "填空"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "對 192.168.10.0/24 寫 ACL 時，常用的反碼（wildcard）是 ____。",
+    "blanks": [["0.0.0.255"]],
+    "explanation": "反碼是「遮罩的相反」：255.255.255.0 對應 0.0.0.255。實際套用請在 LAB 練習。"
+  },
+  {
+    "id": "n-s02",
+    "chapter": "計算機網路",
+    "tags": ["子網路", "簡答"],
+    "difficulty": 2,
+    "type": "short",
+    "stem": "192.168.1.0/25 理論上可用的主機數是多少？（不含網路位址與廣播）",
+    "aliases": ["126", "126 台", "126個"],
+    "explanation": "/25 有 7 個主機位元，2^7−2=126。"
+  },
+  {
+    "id": "n18",
+    "chapter": "計算機網路",
+    "tags": ["子網路"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "一個 /28 的 IPv4 子網，不含網路位址與廣播，可用主機數是？",
+    "options": [
+      { "id": "A", "text": "14" },
+      { "id": "B", "text": "16" },
+      { "id": "C", "text": "30" },
+      { "id": "D", "text": "254" }
+    ],
+    "answer": ["A"],
+    "explanation": "/28 剩 4 個主機位元：2^4−2=14。"
+  },
+  {
+    "id": "n19",
+    "chapter": "計算機網路",
+    "tags": ["ACL"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "標準／延伸 ACL 比對時，下列哪一項最正確？",
+    "options": [
+      { "id": "A", "text": "從最後一條往回比，找到就停" },
+      { "id": "B", "text": "由上往下、先符合的規則生效；最後常有隱含 deny any" },
+      { "id": "C", "text": "所有 permit 與 deny 會同時生效並加總" },
+      { "id": "D", "text": "沒寫 deny 就等於允許所有流量，也不會有隱含拒絕" }
+    ],
+    "answer": ["B"],
+    "explanation": "ACL 是第一個符合的規則說了算。清單末尾通常有 implicit deny。設定與套用介面請走 LAB。"
+  },
+  {
+    "id": "n-o03",
+    "chapter": "計算機網路",
+    "tags": ["ACL", "排序"],
+    "difficulty": 2,
+    "type": "order",
+    "stem": "在 IOS 上建立延伸 ACL 並套到介面（概念順序）。實際指令請在 LAB 打。",
+    "tokens": [
+      { "id": "1", "text": "configure terminal" },
+      { "id": "2", "text": "ip access-list extended WEB" },
+      { "id": "3", "text": "permit tcp any host 10.0.0.10 eq 80" },
+      { "id": "4", "text": "interface gigabitethernet 0/1 再 ip access-group WEB in" }
+    ],
+    "explanation": "先有清單與規則，再套到介面方向。這題考順序；請到實驗真正輸入。"
+  },
+  {
+    "id": "n20",
+    "chapter": "計算機網路",
+    "tags": ["OSPF", "是非"],
+    "difficulty": 2,
+    "type": "boolean",
+    "stem": "兩台路由器要建立 OSPF 鄰居，Hello／Dead 間隔必須一致。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "Hello 與 Dead 不一致就無法形成鄰居。Area、網段與認證也要對得上。"
+  },
+  {
+    "id": "hcia-c02",
+    "chapter": "HCIA 數通",
+    "tags": ["ACL", "填空"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "VRP 進階 ACL（可看埠與協定）常用編號範圍從 ____ 開始。",
+    "blanks": [["3000"]],
+    "explanation": "進階 ACL 編號 3000–3999。基本 ACL 是 2000–2999。規則內容請在 LAB 練習。"
+  },
+  {
+    "id": "hcia-o02",
+    "chapter": "HCIA 數通",
+    "tags": ["ACL", "排序"],
+    "difficulty": 2,
+    "type": "order",
+    "stem": "VRP 建立進階 ACL 並套到介面入向的概念順序。實際指令請走 LAB。",
+    "tokens": [
+      { "id": "1", "text": "system-view" },
+      { "id": "2", "text": "acl 3000" },
+      { "id": "3", "text": "rule 5 permit tcp destination-port eq 80" },
+      { "id": "4", "text": "interface GE0/0/1 再 traffic-filter inbound acl 3000" }
+    ],
+    "explanation": "先系統視圖與 ACL，寫 rule，再到介面用 traffic-filter 套用。不要背成選擇題替代實驗。"
+  },
+  {
+    "id": "hcia20",
+    "chapter": "HCIA 數通",
+    "tags": ["ACL"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "華為 ACL 多條 rule 時，比對方式是？",
+    "options": [
+      { "id": "A", "text": "編號大的永遠優先" },
+      { "id": "B", "text": "依 rule 編號由小到大，先匹配的生效" },
+      { "id": "C", "text": "所有 deny 加總後再看 permit" },
+      { "id": "D", "text": "只看最後一條" }
+    ],
+    "answer": ["B"],
+    "explanation": "編號小的先比。寫錯順序會放行或誤擋。請在 LAB 用 display acl 檢查。"
+  },
+  {
+    "id": "hcip-s02",
+    "chapter": "HCIP 數通",
+    "tags": ["ACL", "簡答"],
+    "difficulty": 2,
+    "type": "short",
+    "stem": "VRP 把 ACL 套到介面過濾流量，常用的指令關鍵字是？（填 traffic-filter）",
+    "aliases": ["traffic-filter", "traffic filter", "trafficfilter"],
+    "explanation": "介面上 traffic-filter inbound/outbound acl <編號>。完整語法請在實驗輸入。"
+  },
+  {
+    "id": "rd-bus-1",
+    "chapter": "英語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 1,
+    "type": "single",
+    "passageId": "en-bus",
+    "passage": "Ken takes the bus to school on weekdays. The ride takes about twenty minutes. He usually reads a short story on his phone. If the bus is late, he walks to the next stop because it is closer to the school gate.",
+    "stem": "How does Ken usually go to school on weekdays?",
+    "options": [
+      { "id": "A", "text": "By bike" },
+      { "id": "B", "text": "By bus" },
+      { "id": "C", "text": "By taxi" },
+      { "id": "D", "text": "He always walks from home" }
+    ],
+    "answer": ["B"],
+    "explanation": "第一句 takes the bus to school on weekdays。"
+  },
+  {
+    "id": "rd-bus-2",
+    "chapter": "英語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 1,
+    "type": "single",
+    "passageId": "en-bus",
+    "passage": "Ken takes the bus to school on weekdays. The ride takes about twenty minutes. He usually reads a short story on his phone. If the bus is late, he walks to the next stop because it is closer to the school gate.",
+    "stem": "About how long is the bus ride?",
+    "options": [
+      { "id": "A", "text": "Two minutes" },
+      { "id": "B", "text": "Twelve minutes" },
+      { "id": "C", "text": "Twenty minutes" },
+      { "id": "D", "text": "Two hours" }
+    ],
+    "answer": ["C"],
+    "explanation": "The ride takes about twenty minutes。"
+  },
+  {
+    "id": "rd-bus-3",
+    "chapter": "英語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 2,
+    "type": "boolean",
+    "passageId": "en-bus",
+    "passage": "Ken takes the bus to school on weekdays. The ride takes about twenty minutes. He usually reads a short story on his phone. If the bus is late, he walks to the next stop because it is closer to the school gate.",
+    "stem": "When the bus is late, Ken walks to the next stop.",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "If the bus is late, he walks to the next stop。"
+  },
+  {
+    "id": "rd-bus-4",
+    "chapter": "英語閱讀",
+    "tags": ["閱讀"],
+    "difficulty": 2,
+    "type": "short",
+    "passageId": "en-bus",
+    "passage": "Ken takes the bus to school on weekdays. The ride takes about twenty minutes. He usually reads a short story on his phone. If the bus is late, he walks to the next stop because it is closer to the school gate.",
+    "stem": "What does Ken usually read on the bus?（英文，如 a short story）",
+    "aliases": ["a short story", "short story", "a story", "he reads a short story"],
+    "explanation": "He usually reads a short story on his phone。"
+  },
+  {
+    "id": "ar13",
+    "chapter": "算術與分數",
+    "tags": ["應用", "百分率"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "一件上衣 400 元，打七五折後應付 ____ 元。",
+    "blanks": [["300"]],
+    "explanation": "七五折是 75%。400×0.75=300。"
+  },
+  {
+    "id": "ar14",
+    "chapter": "算術與分數",
+    "tags": ["應用"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "三人平均分攤 240 元餐費，每人應付？",
+    "options": [
+      { "id": "A", "text": "60 元" },
+      { "id": "B", "text": "80 元" },
+      { "id": "C", "text": "120 元" },
+      { "id": "D", "text": "240 元" }
+    ],
+    "answer": ["B"],
+    "explanation": "240÷3=80。"
+  },
+  {
+    "id": "al12",
+    "chapter": "代數入門",
+    "tags": ["應用", "方程式"],
+    "difficulty": 2,
+    "type": "short",
+    "stem": "小華的年齡是小明的 2 倍少 4 歲。若小明 10 歲，小華幾歲？",
+    "aliases": ["16", "16歲", "16 歲"],
+    "explanation": "2×10−4=16。"
+  },
+  {
+    "id": "ge11",
+    "chapter": "幾何入門",
+    "tags": ["應用", "周長"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "長 8 公尺、寬 5 公尺的長方形花圃，圍一圈籬笆需要 ____ 公尺。",
+    "blanks": [["26"]],
+    "explanation": "周長 2×(8+5)=26。"
+  },
+  {
+    "id": "pr11",
+    "chapter": "機率與統計",
+    "tags": ["應用", "機率"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "袋子有 2 顆紅球、3 顆藍球，隨機抽 1 顆是紅球的機率？",
+    "options": [
+      { "id": "A", "text": "2/5" },
+      { "id": "B", "text": "3/5" },
+      { "id": "C", "text": "2/3" },
+      { "id": "D", "text": "1/2" }
+    ],
+    "answer": ["A"],
+    "explanation": "共 5 顆，紅球 2 顆，機率 2/5。"
+  }
+]

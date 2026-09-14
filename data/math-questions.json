@@ -1,0 +1,562 @@
+[
+  {
+    "id": "ar01",
+    "chapter": "算術與分數",
+    "tags": ["四則"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "先乘除後加減。算式 3 + 4 × 2 的值是？",
+    "options": [
+      { "id": "A", "text": "14" },
+      { "id": "B", "text": "11" },
+      { "id": "C", "text": "10" },
+      { "id": "D", "text": "24" }
+    ],
+    "answer": ["B"],
+    "explanation": "先算 4 × 2 = 8，再加 3 得 11。不是由左到右一路加再乘。"
+  },
+  {
+    "id": "ar02",
+    "chapter": "算術與分數",
+    "tags": ["分數"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "1/2 + 1/2 = ____。",
+    "blanks": [["1", "1/1", "2/2"]],
+    "explanation": "同分母相加：分子 1+1=2，2/2=1。"
+  },
+  {
+    "id": "ar03",
+    "chapter": "算術與分數",
+    "tags": ["分數"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "1/3 + 1/6 = ____（請寫成最簡分數，如 1/2）。",
+    "blanks": [["1/2"]],
+    "explanation": "通分成分母 6：2/6 + 1/6 = 3/6 = 1/2。"
+  },
+  {
+    "id": "ar04",
+    "chapter": "算術與分數",
+    "tags": ["百分率"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "0.25 等於多少百分率？",
+    "options": [
+      { "id": "A", "text": "2.5%" },
+      { "id": "B", "text": "25%" },
+      { "id": "C", "text": "250%" },
+      { "id": "D", "text": "0.25%" }
+    ],
+    "answer": ["B"],
+    "explanation": "小數乘 100 再加百分號：0.25 × 100 = 25%。"
+  },
+  {
+    "id": "ar05",
+    "chapter": "算術與分數",
+    "tags": ["百分率"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "一折是 10%，那麼三折是多少百分率？",
+    "aliases": ["30%", "30 ％", "百分之三十"],
+    "explanation": "一折 10%，三折 30%。不是「打三折等於剩 3%。」"
+  },
+  {
+    "id": "ar06",
+    "chapter": "算術與分數",
+    "tags": ["因數"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "12 與 18 的最大公因數（GCD）是？",
+    "options": [
+      { "id": "A", "text": "3" },
+      { "id": "B", "text": "6" },
+      { "id": "C", "text": "12" },
+      { "id": "D", "text": "36" }
+    ],
+    "answer": ["B"],
+    "explanation": "12=2×2×3，18=2×3×3，共同是 2×3=6。"
+  },
+  {
+    "id": "ar07",
+    "chapter": "算術與分數",
+    "tags": ["倍數"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "4 與 6 的最小公倍數（LCM）是？",
+    "options": [
+      { "id": "A", "text": "10" },
+      { "id": "B", "text": "12" },
+      { "id": "C", "text": "24" },
+      { "id": "D", "text": "6" }
+    ],
+    "answer": ["B"],
+    "explanation": "4=2²，6=2×3，LCM=2²×3=12。"
+  },
+  {
+    "id": "ar08",
+    "chapter": "算術與分數",
+    "tags": ["正負"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "5 + (−8) = ____。",
+    "blanks": [["-3", "−3"]],
+    "explanation": "加負數等於減：5−8=−3。"
+  },
+  {
+    "id": "ar09",
+    "chapter": "算術與分數",
+    "tags": ["小數"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "0.5 與 1/2 相等。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "1÷2=0.5，所以相等。"
+  },
+  {
+    "id": "ar10",
+    "chapter": "算術與分數",
+    "tags": ["比"],
+    "difficulty": 2,
+    "type": "short",
+    "stem": "把比 6:8 約成最簡比（寫成 a:b）。",
+    "aliases": ["3:4", "3：4"],
+    "explanation": "同除以 2 得 3:4。"
+  },
+  {
+    "id": "ar11",
+    "chapter": "算術與分數",
+    "tags": ["排序"],
+    "difficulty": 1,
+    "type": "order",
+    "stem": "由小到大排出這些數。",
+    "tokens": [
+      { "id": "1", "text": "0.2" },
+      { "id": "2", "text": "1/2" },
+      { "id": "3", "text": "3/4" },
+      { "id": "4", "text": "1" }
+    ],
+    "explanation": "0.2=0.2，1/2=0.5，3/4=0.75，1=1。"
+  },
+  {
+    "id": "ar12",
+    "chapter": "算術與分數",
+    "tags": ["應用"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "原價 200 元打八折，應付？",
+    "options": [
+      { "id": "A", "text": "160 元" },
+      { "id": "B", "text": "180 元" },
+      { "id": "C", "text": "20 元" },
+      { "id": "D", "text": "240 元" }
+    ],
+    "answer": ["A"],
+    "explanation": "八折是 80%，200×0.8=160。"
+  },
+  {
+    "id": "al01",
+    "chapter": "代數入門",
+    "tags": ["方程式"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "若 x + 5 = 12，則 x = ____。",
+    "blanks": [["7"]],
+    "explanation": "兩邊減 5：x=7。"
+  },
+  {
+    "id": "al02",
+    "chapter": "代數入門",
+    "tags": ["方程式"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "若 2x = 10，則 x = ____。",
+    "blanks": [["5"]],
+    "explanation": "兩邊除以 2：x=5。"
+  },
+  {
+    "id": "al03",
+    "chapter": "代數入門",
+    "tags": ["方程式"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "解 3x − 4 = 11，x 等於？",
+    "options": [
+      { "id": "A", "text": "3" },
+      { "id": "B", "text": "5" },
+      { "id": "C", "text": "7" },
+      { "id": "D", "text": "15" }
+    ],
+    "answer": ["B"],
+    "explanation": "3x=15，x=5。"
+  },
+  {
+    "id": "al04",
+    "chapter": "代數入門",
+    "tags": ["同類項"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "化簡 3x + 5x（寫成最簡式）。",
+    "aliases": ["8x", "8 x"],
+    "explanation": "同類項係數相加：3+5=8，得 8x。"
+  },
+  {
+    "id": "al05",
+    "chapter": "代數入門",
+    "tags": ["分配律"],
+    "difficulty": 2,
+    "type": "short",
+    "stem": "展開 2(x + 3)（寫成最簡式）。",
+    "aliases": ["2x+6", "2x + 6"],
+    "explanation": "2×x + 2×3 = 2x+6。"
+  },
+  {
+    "id": "al06",
+    "chapter": "代數入門",
+    "tags": ["不等式"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "若 x > 3，下列哪數一定符合？",
+    "options": [
+      { "id": "A", "text": "3" },
+      { "id": "B", "text": "2" },
+      { "id": "C", "text": "4" },
+      { "id": "D", "text": "0" }
+    ],
+    "answer": ["C"],
+    "explanation": "x 必須比 3 大，4 符合；3 沒有大於自己。"
+  },
+  {
+    "id": "al07",
+    "chapter": "代數入門",
+    "tags": ["符號"],
+    "difficulty": 1,
+    "type": "match",
+    "stem": "把符號與意思配對。",
+    "pairs": [
+      { "left": "=", "right": "等於" },
+      { "left": "≠", "right": "不等於" },
+      { "left": ">", "right": "大於" },
+      { "left": "<", "right": "小於" }
+    ],
+    "explanation": "這四個是最基本的比較符號。"
+  },
+  {
+    "id": "al08",
+    "chapter": "代數入門",
+    "tags": ["代入"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "若 x=3，則 4x − 1 = ____。",
+    "blanks": [["11"]],
+    "explanation": "4×3−1=12−1=11。"
+  },
+  {
+    "id": "al09",
+    "chapter": "代數入門",
+    "tags": ["排序"],
+    "difficulty": 2,
+    "type": "order",
+    "stem": "解方程式 2x + 1 = 7 的步驟，請排正確順序。",
+    "tokens": [
+      { "id": "1", "text": "兩邊減 1，得 2x = 6" },
+      { "id": "2", "text": "兩邊除以 2，得 x = 3" },
+      { "id": "3", "text": "代入檢查：2×3+1=7" }
+    ],
+    "explanation": "先移常數項，再除係數，最後代回檢查。"
+  },
+  {
+    "id": "al10",
+    "chapter": "代數入門",
+    "tags": ["比例"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "若 y = 2x 且 x=4，y 是？",
+    "options": [
+      { "id": "A", "text": "2" },
+      { "id": "B", "text": "6" },
+      { "id": "C", "text": "8" },
+      { "id": "D", "text": "16" }
+    ],
+    "answer": ["C"],
+    "explanation": "y=2×4=8。"
+  },
+  {
+    "id": "al11",
+    "chapter": "代數入門",
+    "tags": ["是非"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "未知數可以用不同字母表示，不一定只能用 x。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "y、n、t 都可以當未知數，重點是同一題前後一致。"
+  },
+  {
+    "id": "ge01",
+    "chapter": "幾何入門",
+    "tags": ["三角形"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "三角形內角和是 ____ 度。",
+    "blanks": [["180"]],
+    "explanation": "平面三角形三內角和為 180°。"
+  },
+  {
+    "id": "ge02",
+    "chapter": "幾何入門",
+    "tags": ["三角形"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "一個三角形兩角是 50° 與 60°，第三角是？",
+    "options": [
+      { "id": "A", "text": "70°" },
+      { "id": "B", "text": "90°" },
+      { "id": "C", "text": "110°" },
+      { "id": "D", "text": "180°" }
+    ],
+    "answer": ["A"],
+    "explanation": "180−50−60=70。"
+  },
+  {
+    "id": "ge03",
+    "chapter": "幾何入門",
+    "tags": ["面積"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "長 8、寬 3 的長方形面積是 ____。",
+    "blanks": [["24"]],
+    "explanation": "面積＝長×寬＝8×3=24。"
+  },
+  {
+    "id": "ge04",
+    "chapter": "幾何入門",
+    "tags": ["周長"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "邊長 5 的正方形，周長是多少？",
+    "aliases": ["20", "20單位"],
+    "explanation": "周長＝4×邊長＝20。"
+  },
+  {
+    "id": "ge05",
+    "chapter": "幾何入門",
+    "tags": ["圓"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "圓的半徑是 3，直徑是？",
+    "options": [
+      { "id": "A", "text": "3" },
+      { "id": "B", "text": "6" },
+      { "id": "C", "text": "9" },
+      { "id": "D", "text": "π" }
+    ],
+    "answer": ["B"],
+    "explanation": "直徑＝2×半徑＝6。"
+  },
+  {
+    "id": "ge06",
+    "chapter": "幾何入門",
+    "tags": ["配對"],
+    "difficulty": 1,
+    "type": "match",
+    "stem": "把圖形與面積公式配對（用文字描述）。",
+    "pairs": [
+      { "left": "長方形", "right": "長 × 寬" },
+      { "left": "正方形", "right": "邊長 × 邊長" },
+      { "left": "三角形", "right": "底 × 高 ÷ 2" },
+      { "left": "圓", "right": "半徑 × 半徑 × π" }
+    ],
+    "explanation": "先認圖形再套公式，單位要一致。"
+  },
+  {
+    "id": "ge07",
+    "chapter": "幾何入門",
+    "tags": ["直角"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "直角是 90 度。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "直角＝90°；平角是 180°。"
+  },
+  {
+    "id": "ge08",
+    "chapter": "幾何入門",
+    "tags": ["平行"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "兩條平行線被第三條線所截，同位角的關係是？",
+    "options": [
+      { "id": "A", "text": "互餘" },
+      { "id": "B", "text": "相等" },
+      { "id": "C", "text": "相加為 180° 但不一定相等" },
+      { "id": "D", "text": "沒有關係" }
+    ],
+    "answer": ["B"],
+    "explanation": "平行線的同位角相等；同側內角才互補。"
+  },
+  {
+    "id": "ge09",
+    "chapter": "幾何入門",
+    "tags": ["單位"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "邊長以公分計算的正方形面積，常用什麼單位？",
+    "aliases": ["平方公分", "cm²", "cm2"],
+    "explanation": "長度單位平方後是面積單位，公分對應平方公分。"
+  },
+  {
+    "id": "ge10",
+    "chapter": "幾何入門",
+    "tags": ["三角形"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "底 10、高 4 的三角形面積是？",
+    "options": [
+      { "id": "A", "text": "40" },
+      { "id": "B", "text": "20" },
+      { "id": "C", "text": "14" },
+      { "id": "D", "text": "8" }
+    ],
+    "answer": ["B"],
+    "explanation": "底×高÷2＝10×4÷2＝20。"
+  },
+  {
+    "id": "pr01",
+    "chapter": "機率與統計",
+    "tags": ["平均"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "2、4、6 三個數的算術平均是 ____。",
+    "blanks": [["4"]],
+    "explanation": "和是 12，除以 3 得 4。"
+  },
+  {
+    "id": "pr02",
+    "chapter": "機率與統計",
+    "tags": ["平均"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "5、5、8 的平均是？",
+    "options": [
+      { "id": "A", "text": "5" },
+      { "id": "B", "text": "6" },
+      { "id": "C", "text": "8" },
+      { "id": "D", "text": "18" }
+    ],
+    "answer": ["B"],
+    "explanation": "(5+5+8)÷3=18÷3=6。"
+  },
+  {
+    "id": "pr03",
+    "chapter": "機率與統計",
+    "tags": ["機率"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "一枚公正銅板擲一次，正面朝上的機率？（寫成分數）",
+    "aliases": ["1/2", "0.5", "50%"],
+    "explanation": "兩面機會相同，各 1/2。"
+  },
+  {
+    "id": "pr04",
+    "chapter": "機率與統計",
+    "tags": ["機率"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "公正骰子擲一次，出現偶數的機率是？",
+    "options": [
+      { "id": "A", "text": "1/6" },
+      { "id": "B", "text": "1/2" },
+      { "id": "C", "text": "1/3" },
+      { "id": "D", "text": "2/3" }
+    ],
+    "answer": ["B"],
+    "explanation": "偶數有 2、4、6 共三面，3/6=1/2。"
+  },
+  {
+    "id": "pr05",
+    "chapter": "機率與統計",
+    "tags": ["統計量"],
+    "difficulty": 2,
+    "type": "match",
+    "stem": "把統計量與意思配對。",
+    "pairs": [
+      { "left": "平均數", "right": "把資料加總再除個數" },
+      { "left": "眾數", "right": "出現次數最多的值" },
+      { "left": "中位數", "right": "排序後正中間的值" },
+      { "left": "全距", "right": "最大值減最小值" }
+    ],
+    "explanation": "先排序再找中位數；眾數看頻率，不一定等於平均。"
+  },
+  {
+    "id": "pr06",
+    "chapter": "機率與統計",
+    "tags": ["中位數"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "資料 1、3、8 已排序，中位數是 ____。",
+    "blanks": [["3"]],
+    "explanation": "三筆的正中間是第二筆 3。"
+  },
+  {
+    "id": "pr07",
+    "chapter": "機率與統計",
+    "tags": ["是非"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "機率必須介於 0 與 1 之間（含 0 與 1）。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "不可能是 0，必然是 1，一般事件在中間。不會是 120%。"
+  },
+  {
+    "id": "pr08",
+    "chapter": "機率與統計",
+    "tags": ["眾數"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "資料 2、2、2、5、9 的眾數是？",
+    "aliases": ["2"],
+    "explanation": "2 出現三次，最多，故眾數是 2。"
+  },
+  {
+    "id": "pr09",
+    "chapter": "機率與統計",
+    "tags": ["全距"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "資料 3、10、7 的全距是 ____。",
+    "blanks": [["7"]],
+    "explanation": "最大 10 減最小 3 得 7。"
+  },
+  {
+    "id": "pr10",
+    "chapter": "機率與統計",
+    "tags": ["機率"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "袋子裡 3 紅 1 白，隨機抽一顆是白球的機率？",
+    "options": [
+      { "id": "A", "text": "1/3" },
+      { "id": "B", "text": "1/4" },
+      { "id": "C", "text": "3/4" },
+      { "id": "D", "text": "1" }
+    ],
+    "answer": ["B"],
+    "explanation": "共 4 顆，白球 1 顆，機率 1/4。"
+  }
+]

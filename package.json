@@ -1,0 +1,28 @@
+{
+  "name": "quiz-bank",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build",
+    "start": "next start",
+    "install:offline": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/install-deps.ps1",
+    "audio:generate": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/generate-audio.ps1",
+    "test": "node ./node_modules/typescript/bin/tsc -p tsconfig.test.json && node --test \".tmp-test/tests/*.test.js\""
+  },
+  "dependencies": {
+    "next": "16.3.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "0.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "22.18.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "postcss": "8.5.26",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.8.3"
+  }
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="???????">
+  <rect width="600" height="400" fill="#f8fafc"/>
+  <ellipse cx="300" cy="200" rx="250" ry="160" fill="#dcfce7" stroke="#166534" stroke-width="6"/>
+  <ellipse cx="300" cy="200" rx="70" ry="55" fill="#86efac" stroke="#14532d" stroke-width="3"/>
+  <circle cx="300" cy="200" r="18" fill="#166534"/>
+  <text x="300" y="278" text-anchor="middle" font-size="14" fill="#14532d" font-family="Segoe UI, sans-serif">???</text>
+  <ellipse cx="140" cy="150" rx="50" ry="24" fill="#22c55e" stroke="#166534" stroke-width="2"/>
+  <text x="140" y="190" text-anchor="middle" font-size="13" fill="#166534" font-family="Segoe UI, sans-serif">???</text>
+  <ellipse cx="450" cy="250" rx="48" ry="22" fill="#fdba74" stroke="#9a3412" stroke-width="2"/>
+  <text x="450" y="290" text-anchor="middle" font-size="13" fill="#9a3412" font-family="Segoe UI, sans-serif">???</text>
+  <ellipse cx="430" cy="120" rx="40" ry="50" fill="#bae6fd" stroke="#0369a1" stroke-width="2"/>
+  <text x="430" y="88" text-anchor="middle" font-size="13" fill="#0369a1" font-family="Segoe UI, sans-serif">??</text>
+</svg>

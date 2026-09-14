@@ -1,0 +1,1706 @@
+[
+  {
+    "id": "en-g01",
+    "chapter": "英語文法",
+    "tags": [
+      "時態"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "She ____ to work by train every day.",
+    "options": [
+      {
+        "id": "A",
+        "text": "go"
+      },
+      {
+        "id": "B",
+        "text": "goes"
+      },
+      {
+        "id": "C",
+        "text": "going"
+      },
+      {
+        "id": "D",
+        "text": "gone"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "主詞是第三人稱單數 she，一般現在式動詞加 -s／-es，故用 goes。"
+  },
+  {
+    "id": "en-g02",
+    "chapter": "英語文法",
+    "tags": [
+      "時態"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "They ____ dinner when I arrived.",
+    "options": [
+      {
+        "id": "A",
+        "text": "have"
+      },
+      {
+        "id": "B",
+        "text": "are having"
+      },
+      {
+        "id": "C",
+        "text": "were having"
+      },
+      {
+        "id": "D",
+        "text": "had having"
+      }
+    ],
+    "answer": [
+      "C"
+    ],
+    "explanation": "過去進行式 were/was + V-ing，表示過去某時刻正在進行的動作。"
+  },
+  {
+    "id": "en-g03",
+    "chapter": "英語文法",
+    "tags": [
+      "完成式"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "I ____ this book twice already.",
+    "options": [
+      {
+        "id": "A",
+        "text": "read"
+      },
+      {
+        "id": "B",
+        "text": "have read"
+      },
+      {
+        "id": "C",
+        "text": "am reading"
+      },
+      {
+        "id": "D",
+        "text": "was read"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "already 常搭配現在完成式 have/has + 過去分詞，強調到目前為止的經驗。"
+  },
+  {
+    "id": "en-g04",
+    "chapter": "英語文法",
+    "tags": [
+      "被動"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "The letter ____ yesterday.",
+    "options": [
+      {
+        "id": "A",
+        "text": "sends"
+      },
+      {
+        "id": "B",
+        "text": "was sent"
+      },
+      {
+        "id": "C",
+        "text": "sent"
+      },
+      {
+        "id": "D",
+        "text": "is sending"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "主詞是信，動作承受者用被動：was/were + 過去分詞。"
+  },
+  {
+    "id": "en-g05",
+    "chapter": "英語文法",
+    "tags": [
+      "關係子句"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "This is the teacher ____ helped me last year.",
+    "options": [
+      {
+        "id": "A",
+        "text": "which"
+      },
+      {
+        "id": "B",
+        "text": "who"
+      },
+      {
+        "id": "C",
+        "text": "where"
+      },
+      {
+        "id": "D",
+        "text": "whose"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "先行詞是人，在子句中當主詞，用 who（或 that）。which 多指事物。"
+  },
+  {
+    "id": "en-g06",
+    "chapter": "英語文法",
+    "tags": [
+      "條件句"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "If it rains tomorrow, we ____ at home.",
+    "options": [
+      {
+        "id": "A",
+        "text": "stay"
+      },
+      {
+        "id": "B",
+        "text": "will stay"
+      },
+      {
+        "id": "C",
+        "text": "stayed"
+      },
+      {
+        "id": "D",
+        "text": "would stayed"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "第一類條件句：If + 現在式，主要子句用 will + 原形，談未來可能發生的事。"
+  },
+  {
+    "id": "en-g07",
+    "chapter": "英語文法",
+    "tags": [
+      "冠詞"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "He is ____ honest man.",
+    "options": [
+      {
+        "id": "A",
+        "text": "a"
+      },
+      {
+        "id": "B",
+        "text": "an"
+      },
+      {
+        "id": "C",
+        "text": "the"
+      },
+      {
+        "id": "D",
+        "text": "（不加冠詞）"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "honest 以母音音節開頭，不定冠詞用 an，不是看第一個字母 h。"
+  },
+  {
+    "id": "en-g08",
+    "chapter": "英語文法",
+    "tags": [
+      "比較"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "This box is ____ than that one.",
+    "options": [
+      {
+        "id": "A",
+        "text": "heavy"
+      },
+      {
+        "id": "B",
+        "text": "heavier"
+      },
+      {
+        "id": "C",
+        "text": "heaviest"
+      },
+      {
+        "id": "D",
+        "text": "more heavier"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "兩者比較用比較級。短形容詞加 -er；不可再加 more。"
+  },
+  {
+    "id": "en-g09",
+    "chapter": "英語文法",
+    "tags": [
+      "不定詞"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "I decided ____ a new laptop.",
+    "options": [
+      {
+        "id": "A",
+        "text": "buy"
+      },
+      {
+        "id": "B",
+        "text": "buying"
+      },
+      {
+        "id": "C",
+        "text": "to buy"
+      },
+      {
+        "id": "D",
+        "text": "bought"
+      }
+    ],
+    "answer": [
+      "C"
+    ],
+    "explanation": "decide 後面接 to + 原形動詞。"
+  },
+  {
+    "id": "en-g10",
+    "chapter": "英語文法",
+    "tags": [
+      "主詞動詞一致"
+    ],
+    "difficulty": 2,
+    "type": "boolean",
+    "stem": "The news is good. 這句文法正確（news 當單數）。",
+    "options": [
+      {
+        "id": "A",
+        "text": "正確"
+      },
+      {
+        "id": "B",
+        "text": "錯誤"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "news 雖像複數，語意是不可數，動詞用 is。"
+  },
+  {
+    "id": "en-g11",
+    "chapter": "英語文法",
+    "tags": [
+      "介系詞"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "She is good ____ playing the piano.",
+    "options": [
+      {
+        "id": "A",
+        "text": "in"
+      },
+      {
+        "id": "B",
+        "text": "at"
+      },
+      {
+        "id": "C",
+        "text": "on"
+      },
+      {
+        "id": "D",
+        "text": "for"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "be good at + 動名詞／名詞，表示擅長。"
+  },
+  {
+    "id": "en-g12",
+    "chapter": "英語文法",
+    "tags": [
+      "情態動詞"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "You ____ wear a helmet. It's the rule.",
+    "options": [
+      {
+        "id": "A",
+        "text": "can"
+      },
+      {
+        "id": "B",
+        "text": "must"
+      },
+      {
+        "id": "C",
+        "text": "might"
+      },
+      {
+        "id": "D",
+        "text": "need"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "規定、義務用 must（或 have to）。can 是能力，might 是可能。"
+  },
+  {
+    "id": "en-v01",
+    "chapter": "英語詞彙",
+    "tags": [
+      "同義"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "enormous 最接近的意思是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "very small"
+      },
+      {
+        "id": "B",
+        "text": "very large"
+      },
+      {
+        "id": "C",
+        "text": "very quiet"
+      },
+      {
+        "id": "D",
+        "text": "very cheap"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "enormous 表示極大、巨大。"
+  },
+  {
+    "id": "en-v02",
+    "chapter": "英語詞彙",
+    "tags": [
+      "反義"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "ancient 的反義詞較接近？",
+    "options": [
+      {
+        "id": "A",
+        "text": "modern"
+      },
+      {
+        "id": "B",
+        "text": "silent"
+      },
+      {
+        "id": "C",
+        "text": "narrow"
+      },
+      {
+        "id": "D",
+        "text": "empty"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "ancient 是古老的，相對 modern（現代的）。"
+  },
+  {
+    "id": "en-v03",
+    "chapter": "英語詞彙",
+    "tags": [
+      "搭配"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "Please ____ a reservation for two people.",
+    "options": [
+      {
+        "id": "A",
+        "text": "make"
+      },
+      {
+        "id": "B",
+        "text": "do"
+      },
+      {
+        "id": "C",
+        "text": "take"
+      },
+      {
+        "id": "D",
+        "text": "put"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "習慣用語是 make a reservation（預訂）。"
+  },
+  {
+    "id": "en-v04",
+    "chapter": "英語詞彙",
+    "tags": [
+      "片語"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "look after 的意思是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "尋找"
+      },
+      {
+        "id": "B",
+        "text": "照顧"
+      },
+      {
+        "id": "C",
+        "text": "看不起"
+      },
+      {
+        "id": "D",
+        "text": "期待"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "look after = take care of。look for 才是尋找，look down on 是看不起。"
+  },
+  {
+    "id": "en-v05",
+    "chapter": "英語詞彙",
+    "tags": [
+      "易混"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "The ____ of this word is hard to remember.",
+    "options": [
+      {
+        "id": "A",
+        "text": "pronounce"
+      },
+      {
+        "id": "B",
+        "text": "pronunciation"
+      },
+      {
+        "id": "C",
+        "text": "pronouncing"
+      },
+      {
+        "id": "D",
+        "text": "pronounced"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "空格需要名詞 pronunciation（發音）。pronounce 是動詞。"
+  },
+  {
+    "id": "en-v06",
+    "chapter": "英語詞彙",
+    "tags": [
+      "職場"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "deadline 是指？",
+    "options": [
+      {
+        "id": "A",
+        "text": "會議紀錄"
+      },
+      {
+        "id": "B",
+        "text": "截止期限"
+      },
+      {
+        "id": "C",
+        "text": "薪水單"
+      },
+      {
+        "id": "D",
+        "text": "請假單"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "deadline 是必須完成的最後期限。"
+  },
+  {
+    "id": "en-v07",
+    "chapter": "英語詞彙",
+    "tags": [
+      "搭配"
+    ],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "We say “do homework”, not “make homework”.",
+    "options": [
+      {
+        "id": "A",
+        "text": "正確"
+      },
+      {
+        "id": "B",
+        "text": "錯誤"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "功課、運動常用 do；make 多用於創造或製造（make a cake、make a plan）。"
+  },
+  {
+    "id": "en-v08",
+    "chapter": "英語詞彙",
+    "tags": [
+      "同義"
+    ],
+    "difficulty": 2,
+    "type": "multiple",
+    "stem": "下列哪些可以表示「開始」？（多選）",
+    "options": [
+      {
+        "id": "A",
+        "text": "begin"
+      },
+      {
+        "id": "B",
+        "text": "start"
+      },
+      {
+        "id": "C",
+        "text": "commence"
+      },
+      {
+        "id": "D",
+        "text": "finish"
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "begin、start、commence 都有開始之意；finish 是結束。"
+  },
+  {
+    "id": "en-v09",
+    "chapter": "英語詞彙",
+    "tags": [
+      "易混"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "affect 與 effect 的差別，較正確的是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "兩者完全同義，可隨意替換"
+      },
+      {
+        "id": "B",
+        "text": "affect 多作動詞（影響），effect 多作名詞（結果、效果）"
+      },
+      {
+        "id": "C",
+        "text": "affect 只能形容天氣"
+      },
+      {
+        "id": "D",
+        "text": "effect 只能當副詞"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "The news affected him. / The effect was huge. 詞性是最常見的區分。"
+  },
+  {
+    "id": "en-v10",
+    "chapter": "英語詞彙",
+    "tags": [
+      "片語"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "give up 最接近？",
+    "options": [
+      {
+        "id": "A",
+        "text": "放棄"
+      },
+      {
+        "id": "B",
+        "text": "贈送"
+      },
+      {
+        "id": "C",
+        "text": "舉起"
+      },
+      {
+        "id": "D",
+        "text": "出發"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "give up 是放棄。give away 才較接近贈送。"
+  },
+  {
+    "id": "zh01",
+    "chapter": "中文語文",
+    "tags": [
+      "成語"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "「一石二鳥」比喻？",
+    "options": [
+      {
+        "id": "A",
+        "text": "做事猶豫不決"
+      },
+      {
+        "id": "B",
+        "text": "做一件事得到兩種好處"
+      },
+      {
+        "id": "C",
+        "text": "力氣用錯地方"
+      },
+      {
+        "id": "D",
+        "text": "臨陣退縮"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "一塊石頭打到兩隻鳥，比喻一舉兩得。"
+  },
+  {
+    "id": "zh02",
+    "chapter": "中文語文",
+    "tags": [
+      "成語"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "「杯弓蛇影」形容？",
+    "options": [
+      {
+        "id": "A",
+        "text": "疑神疑鬼、自己嚇自己"
+      },
+      {
+        "id": "B",
+        "text": "酒量很好"
+      },
+      {
+        "id": "C",
+        "text": "畫工精湛"
+      },
+      {
+        "id": "D",
+        "text": "打獵技術高"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "把杯中弓影當成蛇因而驚嚇，比喻沒有根據的疑慮。"
+  },
+  {
+    "id": "zh03",
+    "chapter": "中文語文",
+    "tags": [
+      "錯別字"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "下列用字正確的是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "再接再厲"
+      },
+      {
+        "id": "B",
+        "text": "再接再勵"
+      },
+      {
+        "id": "C",
+        "text": "在接再厲"
+      },
+      {
+        "id": "D",
+        "text": "再接再利"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "正確是「再接再厲」。厲指磨礪，不是鼓勵的勵。"
+  },
+  {
+    "id": "zh04",
+    "chapter": "中文語文",
+    "tags": [
+      "修辭"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "「那孩子的臉紅得像蘋果」主要用了哪種修辭？",
+    "options": [
+      {
+        "id": "A",
+        "text": "擬人"
+      },
+      {
+        "id": "B",
+        "text": "譬喻（明喻）"
+      },
+      {
+        "id": "C",
+        "text": "誇飾"
+      },
+      {
+        "id": "D",
+        "text": "反問"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "出現「像」，把臉比成蘋果，是明喻。"
+  },
+  {
+    "id": "zh05",
+    "chapter": "中文語文",
+    "tags": [
+      "詞義"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "「不耻下問」意指？",
+    "options": [
+      {
+        "id": "A",
+        "text": "不以向他人請教為羞恥，謙虛好學"
+      },
+      {
+        "id": "B",
+        "text": "不肯問人"
+      },
+      {
+        "id": "C",
+        "text": "問題不值得問"
+      },
+      {
+        "id": "D",
+        "text": "只問地位更高的人"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "即使對方年紀或地位較低，也不把請教當成丟臉。"
+  },
+  {
+    "id": "zh06",
+    "chapter": "中文語文",
+    "tags": [
+      "標點"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "表示書名、報刊名，中文裡常用哪種符號？",
+    "options": [
+      {
+        "id": "A",
+        "text": "引號「」"
+      },
+      {
+        "id": "B",
+        "text": "書名號《》"
+      },
+      {
+        "id": "C",
+        "text": "頓號、"
+      },
+      {
+        "id": "D",
+        "text": "破折號——"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "書名、報刊名用《》。引號多用於對話或強調，頓號用於並列。"
+  },
+  {
+    "id": "zh07",
+    "chapter": "中文語文",
+    "tags": [
+      "成語"
+    ],
+    "difficulty": 2,
+    "type": "boolean",
+    "stem": "「破釜沉舟」意指下定決心、不留後路。",
+    "options": [
+      {
+        "id": "A",
+        "text": "正確"
+      },
+      {
+        "id": "B",
+        "text": "錯誤"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "項羽破釜沉舟，比喻決心一戰、不留後路。"
+  },
+  {
+    "id": "zh08",
+    "chapter": "中文語文",
+    "tags": [
+      "詞性"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "「他跑得很快」裡的「很」是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "名詞"
+      },
+      {
+        "id": "B",
+        "text": "副詞"
+      },
+      {
+        "id": "C",
+        "text": "介詞"
+      },
+      {
+        "id": "D",
+        "text": "連詞"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "「很」修飾形容詞「快」，是程度副詞。"
+  },
+  {
+    "id": "zh09",
+    "chapter": "中文語文",
+    "tags": [
+      "成語"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "下列哪組意思最接近？",
+    "options": [
+      {
+        "id": "A",
+        "text": "畫蛇添足 ／ 多此一舉"
+      },
+      {
+        "id": "B",
+        "text": "破釜沉舟 ／ 優柔寡斷"
+      },
+      {
+        "id": "C",
+        "text": "一石二鳥 ／ 自相矛盾"
+      },
+      {
+        "id": "D",
+        "text": "杯弓蛇影 ／ 再接再厲"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "畫蛇添足與多此一舉都指多做了反而弄巧。"
+  },
+  {
+    "id": "zh10",
+    "chapter": "中文語文",
+    "tags": [
+      "文句"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "「因為下雨，所以賽車取消。」這句的復句關係是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "因果"
+      },
+      {
+        "id": "B",
+        "text": "轉折"
+      },
+      {
+        "id": "C",
+        "text": "假設"
+      },
+      {
+        "id": "D",
+        "text": "選擇"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "「因為…所以…」表示原因與結果。"
+  },
+  {
+    "id": "jp01",
+    "chapter": "日語入門",
+    "tags": [
+      "假名"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "平假名「あ」的羅馬拼音是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "i"
+      },
+      {
+        "id": "B",
+        "text": "a"
+      },
+      {
+        "id": "C",
+        "text": "u"
+      },
+      {
+        "id": "D",
+        "text": "e"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "五十音あ行：あ a、い i、う u、え e、お o。"
+  },
+  {
+    "id": "jp02",
+    "chapter": "日語入門",
+    "tags": [
+      "挨拶"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "早上打招呼常用？",
+    "options": [
+      {
+        "id": "A",
+        "text": "こんにちは"
+      },
+      {
+        "id": "B",
+        "text": "おはようございます"
+      },
+      {
+        "id": "C",
+        "text": "こんばんは"
+      },
+      {
+        "id": "D",
+        "text": "おやすみなさい"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "おはようございます是早安。こんにちは偏白天，こんばんは是晚上。"
+  },
+  {
+    "id": "jp03",
+    "chapter": "日語入門",
+    "tags": [
+      "文法"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "「これは本です」的意思是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "那是書"
+      },
+      {
+        "id": "B",
+        "text": "這是書"
+      },
+      {
+        "id": "C",
+        "text": "哪裡有書"
+      },
+      {
+        "id": "D",
+        "text": "請給我書"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "これ＝這、本＝書、です＝是（禮貌形）。"
+  },
+  {
+    "id": "jp04",
+    "chapter": "日語入門",
+    "tags": [
+      "助詞"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "「學校に行きます」裡的「に」主要表示？",
+    "options": [
+      {
+        "id": "A",
+        "text": "工具、手段"
+      },
+      {
+        "id": "B",
+        "text": "移動的目的地"
+      },
+      {
+        "id": "C",
+        "text": "並列"
+      },
+      {
+        "id": "D",
+        "text": "引用"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "往場所移動常用 に（或 へ）。で 才較常表工具或動作發生的場所。"
+  },
+  {
+    "id": "jp05",
+    "chapter": "日語入門",
+    "tags": [
+      "動詞"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "「食べます」的意思是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "喝"
+      },
+      {
+        "id": "B",
+        "text": "吃"
+      },
+      {
+        "id": "C",
+        "text": "看"
+      },
+      {
+        "id": "D",
+        "text": "聽"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "食べる／食べます是吃。喝是飲みます。"
+  },
+  {
+    "id": "jp06",
+    "chapter": "日語入門",
+    "tags": [
+      "數字"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "日語「三」的音讀較接近？",
+    "options": [
+      {
+        "id": "A",
+        "text": "いち"
+      },
+      {
+        "id": "B",
+        "text": "に"
+      },
+      {
+        "id": "C",
+        "text": "さん"
+      },
+      {
+        "id": "D",
+        "text": "よん／し"
+      }
+    ],
+    "answer": [
+      "C"
+    ],
+    "explanation": "一いち、二に、三さん、四よん／し。"
+  },
+  {
+    "id": "jp07",
+    "chapter": "日語入門",
+    "tags": [
+      "敬語"
+    ],
+    "difficulty": 2,
+    "type": "boolean",
+    "stem": "「ください」常用於禮貌地請對方給某物或做某事。",
+    "options": [
+      {
+        "id": "A",
+        "text": "正確"
+      },
+      {
+        "id": "B",
+        "text": "錯誤"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "水をください＝請給我水。動詞て形＋ください是請對方做該動作。"
+  },
+  {
+    "id": "jp08",
+    "chapter": "日語入門",
+    "tags": [
+      "詞彙"
+    ],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "「ありがとう」的意思是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "對不起"
+      },
+      {
+        "id": "B",
+        "text": "謝謝"
+      },
+      {
+        "id": "C",
+        "text": "再見"
+      },
+      {
+        "id": "D",
+        "text": "不客氣"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "ありがとう／ありがとうございます是謝謝。對不起是すみません／ごめんなさい。"
+  },
+  {
+    "id": "jp09",
+    "chapter": "日語入門",
+    "tags": [
+      "指示"
+    ],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "これ／それ／あれ 的區分，較正確的是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "これ靠近自己，それ靠近對方，あれ離雙方都遠"
+      },
+      {
+        "id": "B",
+        "text": "三者完全沒有遠近差別"
+      },
+      {
+        "id": "C",
+        "text": "あれ一定指人"
+      },
+      {
+        "id": "D",
+        "text": "それ只能指時間"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "這是日語指示詞的基本遠近系統（こ・そ・あ・ど）。"
+  },
+  {
+    "id": "jp10",
+    "chapter": "日語入門",
+    "tags": [
+      "文法"
+    ],
+    "difficulty": 2,
+    "type": "multiple",
+    "stem": "下列哪些是日語禮貌形常見結尾？（多選）",
+    "options": [
+      {
+        "id": "A",
+        "text": "です"
+      },
+      {
+        "id": "B",
+        "text": "ます"
+      },
+      {
+        "id": "C",
+        "text": "だ（常出現在很隨便的口語）"
+      },
+      {
+        "id": "D",
+        "text": "ございます"
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": "です／ます是丁寧形；ございます更鄭重。だ是普通形，較不正式。"
+  },
+  {
+    "id": "kr01",
+    "chapter": "韓語入門",
+    "tags": ["字母"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "韓語字母系統稱為？",
+    "options": [
+      { "id": "A", "text": "平假名" },
+      { "id": "B", "text": "諺文（한글）" },
+      { "id": "C", "text": "羅馬拼音" },
+      { "id": "D", "text": "注音" }
+    ],
+    "answer": ["B"],
+    "explanation": "韓語書寫系統是諺文（한글），由子音與母音組合成音節方塊。"
+  },
+  {
+    "id": "kr02",
+    "chapter": "韓語入門",
+    "tags": ["字母"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "「안녕하세요」常用來表示？",
+    "options": [
+      { "id": "A", "text": "謝謝" },
+      { "id": "B", "text": "對不起" },
+      { "id": "C", "text": "你好（問候）" },
+      { "id": "D", "text": "再見" }
+    ],
+    "answer": ["C"],
+    "explanation": "안녕하세요 是最常用的問候語，相當於你好。"
+  },
+  {
+    "id": "kr03",
+    "chapter": "韓語入門",
+    "tags": ["詞彙"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "「감사합니다」的意思是？",
+    "options": [
+      { "id": "A", "text": "謝謝" },
+      { "id": "B", "text": "請" },
+      { "id": "C", "text": "是的" },
+      { "id": "D", "text": "不是" }
+    ],
+    "answer": ["A"],
+    "explanation": "감사합니다 是較正式的謝謝。고맙습니다 也常用。"
+  },
+  {
+    "id": "kr04",
+    "chapter": "韓語入門",
+    "tags": ["文法"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "韓語基本語序通常是？",
+    "options": [
+      { "id": "A", "text": "主詞－動詞－受詞（SVO）" },
+      { "id": "B", "text": "主詞－受詞－動詞（SOV）" },
+      { "id": "C", "text": "動詞永遠放在最前面" },
+      { "id": "D", "text": "沒有固定語序" }
+    ],
+    "answer": ["B"],
+    "explanation": "韓語和日語類似，動詞通常在句尾，語序是 SOV。"
+  },
+  {
+    "id": "kr05",
+    "chapter": "韓語入門",
+    "tags": ["助詞"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "助詞「은／는」主要標記？",
+    "options": [
+      { "id": "A", "text": "主題" },
+      { "id": "B", "text": "受詞" },
+      { "id": "C", "text": "地點" },
+      { "id": "D", "text": "時間" }
+    ],
+    "answer": ["A"],
+    "explanation": "은／는 是主題助詞；이／가 較常標示主語。받침有無決定用 은 或 는。"
+  },
+  {
+    "id": "kr06",
+    "chapter": "韓語入門",
+    "tags": ["數字"],
+    "difficulty": 2,
+    "type": "boolean",
+    "stem": "韓語有兩套常用數字系統：固有韓語數與漢語系數。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "例如一可以是 하나（固有）或 일（漢語系），用途不同（年紀、日期、金額等）。"
+  },
+  {
+    "id": "kr07",
+    "chapter": "韓語入門",
+    "tags": ["詞彙"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "「물」的意思是？",
+    "options": [
+      { "id": "A", "text": "火" },
+      { "id": "B", "text": "水" },
+      { "id": "C", "text": "米" },
+      { "id": "D", "text": "山" }
+    ],
+    "answer": ["B"],
+    "explanation": "물 是水。火是 불，山是 산。"
+  },
+  {
+    "id": "kr08",
+    "chapter": "韓語入門",
+    "tags": ["敬語"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "對不熟的人或長輩說話，較合適的是？",
+    "options": [
+      { "id": "A", "text": "用半語（반말）比較親切" },
+      { "id": "B", "text": "用尊敬／丁寧語尾（如 -요、-습니다）" },
+      { "id": "C", "text": "一律省略動詞" },
+      { "id": "D", "text": "韓語沒有敬語" }
+    ],
+    "answer": ["B"],
+    "explanation": "韓語敬語很重要。對陌生人或長輩用 -요／-습니다；반말留給很熟的平輩。"
+  },
+  {
+    "id": "kr09",
+    "chapter": "韓語入門",
+    "tags": ["字母"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "子音「ㄱ」在音節開頭常發近似哪個音？",
+    "options": [
+      { "id": "A", "text": "m" },
+      { "id": "B", "text": "g／k" },
+      { "id": "C", "text": "s" },
+      { "id": "D", "text": "n" }
+    ],
+    "answer": ["B"],
+    "explanation": "ㄱ 開頭接近不送氣的 g／k。ㄴ 是 n，ㅁ 是 m，ㅅ 是 s。"
+  },
+  {
+    "id": "kr10",
+    "chapter": "韓語入門",
+    "tags": ["文法"],
+    "difficulty": 2,
+    "type": "multiple",
+    "stem": "下列哪些是韓語常見敬語語尾？（多選）",
+    "options": [
+      { "id": "A", "text": "-요" },
+      { "id": "B", "text": "-습니다" },
+      { "id": "C", "text": "반말 어미 -아／-어（對長輩）" },
+      { "id": "D", "text": "-ㅂ니다" }
+    ],
+    "answer": ["A", "B", "D"],
+    "explanation": "-요、-습니다／-ㅂ니다 是敬語。반말 不適合對長輩。"
+  },
+  {
+    "id": "en-c01",
+    "chapter": "英語文法",
+    "tags": ["時態", "填空"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "She ____ to work by train every day.",
+    "blanks": [["goes"]],
+    "explanation": "主詞 she 是第三人稱單數，一般現在式動詞加 -s。"
+  },
+  {
+    "id": "en-c02",
+    "chapter": "英語文法",
+    "tags": ["冠詞", "填空"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "He is ____ honest man.",
+    "blanks": [["an"]],
+    "explanation": "honest 的 h 不發音，母音音開頭用 an。"
+  },
+  {
+    "id": "en-c03",
+    "chapter": "英語文法",
+    "tags": ["比較級", "填空"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "This box is ____ than that one.",
+    "blanks": [["bigger", "larger"]],
+    "explanation": "兩者比較用比較級。big → bigger；也可接受 larger。"
+  },
+  {
+    "id": "en-c04",
+    "chapter": "英語文法",
+    "tags": ["不定詞", "填空"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "I decided ____ a new laptop.",
+    "blanks": [["to buy"]],
+    "explanation": "decide 後面接 to + 原形動詞。"
+  },
+  {
+    "id": "en-s01",
+    "chapter": "英語詞彙",
+    "tags": ["簡答"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "enormous 最接近的中文意思？",
+    "aliases": ["巨大", "龐大", "極大", "很大"],
+    "explanation": "enormous 表示非常大。"
+  },
+  {
+    "id": "en-s02",
+    "chapter": "英語詞彙",
+    "tags": ["片語", "簡答"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "look after 的意思？（中文）",
+    "aliases": ["照顧", "照料", "照看"],
+    "explanation": "look after = take care of，照顧。"
+  },
+  {
+    "id": "en-s03",
+    "chapter": "英語詞彙",
+    "tags": ["簡答"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "deadline 是指什麼？（中文）",
+    "aliases": ["截止期限", "截止日期", "期限", "最後期限"],
+    "explanation": "deadline 是必須完成的最後時限。"
+  },
+  {
+    "id": "en-m01",
+    "chapter": "英語詞彙",
+    "tags": ["配對"],
+    "difficulty": 1,
+    "type": "match",
+    "stem": "把單字與意思配對。",
+    "pairs": [
+      { "left": "give up", "right": "放棄" },
+      { "left": "ancient", "right": "古老的" },
+      { "left": "deadline", "right": "截止期限" },
+      { "left": "look after", "right": "照顧" }
+    ],
+    "explanation": "這些都是常用詞彙與片語的基本對應。"
+  },
+  {
+    "id": "zh-s01",
+    "chapter": "中文語文",
+    "tags": ["成語", "簡答"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "「一石二鳥」比喻什麼？",
+    "aliases": ["一舉兩得", "做一件事得到兩種好處", "一舉兩得"],
+    "explanation": "一塊石頭打到兩隻鳥，比喻一件事得到兩種好處。"
+  },
+  {
+    "id": "zh-s02",
+    "chapter": "中文語文",
+    "tags": ["成語", "簡答"],
+    "difficulty": 2,
+    "type": "short",
+    "stem": "「杯弓蛇影」形容什麼？",
+    "aliases": ["疑神疑鬼", "自己嚇自己", "無端疑懼"],
+    "explanation": "把杯中弓影當成蛇，比喻沒有根據的疑慮。"
+  },
+  {
+    "id": "zh-s03",
+    "chapter": "中文語文",
+    "tags": ["修辭", "簡答"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "「那孩子的臉紅得像蘋果」主要是哪種修辭？",
+    "aliases": ["明喻", "譬喻", "比喻"],
+    "explanation": "出現「像」，是明喻。"
+  },
+  {
+    "id": "zh-c01",
+    "chapter": "中文語文",
+    "tags": ["成語", "填空"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "正確寫法是「再接再____」。",
+    "blanks": [["厲"]],
+    "explanation": "厲指磨礪，不是鼓勵的勵。"
+  },
+  {
+    "id": "zh-m01",
+    "chapter": "中文語文",
+    "tags": ["成語", "配對"],
+    "difficulty": 2,
+    "type": "match",
+    "stem": "把成語與意思配對。",
+    "pairs": [
+      { "left": "破釜沉舟", "right": "下定決心、不留後路" },
+      { "left": "畫蛇添足", "right": "多此一舉" },
+      { "left": "杯弓蛇影", "right": "疑神疑鬼" },
+      { "left": "一石二鳥", "right": "一舉兩得" }
+    ],
+    "explanation": "成語要對準核心意思，不要只記字面。"
+  },
+  {
+    "id": "jp-c01",
+    "chapter": "日語入門",
+    "tags": ["填空"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "平假名「あ」的羅馬拼音是 ____。",
+    "blanks": [["a"]],
+    "explanation": "あ＝a，い＝i，う＝u，え＝e，お＝o。"
+  },
+  {
+    "id": "jp-s01",
+    "chapter": "日語入門",
+    "tags": ["簡答"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "「ありがとう」的中文意思？",
+    "aliases": ["謝謝", "多謝", "謝謝你"],
+    "explanation": "ありがとう 是謝謝；更禮貌可用 ありがとうございます。"
+  },
+  {
+    "id": "jp-s02",
+    "chapter": "日語入門",
+    "tags": ["簡答"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "「食べます」的意思？",
+    "aliases": ["吃", "吃東西", "用餐"],
+    "explanation": "食べます 是「吃」的丁寧形。"
+  },
+  {
+    "id": "jp-m01",
+    "chapter": "日語入門",
+    "tags": ["配對"],
+    "difficulty": 1,
+    "type": "match",
+    "stem": "把日語與意思配對。",
+    "pairs": [
+      { "left": "おはよう", "right": "早安" },
+      { "left": "ありがとう", "right": "謝謝" },
+      { "left": "ください", "right": "請給我" },
+      { "left": "これは本です", "right": "這是書" }
+    ],
+    "explanation": "入門問候與指示句的基本對應。"
+  },
+  {
+    "id": "kr-c01",
+    "chapter": "韓語入門",
+    "tags": ["填空"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "「물」的中文意思是 ____。",
+    "blanks": [["水"]],
+    "explanation": "물＝水。불是火，산是山。"
+  },
+  {
+    "id": "kr-s01",
+    "chapter": "韓語入門",
+    "tags": ["簡答"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "「안녕하세요」常用來表示？",
+    "aliases": ["你好", "問候", "打招呼"],
+    "explanation": "안녕하세요 是最常用的問候語。"
+  },
+  {
+    "id": "kr-s02",
+    "chapter": "韓語入門",
+    "tags": ["簡答"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "「감사합니다」的意思？",
+    "aliases": ["謝謝", "感謝", "多謝"],
+    "explanation": "감사합니다 是較正式的謝謝。"
+  },
+  {
+    "id": "kr-m01",
+    "chapter": "韓語入門",
+    "tags": ["配對"],
+    "difficulty": 1,
+    "type": "match",
+    "stem": "把韓語與意思配對。",
+    "pairs": [
+      { "left": "안녕하세요", "right": "你好" },
+      { "left": "감사합니다", "right": "謝謝" },
+      { "left": "물", "right": "水" },
+      { "left": "한글", "right": "諺文" }
+    ],
+    "explanation": "入門詞彙的基本對應。"
+  }
+]

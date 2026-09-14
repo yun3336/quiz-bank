@@ -1,0 +1,760 @@
+[
+  {
+    "id": "hcia01",
+    "chapter": "HCIA 數通",
+    "tags": ["VRP", "視圖"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "華為 VRP 中，由使用者視圖進入系統視圖的指令是？",
+    "options": [
+      { "id": "A", "text": "enable" },
+      { "id": "B", "text": "system-view" },
+      { "id": "C", "text": "configure terminal" },
+      { "id": "D", "text": "privilege" }
+    ],
+    "answer": ["B"],
+    "explanation": "VRP 使用者視圖提示符為 <設備名>，輸入 system-view 後變為 [設備名]。enable / conf t 是 Cisco IOS 的寫法。"
+  },
+  {
+    "id": "hcia02",
+    "chapter": "HCIA 數通",
+    "tags": ["VRP", "儲存"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "要把目前生效的設定寫入儲存裝置，華為設備常用哪一條？",
+    "options": [
+      { "id": "A", "text": "write memory" },
+      { "id": "B", "text": "copy running-config startup-config" },
+      { "id": "C", "text": "save" },
+      { "id": "D", "text": "commit forever" }
+    ],
+    "answer": ["C"],
+    "explanation": "VRP 用 save 把目前組態存檔。Cisco 才常用 copy run start 或 wr。"
+  },
+  {
+    "id": "hcia03",
+    "chapter": "HCIA 數通",
+    "tags": ["VLAN"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "一次建立 VLAN 10 與 20，較符合華為習慣的指令是？",
+    "options": [
+      { "id": "A", "text": "vlan 10,20" },
+      { "id": "B", "text": "vlan batch 10 20" },
+      { "id": "C", "text": "switchport vlan 10 20" },
+      { "id": "D", "text": "create vlan 10+20" }
+    ],
+    "answer": ["B"],
+    "explanation": "vlan batch 可一次建多個 VLAN，也支援 10 to 20 這種連續範圍。"
+  },
+  {
+    "id": "hcia04",
+    "chapter": "HCIA 數通",
+    "tags": ["交換", "Access"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "把 GE0/0/1 設成 Access 並劃入 VLAN 10，正確組合是？",
+    "options": [
+      { "id": "A", "text": "switchport mode access 再 switchport access vlan 10" },
+      { "id": "B", "text": "port link-type access 再 port default vlan 10" },
+      { "id": "C", "text": "port trunk allow-pass vlan 10" },
+      { "id": "D", "text": "undo port vlan 1" }
+    ],
+    "answer": ["B"],
+    "explanation": "華為 Access 用 port link-type access 與 port default vlan。A 是 Cisco 寫法；C 是 Trunk 放行。"
+  },
+  {
+    "id": "hcia05",
+    "chapter": "HCIA 數通",
+    "tags": ["Trunk"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "華為 Trunk 埠要放行 VLAN 10 和 20，應使用？",
+    "options": [
+      { "id": "A", "text": "port trunk allow-pass vlan 10 20" },
+      { "id": "B", "text": "switchport trunk allowed vlan 10,20" },
+      { "id": "C", "text": "port default vlan 10 20" },
+      { "id": "D", "text": "vlan trunk 10;20" }
+    ],
+    "answer": ["A"],
+    "explanation": "先 port link-type trunk，再用 port trunk allow-pass vlan 指定允許的 VLAN。"
+  },
+  {
+    "id": "hcia06",
+    "chapter": "HCIA 數通",
+    "tags": ["STP"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "RSTP 相較傳統 STP，最主要的改進是？",
+    "options": [
+      { "id": "A", "text": "不再需要根橋" },
+      { "id": "B", "text": "收斂更快，並定義 Alternate / Backup 等角色" },
+      { "id": "C", "text": "只能用在路由器上" },
+      { "id": "D", "text": "取消了 BPDU" }
+    ],
+    "answer": ["B"],
+    "explanation": "RSTP（802.1w）用提案／同意握手加速，埠角色更細。仍有根橋與 BPDU。"
+  },
+  {
+    "id": "hcia07",
+    "chapter": "HCIA 數通",
+    "tags": ["IP", "子網"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "192.168.10.0/26 可用主機數大約是？",
+    "options": [
+      { "id": "A", "text": "30" },
+      { "id": "B", "text": "62" },
+      { "id": "C", "text": "126" },
+      { "id": "D", "text": "254" }
+    ],
+    "answer": ["B"],
+    "explanation": "/26 主機位元 6 位，2^6=64，扣網路與廣播約 62 個可用位址。"
+  },
+  {
+    "id": "hcia08",
+    "chapter": "HCIA 數通",
+    "tags": ["靜態路由"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "華為設定靜態路由的指令格式最接近？",
+    "options": [
+      { "id": "A", "text": "ip route 192.168.2.0 255.255.255.0 10.1.1.2" },
+      { "id": "B", "text": "ip route-static 192.168.2.0 255.255.255.0 10.1.1.2" },
+      { "id": "C", "text": "route add 192.168.2.0 via 10.1.1.2" },
+      { "id": "D", "text": "static-route 192.168.2.0/24 next 10.1.1.2" }
+    ],
+    "answer": ["B"],
+    "explanation": "VRP 為 ip route-static 目的網路 掩碼 下一跳。Cisco 才是 ip route。"
+  },
+  {
+    "id": "hcia09",
+    "chapter": "HCIA 數通",
+    "tags": ["OSPF"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "OSPF 單區域入門組態中，network 指令後面的 0.0.0.255 稱為？",
+    "options": [
+      { "id": "A", "text": "子網掩碼" },
+      { "id": "B", "text": "反掩碼（wildcard）" },
+      { "id": "C", "text": "預設閘道" },
+      { "id": "D", "text": "AS 號" }
+    ],
+    "answer": ["B"],
+    "explanation": "OSPF network 用反掩碼比對哪些介面進入區域。0.0.0.255 對應 /24。"
+  },
+  {
+    "id": "hcia10",
+    "chapter": "HCIA 數通",
+    "tags": ["ACL"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "華為基本 ACL（2000–2999）主要依據什麼過濾？",
+    "options": [
+      { "id": "A", "text": "僅來源 IP" },
+      { "id": "B", "text": "來源與目的 IP、協定與埠" },
+      { "id": "C", "text": "僅 MAC 位址" },
+      { "id": "D", "text": "僅 VLAN ID" }
+    ],
+    "answer": ["A"],
+    "explanation": "基本 ACL 只看來源位址；進階 ACL（3000–3999）才能同時看目的、協定與埠。"
+  },
+  {
+    "id": "hcia11",
+    "chapter": "HCIA 數通",
+    "tags": ["NAT"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "多台私網主機共用少數公網 IP 上網，通常用哪種 NAT？",
+    "options": [
+      { "id": "A", "text": "靜態一對一 NAT" },
+      { "id": "B", "text": "NAPT / Easy IP（埠轉換）" },
+      { "id": "C", "text": "只改 MAC 不改 IP" },
+      { "id": "D", "text": "GRE 隧道" }
+    ],
+    "answer": ["B"],
+    "explanation": "NAPT 用公網 IP 加上埠號區分會話，讓很多私網主機同時上網。"
+  },
+  {
+    "id": "hcia12",
+    "chapter": "HCIA 數通",
+    "tags": ["DHCP"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "DHCP Relay 讓不同網段的用戶端，也能向不在同一廣播域的 DHCP 伺服器要位址。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "中繼把 DHCP 廣播轉成單播送到指定伺服器，適合跨 VLAN 集中發放位址。"
+  },
+  {
+    "id": "hcia13",
+    "chapter": "HCIA 數通",
+    "tags": ["介面"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "華為交換器 GigabitEthernet0/0/1 的常見縮寫是？",
+    "options": [
+      { "id": "A", "text": "Fa0/1" },
+      { "id": "B", "text": "Gi0/1" },
+      { "id": "C", "text": "GE0/0/1" },
+      { "id": "D", "text": "Eth1/0/1 且不能縮寫" }
+    ],
+    "answer": ["C"],
+    "explanation": "槽位／子槽／埠為 0/0/1，縮寫 GE0/0/1。Fa/Gi 兩段式較像 Cisco。"
+  },
+  {
+    "id": "hcia14",
+    "chapter": "HCIA 數通",
+    "tags": ["三層", "Vlanif"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "華為三層交換器上，VLAN 10 的閘道介面通常是？",
+    "options": [
+      { "id": "A", "text": "interface Vlan 10（SVI 寫法與 Cisco 完全相同）" },
+      { "id": "B", "text": "interface Vlanif10" },
+      { "id": "C", "text": "interface Loopback10 即可當閘道" },
+      { "id": "D", "text": "只能用物理口當閘道，不能用 VLAN 介面" }
+    ],
+    "answer": ["B"],
+    "explanation": "華為 VLAN 三層介面叫 Vlanif。Cisco 則是 interface vlan 10。"
+  },
+  {
+    "id": "hcia15",
+    "chapter": "HCIA 數通",
+    "tags": ["ARP"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "ARP 的作用是？",
+    "options": [
+      { "id": "A", "text": "把網域名稱解析成 IP" },
+      { "id": "B", "text": "在同一二層網段把 IP 對應到 MAC" },
+      { "id": "C", "text": "在自治系統之間交換路由" },
+      { "id": "D", "text": "加密 Telnet" }
+    ],
+    "answer": ["B"],
+    "explanation": "乙太網傳送需要目的 MAC。ARP 詢問「這個 IP 對應哪張網卡」。"
+  },
+  {
+    "id": "hcia16",
+    "chapter": "HCIA 數通",
+    "tags": ["管理"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "遠端管理交換器時，相較 Telnet，SSH 的主要優點是？",
+    "options": [
+      { "id": "A", "text": "速度一定比較快" },
+      { "id": "B", "text": "傳輸過程可加密，降低帳密被竊聽風險" },
+      { "id": "C", "text": "不需要 IP 位址" },
+      { "id": "D", "text": "只能本機 console 使用" }
+    ],
+    "answer": ["B"],
+    "explanation": "Telnet 明文；SSH 提供加密通道，是設備遠端登入的建議做法。"
+  },
+  {
+    "id": "hcia17",
+    "chapter": "HCIA 數通",
+    "tags": ["VRP", "undo"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "華為常用 undo 取消設定，例如 undo shutdown 用來啟用介面。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "VRP 以 undo 否定命令。Cisco 則常用 no shutdown。"
+  },
+  {
+    "id": "hcia18",
+    "chapter": "HCIA 數通",
+    "tags": ["OSPF", "鄰居"],
+    "difficulty": 2,
+    "type": "multiple",
+    "stem": "兩台路由器要形成 OSPF 鄰居，下列哪些通常必須一致？（多選）",
+    "options": [
+      { "id": "A", "text": "Area ID" },
+      { "id": "B", "text": "Hello / Dead 間隔" },
+      { "id": "C", "text": "Router-ID 必須相同" },
+      { "id": "D", "text": "認證參數（若有啟用）" }
+    ],
+    "answer": ["A", "B", "D"],
+    "explanation": "Router-ID 必須在自治系統內唯一，不能相同。區域、計時器與認證不一致會無法建立鄰居。"
+  },
+  {
+    "id": "hcip01",
+    "chapter": "HCIP 數通",
+    "tags": ["OSPF", "LSA"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "OSPF Type 1 LSA 描述的是？",
+    "options": [
+      { "id": "A", "text": "ASBR 把外部路由灌進 OSPF" },
+      { "id": "B", "text": "路由器自己的連路狀態（Router LSA）" },
+      { "id": "C", "text": "整個 AS 的預設路由摘要" },
+      { "id": "D", "text": "BGP NLRI" }
+    ],
+    "answer": ["B"],
+    "explanation": "Type 1 是 Router LSA，描述本路由器的連路。Type 5 才是外部 LSA。"
+  },
+  {
+    "id": "hcip02",
+    "chapter": "HCIP 數通",
+    "tags": ["OSPF", "區域"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "Stub 區域通常不允許哪種 LSA 進入？",
+    "options": [
+      { "id": "A", "text": "Type 1 Router LSA" },
+      { "id": "B", "text": "Type 5 外部 LSA" },
+      { "id": "C", "text": "Type 2 Network LSA" },
+      { "id": "D", "text": "任何 LSA 都不允許" }
+    ],
+    "answer": ["B"],
+    "explanation": "Stub 阻擋 Type 5，改由 ABR 發預設路由。NSSA 則用 Type 7 承載外部路由。"
+  },
+  {
+    "id": "hcip03",
+    "chapter": "HCIP 數通",
+    "tags": ["BGP"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "BGP 路徑選擇中，通常最先比較的是？",
+    "options": [
+      { "id": "A", "text": "AS_PATH 長度" },
+      { "id": "B", "text": "MED" },
+      { "id": "C", "text": "Preferred-Value / Weight（廠商本地優先）與 Local Preference" },
+      { "id": "D", "text": "IGP 度量" }
+    ],
+    "answer": ["C"],
+    "explanation": "華為會先看 Preferred-Value，再看 Local-Pref，之後才是 AS_PATH、Origin、MED 等。Weight 是 Cisco 本地值，概念類似。"
+  },
+  {
+    "id": "hcip04",
+    "chapter": "HCIP 數通",
+    "tags": ["BGP"],
+    "difficulty": 2,
+    "type": "boolean",
+    "stem": "iBGP 鄰居預設不會把從另一個 iBGP 學到的路由再傳給第三個 iBGP，因此大規模 AS 常需 RR 或聯盟。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "這是 iBGP 水平分割規則，避免路由環路。全連接、Route Reflector 或 Confederation 用來擴展。"
+  },
+  {
+    "id": "hcip05",
+    "chapter": "HCIP 數通",
+    "tags": ["MPLS", "VPN"],
+    "difficulty": 3,
+    "type": "single",
+    "stem": "MPLS L3VPN 裡，RD（Route Distinguisher）的主要作用是？",
+    "options": [
+      { "id": "A", "text": "加密客戶流量" },
+      { "id": "B", "text": "讓不同 VRF 中相同的 IPv4 前綴在 BGP 裡變成唯一 VPNv4 路由" },
+      { "id": "C", "text": "取代所有 IGP" },
+      { "id": "D", "text": "指定 QoS 佇列" }
+    ],
+    "answer": ["B"],
+    "explanation": "RD 把 192.168.1.0/24 變成 VPNv4 前綴。RT 才負責導入／導出到哪個 VRF。"
+  },
+  {
+    "id": "hcip06",
+    "chapter": "HCIP 數通",
+    "tags": ["MSTP"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "MSTP 相較 RSTP 的主要價值是？",
+    "options": [
+      { "id": "A", "text": "完全不需要生成樹" },
+      { "id": "B", "text": "可把 VLAN 對應到不同實例，讓多條上聯都能轉發不同 VLAN" },
+      { "id": "C", "text": "只能有一個根橋服務所有 VLAN 且無法負載分擔" },
+      { "id": "D", "text": "只用於 WAN 專線" }
+    ],
+    "answer": ["B"],
+    "explanation": "多生成樹實例可把不同 VLAN 對到不同根橋，上聯可負載分擔並仍防環。"
+  },
+  {
+    "id": "hcip07",
+    "chapter": "HCIP 數通",
+    "tags": ["Eth-Trunk"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "Eth-Trunk 使用 LACP 時，主要好處是？",
+    "options": [
+      { "id": "A", "text": "自動協商聚合成員，減少配錯線造成的環路或單通" },
+      { "id": "B", "text": "把兩條線變成兩倍於物理速率的單一流會話（所有流量都加倍）" },
+      { "id": "C", "text": "不再需要 VLAN" },
+      { "id": "D", "text": "只能綁銅纜不能綁光纖" }
+    ],
+    "answer": ["A"],
+    "explanation": "LACP 動態確認對端。流量依雜湊分攤，單一會話通常仍走一條成員鏈路。"
+  },
+  {
+    "id": "hcip08",
+    "chapter": "HCIP 數通",
+    "tags": ["VRRP"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "VRRP 虛擬 IP 對區域網主機而言，角色是？",
+    "options": [
+      { "id": "A", "text": "DNS 伺服器位址" },
+      { "id": "B", "text": "預設閘道，主備路由器共享此 VIP" },
+      { "id": "C", "text": "OSPF Router-ID" },
+      { "id": "D", "text": "NTP 伺服器" }
+    ],
+    "answer": ["B"],
+    "explanation": "主設備回應 VIP 的 ARP。主掛了備設備接手，主機閘道設定不用改。"
+  },
+  {
+    "id": "hcip09",
+    "chapter": "HCIP 數通",
+    "tags": ["QoS"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "DiffServ 模型裡，DSCP 主要用來？",
+    "options": [
+      { "id": "A", "text": "標示封包類別，讓沿途依 PHB 做佇列與丟棄" },
+      { "id": "B", "text": "取代 IP 位址" },
+      { "id": "C", "text": "建立 MPLS 標籤棧底" },
+      { "id": "D", "text": "只在二層交換機之間有效" }
+    ],
+    "answer": ["A"],
+    "explanation": "DSCP 在 IP 頭 ToS 欄。EF、AF 等 PHB 決定排程與擁塞時誰先丟。"
+  },
+  {
+    "id": "hcip10",
+    "chapter": "HCIP 數通",
+    "tags": ["BFD"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "BFD 與路由協定聯動的主要目的是？",
+    "options": [
+      { "id": "A", "text": "增加路由度量讓路更長" },
+      { "id": "B", "text": "毫秒級偵測轉發路徑故障，加速切換" },
+      { "id": "C", "text": "取代所有 ACL" },
+      { "id": "D", "text": "自動分配 IP" }
+    ],
+    "answer": ["B"],
+    "explanation": "Hello 往往以秒計。BFD 可很快把鄰居或靜態路由標為 down，縮短流量黑洞。"
+  },
+  {
+    "id": "hcip11",
+    "chapter": "HCIP 數通",
+    "tags": ["IPv6"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "IPv6 裡 Neighbor Discovery 大致取代了 IPv4 的？",
+    "options": [
+      { "id": "A", "text": "BGP" },
+      { "id": "B", "text": "ARP 與部分 ICMP 路由器發現功能" },
+      { "id": "C", "text": "OSPF LSA" },
+      { "id": "D", "text": "STP" }
+    ],
+    "answer": ["B"],
+    "explanation": "NS/NA 做位址解析，RA/RS 做路由器發現與前綴通告，對應 ARP 與部分 ICMP。"
+  },
+  {
+    "id": "hcip12",
+    "chapter": "HCIP 數通",
+    "tags": ["堆疊"],
+    "difficulty": 2,
+    "type": "boolean",
+    "stem": "交換器堆疊／CSS 可把多台實體設備虛擬成一台邏輯設備，簡化管理並提高可靠性。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "堆疊後通常一個管理面、跨設備聚合，單機故障時成員仍可轉發。"
+  },
+  {
+    "id": "hcip13",
+    "chapter": "HCIP 數通",
+    "tags": ["ISIS"],
+    "difficulty": 3,
+    "type": "single",
+    "stem": "IS-IS 與 OSPF 都是連路狀態協定，IS-IS 常見差異是？",
+    "options": [
+      { "id": "A", "text": "IS-IS 跑在 IP 層之上，OSPF 跑在資料連結層" },
+      { "id": "B", "text": "IS-IS 直接封在資料連結層，OSPF 封在 IP 上；IS-IS 也常用於大型 ISP 與雙棧" },
+      { "id": "C", "text": "IS-IS 不能宣告 IPv6" },
+      { "id": "D", "text": "OSPF 沒有區域概念" }
+    ],
+    "answer": ["B"],
+    "explanation": "IS-IS 是 ISO CLNS 風格，PDU 不依賴 IP。擴展 TLV 對 IPv6 友善。OSPF 同樣有區域。"
+  },
+  {
+    "id": "hcip14",
+    "chapter": "HCIP 數通",
+    "tags": ["路由策略"],
+    "difficulty": 3,
+    "type": "single",
+    "stem": "route-policy / routing-policy 常見用途是？",
+    "options": [
+      { "id": "A", "text": "只用來設定主機名稱" },
+      { "id": "B", "text": "依前綴、AS-PATH 等匹配路由，再改屬性或過濾" },
+      { "id": "C", "text": "取代交換機 VLAN" },
+      { "id": "D", "text": "產生 MAC 位址表" }
+    ],
+    "answer": ["B"],
+    "explanation": "導入、重分發、BGP 出站入站都常用路由策略搭配 ACL 或 prefix-list。"
+  },
+  {
+    "id": "hcip15",
+    "chapter": "HCIP 數通",
+    "tags": ["OSPF", "BGP"],
+    "difficulty": 3,
+    "type": "multiple",
+    "stem": "把 OSPF 路由重分發進 BGP 時，應特別注意哪些？（多選）",
+    "options": [
+      { "id": "A", "text": "路由環路與回灌" },
+      { "id": "B", "text": "前綴數量與過濾" },
+      { "id": "C", "text": "Next-hop 是否可達" },
+      { "id": "D", "text": "把所有主機 ARP 表一併重分發" }
+    ],
+    "answer": ["A", "B", "C"],
+    "explanation": "重分發要控範圍、防環，並保證 BGP 下一跳在 IGP 中可達。ARP 不是路由重分發對象。"
+  },
+  {
+    "id": "hcie01",
+    "chapter": "HCIE 數通",
+    "tags": ["BGP", "RR"],
+    "difficulty": 3,
+    "type": "single",
+    "stem": "BGP Route Reflector 能打破 iBGP 全連接，是因為它？",
+    "options": [
+      { "id": "A", "text": "把從 client 學到的 iBGP 路由再反射給其他 client / non-client" },
+      { "id": "B", "text": "把所有 iBGP 改成 eBGP" },
+      { "id": "C", "text": "關閉 AS_PATH" },
+      { "id": "D", "text": "只反射預設路由" }
+    ],
+    "answer": ["A"],
+    "explanation": "RR 用 Originator-ID、Cluster-List 防環，讓 client 不必兩兩建立 iBGP。"
+  },
+  {
+    "id": "hcie02",
+    "chapter": "HCIE 數通",
+    "tags": ["MPLS", "L3VPN"],
+    "difficulty": 3,
+    "type": "single",
+    "stem": "PE 之間傳遞 VPNv4 路由，通常依賴？",
+    "options": [
+      { "id": "A", "text": "只靠 OSPF Type 5" },
+      { "id": "B", "text": "MP-BGP（AFI/SAFI VPNv4）加上 MPLS 標籤" },
+      { "id": "C", "text": "只靠 STP" },
+      { "id": "D", "text": "只靠 FTP" }
+    ],
+    "answer": ["B"],
+    "explanation": "控制面用 MP-BGP 帶 RD/RT 與標籤，資料面用 MPLS 標籤轉發跨 SP 骨幹。"
+  },
+  {
+    "id": "hcie03",
+    "chapter": "HCIE 數通",
+    "tags": ["VXLAN", "EVPN"],
+    "difficulty": 3,
+    "type": "single",
+    "stem": "BGP EVPN 作為 VXLAN 控制面，主要用來？",
+    "options": [
+      { "id": "A", "text": "以 BGP 通告 VTEP、MAC/IP 綁定，減少未知單播洪泛" },
+      { "id": "B", "text": "取代伺服器作業系統" },
+      { "id": "C", "text": "只能用於串列專線" },
+      { "id": "D", "text": "關閉所有 VLAN" }
+    ],
+    "answer": ["A"],
+    "explanation": "EVPN Type 2/3 等路由讓葉節點學習對端主機與 VNI 成員，較純洪水式 VXLAN 更可擴展。"
+  },
+  {
+    "id": "hcie04",
+    "chapter": "HCIE 數通",
+    "tags": ["園區", "設計"],
+    "difficulty": 3,
+    "type": "single",
+    "stem": "大型園區雙核心常見設計原則是？",
+    "options": [
+      { "id": "A", "text": "接入層雙上聯、核心／匯聚做冗餘與分擔，避免單點故障" },
+      { "id": "B", "text": "所有終端直接接到核心，取消接入層" },
+      { "id": "C", "text": "只用一條上聯並關閉生成樹" },
+      { "id": "D", "text": "核心與接入必須在同一廣播域且不分 VLAN" }
+    ],
+    "answer": ["A"],
+    "explanation": "分層、雙歸屬、跨設備聚合或 MSTP/堆疊，兼顧可用性與可擴展。HCIE 重設計取捨。"
+  },
+  {
+    "id": "hcie05",
+    "chapter": "HCIE 數通",
+    "tags": ["高可用"],
+    "difficulty": 3,
+    "type": "single",
+    "stem": "IP FRR / LFA 這類技術想解決的問題是？",
+    "options": [
+      { "id": "A", "text": "讓 DNS 更快" },
+      { "id": "B", "text": "在 IGP 完全收斂前，先切到預計算的備份下一跳" },
+      { "id": "C", "text": "把 OSPF 變成距離向量" },
+      { "id": "D", "text": "取消 BFD" }
+    ],
+    "answer": ["B"],
+    "explanation": "預先算好無環備份路徑，故障時資料面可快速切換，常與 BFD 搭配。"
+  },
+  {
+    "id": "hcie06",
+    "chapter": "HCIE 數通",
+    "tags": ["排障"],
+    "difficulty": 3,
+    "type": "single",
+    "stem": "跨網段不通時，較合理的排查順序是？",
+    "options": [
+      { "id": "A", "text": "先改 BGP AS 號，再看實體燈號" },
+      { "id": "B", "text": "先確認物理／二層，再查 IP、閘道、路由、策略與 NAT/ACL" },
+      { "id": "C", "text": "直接重灌所有設備系統" },
+      { "id": "D", "text": "只 ping 255.255.255.255 即可定位" }
+    ],
+    "answer": ["B"],
+    "explanation": "由下而上：鏈路、VLAN/Trunk、位址與 ARP、路由表、策略過濾。HCIE 強調系統化排障。"
+  },
+  {
+    "id": "hcie07",
+    "chapter": "HCIE 數通",
+    "tags": ["BGP"],
+    "difficulty": 3,
+    "type": "boolean",
+    "stem": "eBGP 多跳（ebgp-max-hop / ebgp-multihop）用於對等體不是直連，例如經 Loopback 建連。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "eBGP TTL 預設為 1。Loopback 互連需改 TTL，並保證 IGP 到達對端 Loopback。"
+  },
+  {
+    "id": "hcie08",
+    "chapter": "HCIE 數通",
+    "tags": ["流量", "PBR"],
+    "difficulty": 3,
+    "type": "single",
+    "stem": "策略路由（PBR）與目的路由的差別是？",
+    "options": [
+      { "id": "A", "text": "PBR 可依來源、應用等把流量送到不同下一跳，不完全跟目的表走" },
+      { "id": "B", "text": "PBR 會刪除路由表" },
+      { "id": "C", "text": "PBR 只能在二層交換機使用" },
+      { "id": "D", "text": "兩者完全相同" }
+    ],
+    "answer": ["A"],
+    "explanation": "目的路由只看目的前綴。PBR 用於引流、出口選擇、旁路防火牆等專家場景。"
+  },
+  {
+    "id": "hcie09",
+    "chapter": "HCIE 數通",
+    "tags": ["IPv6", "過渡"],
+    "difficulty": 3,
+    "type": "single",
+    "stem": "雙棧（Dual-Stack）過渡方案是指？",
+    "options": [
+      { "id": "A", "text": "節點同時跑 IPv4 與 IPv6" },
+      { "id": "B", "text": "立刻關閉全部 IPv4" },
+      { "id": "C", "text": "只用 NAT64 且主機不能有 IPv6 位址" },
+      { "id": "D", "text": "把 IPv6 封在 STP 裡" }
+    ],
+    "answer": ["A"],
+    "explanation": "雙棧最常見。另有隧道、NAT64/DNS64。HCIE 要能依現網選過渡路徑。"
+  },
+  {
+    "id": "hcie10",
+    "chapter": "HCIE 數通",
+    "tags": ["MPLS", "排障"],
+    "difficulty": 3,
+    "type": "multiple",
+    "stem": "L3VPN 客戶不通時，較應檢查哪些？（多選）",
+    "options": [
+      { "id": "A", "text": "VRF 是否綁對介面" },
+      { "id": "B", "text": "RT 導入／導出是否對上" },
+      { "id": "C", "text": "PE-PE 的 MP-BGP 與骨幹 LSP 是否正常" },
+      { "id": "D", "text": "客戶 PC 的螢幕解析度" }
+    ],
+    "answer": ["A", "B", "C"],
+    "explanation": "控制面（VRF、RD/RT、MP-BGP）與資料面（LSP/標籤）都要通。終端顯示與 VPN 無關。"
+  },
+  {
+    "id": "hcie11",
+    "chapter": "HCIE 數通",
+    "tags": ["安全"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "控制面安全（CP 防護／CoPP）主要保護？",
+    "options": [
+      { "id": "A", "text": "終端印表機驅動" },
+      { "id": "B", "text": "設備 CPU 處理的協定封包，避免被洪水打滿導致鄰居全斷" },
+      { "id": "C", "text": "只加密硬碟" },
+      { "id": "D", "text": "只用於無線漫遊" }
+    ],
+    "answer": ["B"],
+    "explanation": "限速、白名單保護 OSPF/BGP/SSH 等到 CPU 的流量，是骨幹穩定性的專家課題。"
+  },
+  {
+    "id": "hcie12",
+    "chapter": "HCIE 數通",
+    "tags": ["設計"],
+    "difficulty": 3,
+    "type": "boolean",
+    "stem": "HCIE 級設計常要在收斂速度、路徑優化、營運複雜度之間做取捨，而不是把所有特性一次全開。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "專家級重點是場景、風險與可維護性。特性堆疊可能讓排障更難。"
+  },
+  {
+    "id": "hcia-o01",
+    "chapter": "HCIA 數通",
+    "tags": ["VRP", "排序"],
+    "difficulty": 1,
+    "type": "order",
+    "stem": "華為交換器把介面劃入 VLAN 的常見順序。",
+    "tokens": [
+      { "id": "1", "text": "system-view" },
+      { "id": "2", "text": "vlan batch 10" },
+      { "id": "3", "text": "interface GigabitEthernet 0/0/1" },
+      { "id": "4", "text": "port default vlan 10" }
+    ],
+    "explanation": "先系統視圖，再建立 VLAN，進入介面後用 port default vlan 指定 Access VLAN。不要用 Cisco 的 switchport。"
+  },
+  {
+    "id": "hcia-c01",
+    "chapter": "HCIA 數通",
+    "tags": ["VRP", "填空"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "由使用者視圖進入系統視圖，指令是 ____。",
+    "blanks": [["system-view", "system view"]],
+    "explanation": "VRP 用 system-view，不是 enable 或 configure terminal。"
+  },
+  {
+    "id": "hcip-o01",
+    "chapter": "HCIP 數通",
+    "tags": ["OSPF", "排序"],
+    "difficulty": 2,
+    "type": "order",
+    "stem": "VRP 宣告 OSPF 網段的常見順序。",
+    "tokens": [
+      { "id": "1", "text": "system-view" },
+      { "id": "2", "text": "ospf 1" },
+      { "id": "3", "text": "area 0" },
+      { "id": "4", "text": "network 10.0.0.0 0.0.0.255" }
+    ],
+    "explanation": "先進系統視圖，建立 OSPF 行程，進入區域後再用 network 宣告（反碼遮罩）。"
+  },
+  {
+    "id": "hcip-s01",
+    "chapter": "HCIP 數通",
+    "tags": ["簡答"],
+    "difficulty": 2,
+    "type": "short",
+    "stem": "華為把多條實體鏈路綁成一條邏輯鏈路，這項技術常稱為？",
+    "aliases": ["Eth-Trunk", "eth-trunk", "Eth Trunk", "鏈路聚合"],
+    "explanation": "Eth-Trunk 是 VRP 的鏈路聚合，對應 Cisco 的 EtherChannel。"
+  }
+]

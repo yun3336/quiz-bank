@@ -1,0 +1,15 @@
+[
+  { "file": "en-sit.wav", "text": "Please sit down.", "culture": "en-US" },
+  { "file": "en-weather.wav", "text": "The weather is nice today.", "culture": "en-US" },
+  { "file": "en-morning.wav", "text": "I like to read books in the morning.", "culture": "en-US" },
+  { "file": "en-window.wav", "text": "Could you open the window, please?", "culture": "en-US" },
+  { "file": "en-library.wav", "text": "Where is the library?", "culture": "en-US" },
+  { "file": "en-thanks.wav", "text": "Thank you very much.", "culture": "en-US" },
+  { "file": "en-goodbye.wav", "text": "See you tomorrow.", "culture": "en-US" },
+  { "file": "zh-weather.wav", "text": "今天天氣很好。", "culture": "zh-TW" },
+  { "file": "zh-window.wav", "text": "請把窗戶打開。", "culture": "zh-TW" },
+  { "file": "zh-library.wav", "text": "圖書館在哪裡？", "culture": "zh-TW" },
+  { "file": "ja-book.wav", "text": "これは本です。", "culture": "ja-JP" },
+  { "file": "ja-morning.wav", "text": "おはようございます。", "culture": "ja-JP" },
+  { "file": "ja-thanks.wav", "text": "ありがとうございます。", "culture": "ja-JP" }
+]

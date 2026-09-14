@@ -1,0 +1,534 @@
+[
+  {
+    "id": "ph01",
+    "chapter": "物理入門",
+    "tags": ["單位"],
+    "difficulty": 1,
+    "type": "match",
+    "stem": "把物理量與常用單位配對。",
+    "pairs": [
+      { "left": "長度", "right": "公尺（m）" },
+      { "left": "時間", "right": "秒（s）" },
+      { "left": "質量", "right": "公斤（kg）" },
+      { "left": "力", "right": "牛頓（N）" }
+    ],
+    "explanation": "SI 基本量裡，長度用公尺、時間用秒、質量用公斤；力是導出單位牛頓。"
+  },
+  {
+    "id": "ph02",
+    "chapter": "物理入門",
+    "tags": ["速度"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "平均速率＝路程 ÷ ____。",
+    "blanks": [["時間"]],
+    "explanation": "速率看走了多遠、花了多久；速度才強調方向。"
+  },
+  {
+    "id": "ph03",
+    "chapter": "物理入門",
+    "tags": ["牛頓"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "物體不受外力（或合力為零）時，會？",
+    "options": [
+      { "id": "A", "text": "立刻停下" },
+      { "id": "B", "text": "保持靜止或等速直線運動" },
+      { "id": "C", "text": "一定加速" },
+      { "id": "D", "text": "質量變成零" }
+    ],
+    "answer": ["B"],
+    "explanation": "這是慣性定律：合力為零時運動狀態不變。"
+  },
+  {
+    "id": "ph04",
+    "chapter": "物理入門",
+    "tags": ["密度"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "密度的定義是質量除以什麼？",
+    "aliases": ["體積", "體積V"],
+    "explanation": "密度 ρ＝m／V。同體積時，密度大的質量較大。"
+  },
+  {
+    "id": "ph05",
+    "chapter": "物理入門",
+    "tags": ["能量"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "位置越高、重力位能通常？",
+    "options": [
+      { "id": "A", "text": "越小" },
+      { "id": "B", "text": "越大" },
+      { "id": "C", "text": "一定為零" },
+      { "id": "D", "text": "與高度無關" }
+    ],
+    "answer": ["B"],
+    "explanation": "重力位能大致與高度成正比（同一物體、同一重力場）。"
+  },
+  {
+    "id": "ph06",
+    "chapter": "物理入門",
+    "tags": ["電路"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "歐姆定律：電壓＝電流 × ____。",
+    "blanks": [["電阻", "R"]],
+    "explanation": "V＝IR。電阻越大，同樣電流需要更大電壓。"
+  },
+  {
+    "id": "ph07",
+    "chapter": "物理入門",
+    "tags": ["光"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "光在真空中的速率比在水中快。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "光在真空最快；進入水、玻璃會變慢，也常伴隨折射。"
+  },
+  {
+    "id": "ph08",
+    "chapter": "物理入門",
+    "tags": ["聲音"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "聲音最需要哪一種才能傳播？",
+    "options": [
+      { "id": "A", "text": "介質（如空氣、水）" },
+      { "id": "B", "text": "完全真空" },
+      { "id": "C", "text": "磁場" },
+      { "id": "D", "text": "一定要看到光源" }
+    ],
+    "answer": ["A"],
+    "explanation": "聲音是機械波，真空中無法傳遞；光可以在真空中走。"
+  },
+  {
+    "id": "ph09",
+    "chapter": "物理入門",
+    "tags": ["溫度"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "水在標準狀況下沸騰的攝氏溫度？",
+    "aliases": ["100", "100度", "100℃", "100°C"],
+    "explanation": "標準大氣壓下，水的沸點約 100°C，冰點 0°C。"
+  },
+  {
+    "id": "ph10",
+    "chapter": "物理入門",
+    "tags": ["力"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "質量 2 kg 的物體，重力大小約為？（g 取 10 m/s²）",
+    "options": [
+      { "id": "A", "text": "2 N" },
+      { "id": "B", "text": "12 N" },
+      { "id": "C", "text": "20 N" },
+      { "id": "D", "text": "200 N" }
+    ],
+    "answer": ["C"],
+    "explanation": "重量 W＝mg＝2×10＝20 N。質量單位是公斤，不是牛頓。"
+  },
+  {
+    "id": "ch01",
+    "chapter": "化學入門",
+    "tags": ["元素"],
+    "difficulty": 1,
+    "type": "match",
+    "stem": "把元素與化學符號配對。",
+    "pairs": [
+      { "left": "氫", "right": "H" },
+      { "left": "氧", "right": "O" },
+      { "left": "碳", "right": "C" },
+      { "left": "鈉", "right": "Na" }
+    ],
+    "explanation": "鈉的符號 Na 來自拉丁名，不是 N（N 是氮）。"
+  },
+  {
+    "id": "ch02",
+    "chapter": "化學入門",
+    "tags": ["水"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "水的化學式是 ____。",
+    "blanks": [["H2O", "H₂O"]],
+    "explanation": "兩個氫原子與一個氧原子組成一個水分子。"
+  },
+  {
+    "id": "ch03",
+    "chapter": "化學入門",
+    "tags": ["狀態"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "冰融化成水，主要改變的是？",
+    "options": [
+      { "id": "A", "text": "化學組成（變成新物質）" },
+      { "id": "B", "text": "物理狀態（固→液）" },
+      { "id": "C", "text": "原子核種類" },
+      { "id": "D", "text": "一定放出大量氧氣" }
+    ],
+    "answer": ["B"],
+    "explanation": "熔化是物理變化，水分子還是 H₂O，只是排列與運動改變。"
+  },
+  {
+    "id": "ch04",
+    "chapter": "化學入門",
+    "tags": ["酸鹼"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "pH＝7 的水溶液通常視為？",
+    "options": [
+      { "id": "A", "text": "強酸" },
+      { "id": "B", "text": "強鹼" },
+      { "id": "C", "text": "中性" },
+      { "id": "D", "text": "無法判斷" }
+    ],
+    "answer": ["C"],
+    "explanation": "25°C 時 pH＝7 接近中性；小於 7 偏酸，大於 7 偏鹼。"
+  },
+  {
+    "id": "ch05",
+    "chapter": "化學入門",
+    "tags": ["燃燒"],
+    "difficulty": 2,
+    "type": "boolean",
+    "stem": "燃燒通常需要可燃物、氧氣（或助燃物）與達到燃點。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "缺一不可。隔絕氧氣（如蓋鍋蓋）常可滅火。"
+  },
+  {
+    "id": "ch06",
+    "chapter": "化學入門",
+    "tags": ["空氣"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "空氣中體積百分率最高的氣體是？",
+    "aliases": ["氮", "氮氣", "N2", "N₂"],
+    "explanation": "氮氣約 78%，氧氣約 21%，其餘是氬、二氧化碳等。"
+  },
+  {
+    "id": "ch07",
+    "chapter": "化學入門",
+    "tags": ["溶液"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "把糖溶在水裡，糖是？",
+    "options": [
+      { "id": "A", "text": "溶劑" },
+      { "id": "B", "text": "溶質" },
+      { "id": "C", "text": "催化劑" },
+      { "id": "D", "text": "沉澱" }
+    ],
+    "answer": ["B"],
+    "explanation": "被溶解的是溶質，水是溶劑，整體叫溶液。"
+  },
+  {
+    "id": "ch08",
+    "chapter": "化學入門",
+    "tags": ["原子"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "原子中帶正電的是 ____。",
+    "blanks": [["質子"]],
+    "explanation": "質子帶正電、電子帶負電、中子不帶電。原子序等於質子數。"
+  },
+  {
+    "id": "ch09",
+    "chapter": "化學入門",
+    "tags": ["金屬"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "下列哪項比較像金屬的通性？",
+    "options": [
+      { "id": "A", "text": "通常易導電、有光澤" },
+      { "id": "B", "text": "常溫都是氣體" },
+      { "id": "C", "text": "一定不導電" },
+      { "id": "D", "text": "都是惰性、完全不反應" }
+    ],
+    "answer": ["A"],
+    "explanation": "多數金屬有金屬光澤、延展性、能導電導熱。汞在常溫是液體。"
+  },
+  {
+    "id": "ch10",
+    "chapter": "化學入門",
+    "tags": ["二氧化碳"],
+    "difficulty": 2,
+    "type": "short",
+    "stem": "澄清石灰水遇到二氧化碳，常會變得如何？",
+    "aliases": ["混濁", "變混濁", "變白", "產生沉澱"],
+    "explanation": "二氧化碳使石灰水變混濁，是常見的鑑定現象。"
+  },
+  {
+    "id": "bi01",
+    "chapter": "生物入門",
+    "tags": ["細胞"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "生物的基本結構與功能單位通常是？",
+    "options": [
+      { "id": "A", "text": "器官" },
+      { "id": "B", "text": "細胞" },
+      { "id": "C", "text": "族群" },
+      { "id": "D", "text": "生物圈" }
+    ],
+    "answer": ["B"],
+    "explanation": "細胞是生命的基本單位；器官由組織構成，層級更高。"
+  },
+  {
+    "id": "bi02",
+    "chapter": "生物入門",
+    "tags": ["細胞"],
+    "difficulty": 1,
+    "type": "match",
+    "stem": "把細胞構造與功能配對。",
+    "pairs": [
+      { "left": "細胞核", "right": "含遺傳物質" },
+      { "left": "細胞膜", "right": "控制物質進出" },
+      { "left": "粒線體", "right": "進行呼吸作用產能" },
+      { "left": "葉綠體", "right": "進行光合作用" }
+    ],
+    "explanation": "葉綠體主要在植物綠色部位；動物細胞沒有葉綠體。"
+  },
+  {
+    "id": "bi03",
+    "chapter": "生物入門",
+    "tags": ["光合"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "綠色植物進行光合作用，主要在 ____ 中進行。",
+    "blanks": [["葉綠體"]],
+    "explanation": "葉綠體含葉綠素，能吸收光能製造養分。"
+  },
+  {
+    "id": "bi04",
+    "chapter": "生物入門",
+    "tags": ["遺傳"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "攜帶遺傳訊息的主要物質簡稱是？",
+    "aliases": ["DNA", "去氧核醣核酸"],
+    "explanation": "DNA 儲存遺傳訊息；基因是 DNA 上有功能的片段。"
+  },
+  {
+    "id": "bi05",
+    "chapter": "生物入門",
+    "tags": ["分類"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "病毒通常被視為能獨立完成所有生命活動的細胞生物。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["B"],
+    "explanation": "病毒沒有完整細胞構造，必須在宿主內才能複製，一般不視為典型細胞生物。"
+  },
+  {
+    "id": "bi06",
+    "chapter": "生物入門",
+    "tags": ["呼吸"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "人體呼吸作用的主要目的之一是？",
+    "options": [
+      { "id": "A", "text": "把光能變成化學能" },
+      { "id": "B", "text": "分解養分釋放能量供細胞使用" },
+      { "id": "C", "text": "把氮氣變成蛋白質" },
+      { "id": "D", "text": "製造葉綠素" }
+    ],
+    "answer": ["B"],
+    "explanation": "細胞呼吸分解葡萄糖等養分，釋出能量（ATP）。光合作用才是植物固光能。"
+  },
+  {
+    "id": "bi07",
+    "chapter": "生物入門",
+    "tags": ["食物網"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "在食物鏈中，綠色植物通常扮演？",
+    "options": [
+      { "id": "A", "text": "生產者" },
+      { "id": "B", "text": "初級消費者" },
+      { "id": "C", "text": "分解者" },
+      { "id": "D", "text": "頂級掠食者" }
+    ],
+    "answer": ["A"],
+    "explanation": "植物行光合作用製造有機物，是生產者。分解者多是菌類、細菌。"
+  },
+  {
+    "id": "bi08",
+    "chapter": "生物入門",
+    "tags": ["人體"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "血液循環中，把氧送到全身的紅色細胞是 ____。",
+    "blanks": [["紅血球", "紅細胞"]],
+    "explanation": "紅血球含血紅素，負責運氧。白血球主要與防禦有關。"
+  },
+  {
+    "id": "bi09",
+    "chapter": "生物入門",
+    "tags": ["植物"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "植物根的主要功能之一是吸收什麼？",
+    "aliases": ["水", "水分", "水和礦物質", "水分與礦物質"],
+    "explanation": "根吸收水分與礦物質，也有固定植株的作用。"
+  },
+  {
+    "id": "bi10",
+    "chapter": "生物入門",
+    "tags": ["演化"],
+    "difficulty": 2,
+    "type": "boolean",
+    "stem": "適應環境的性狀較容易被保留下來，是天擇的基本概念。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "在該環境下較能存活、繁殖的個體，其特徵較容易傳到下一世代。"
+  },
+  {
+    "id": "ea01",
+    "chapter": "地球科學",
+    "tags": ["地球"],
+    "difficulty": 1,
+    "type": "order",
+    "stem": "由地表往地心，排出地球內部大致層序。",
+    "tokens": [
+      { "id": "1", "text": "地殼" },
+      { "id": "2", "text": "地函" },
+      { "id": "3", "text": "地核" }
+    ],
+    "explanation": "最外是地殼，中間地函，最內是地核。"
+  },
+  {
+    "id": "ea02",
+    "chapter": "地球科學",
+    "tags": ["岩石"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "岩漿冷卻凝固形成的岩石屬於？",
+    "options": [
+      { "id": "A", "text": "沉積岩" },
+      { "id": "B", "text": "火成岩" },
+      { "id": "C", "text": "變質岩" },
+      { "id": "D", "text": "化石" }
+    ],
+    "answer": ["B"],
+    "explanation": "火成岩由岩漿冷卻而成。沉積岩由沉積物壓實，變質岩由原岩變質。"
+  },
+  {
+    "id": "ea03",
+    "chapter": "地球科學",
+    "tags": ["天氣"],
+    "difficulty": 1,
+    "type": "cloze",
+    "stem": "測量氣溫常用的溫度單位，在臺灣日常生活中多是 ____。",
+    "blanks": [["攝氏", "°C", "℃", "攝氏度"]],
+    "explanation": "日常氣象用攝氏。開氏多用於科學計算。"
+  },
+  {
+    "id": "ea04",
+    "chapter": "地球科學",
+    "tags": ["水循環"],
+    "difficulty": 1,
+    "type": "match",
+    "stem": "把水循環過程與描述配對。",
+    "pairs": [
+      { "left": "蒸發", "right": "液態水變成水氣" },
+      { "left": "凝結", "right": "水氣變成雲或露" },
+      { "left": "降水", "right": "雨、雪落到地面" },
+      { "left": "逕流", "right": "水在地表流動" }
+    ],
+    "explanation": "太陽提供能量驅動蒸發；冷卻凝結成雲，再降水回到地面。"
+  },
+  {
+    "id": "ea05",
+    "chapter": "地球科學",
+    "tags": ["月亮"],
+    "difficulty": 2,
+    "type": "boolean",
+    "stem": "月食發生時，地球走到太陽與月球之間。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "日食是月球擋在太陽與地球之間；月食是地球影子落到月球上。"
+  },
+  {
+    "id": "ea06",
+    "chapter": "地球科學",
+    "tags": ["板塊"],
+    "difficulty": 2,
+    "type": "single",
+    "stem": "地震、火山較常出現在？",
+    "options": [
+      { "id": "A", "text": "板塊交界帶" },
+      { "id": "B", "text": "絕對平坦、毫無應力的區塊（理想狀況）" },
+      { "id": "C", "text": "只發生在沙漠" },
+      { "id": "D", "text": "只與颱風路徑重合" }
+    ],
+    "answer": ["A"],
+    "explanation": "板塊互相擠壓、張裂或錯動的地方，能量容易釋放成地震，岩漿也較易上升。"
+  },
+  {
+    "id": "ea07",
+    "chapter": "地球科學",
+    "tags": ["太陽系"],
+    "difficulty": 1,
+    "type": "short",
+    "stem": "太陽系中，我們所在的行星名稱？",
+    "aliases": ["地球", "Earth"],
+    "explanation": "地球是太陽系的岩石行星，有液態水與適合生命的大氣。"
+  },
+  {
+    "id": "ea08",
+    "chapter": "地球科學",
+    "tags": ["大氣"],
+    "difficulty": 1,
+    "type": "single",
+    "stem": "天氣現象主要發生在大氣的哪一層？",
+    "options": [
+      { "id": "A", "text": "對流層" },
+      { "id": "B", "text": "增溫層" },
+      { "id": "C", "text": "外氣層" },
+      { "id": "D", "text": "地核" }
+    ],
+    "answer": ["A"],
+    "explanation": "雲、雨、風主要在對流層。臭氧層主要在平流層。"
+  },
+  {
+    "id": "ea09",
+    "chapter": "地球科學",
+    "tags": ["資源"],
+    "difficulty": 2,
+    "type": "cloze",
+    "stem": "煤、石油這類形成需極長時間、用完短期内難再生的能源，稱為 ____ 能源。",
+    "blanks": [["非再生", "不可再生"]],
+    "explanation": "化石燃料屬非再生能源。太陽能、風能屬再生能源。"
+  },
+  {
+    "id": "ea10",
+    "chapter": "地球科學",
+    "tags": ["方位"],
+    "difficulty": 1,
+    "type": "boolean",
+    "stem": "在北半球，北極星可用來大致判斷北方。",
+    "options": [
+      { "id": "A", "text": "正確" },
+      { "id": "B", "text": "錯誤" }
+    ],
+    "answer": ["A"],
+    "explanation": "北極星接近北天極，夜間可用來找北方。南半球看不到北極星。"
+  }
+]

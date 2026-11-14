@@ -1,3 +1,4 @@
+import { clearKeysWithPrefix } from "./localData";
 import { parseRemindPref, type RemindPref } from "./remind";
 import { parseExamSession, parsePracticeSession, type ExamSession, type PracticeSession } from "./session";
 import { compactStore, MAX_ATTEMPTS, MAX_EXAM_HISTORY, mergeProgressStores, normalizeNote, normalizeNotes } from "./progress";
@@ -369,4 +370,25 @@ export function clearExamSession(): void {
   if (!localStorage.getItem(EXAM_SESSION_KEY)) return;
   localStorage.removeItem(EXAM_SESSION_KEY);
   notifySession();
+}
+
+/**
+ * 清除這個瀏覽器裡所有 quiz-bank 本機資料（localStorage／sessionStorage 前綴鍵、
+ * vendor cookie）。不會呼叫任何伺服器。呼叫端宜一併 `resetCatalogCache()`。
+ */
+export function clearLocalQuizBankData(): void {
+  if (!canUseStorage()) return;
+  clearKeysWithPrefix(localStorage);
+  clearKeysWithPrefix(sessionStorage);
+  document.cookie = `${VENDOR_COOKIE}=; path=/; max-age=0; samesite=lax`;
+  try {
+    delete document.documentElement.dataset.vendor;
+    document.documentElement.classList.remove("dark");
+  } catch {
+    /* ignore */
+  }
+  notifyProgress();
+  notifySession();
+  window.dispatchEvent(new Event(VENDOR_EVENT));
+  window.dispatchEvent(new Event(REMIND_EVENT));
 }

@@ -95,11 +95,21 @@ export function AppShell({ children }: { children: ReactNode }) {
       >
         {children}
       </main>
-      <footer className="mx-auto hidden w-full max-w-5xl px-4 pb-[max(2rem,env(safe-area-inset-bottom))] text-center text-xs text-slate-400 md:block">
-        作答進度只存在這個瀏覽器，可在統計頁備份
-        <span className="qb-install-hint">
-          。可用瀏覽器選單加入主畫面；連線時打開過的頁面，之後能離線刷
-        </span>
+      <footer className="mx-auto w-full max-w-5xl px-4 pb-[max(5.5rem,calc(4.25rem+env(safe-area-inset-bottom)))] text-center text-xs text-slate-400 md:pb-[max(2rem,env(safe-area-inset-bottom))]">
+        <p className="hidden md:block">
+          作答進度只存在這個瀏覽器，可在統計頁備份
+          <span className="qb-install-hint">
+            。可用瀏覽器選單加入主畫面；連線時打開過的頁面，之後能離線刷
+          </span>
+        </p>
+        <p className="mt-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+          <Link href="/privacy" data-full-nav className="underline-offset-2 hover:text-slate-600 hover:underline">
+            隱私政策
+          </Link>
+          <Link href="/support" data-full-nav className="underline-offset-2 hover:text-slate-600 hover:underline">
+            支援
+          </Link>
+        </p>
       </footer>
       <nav className="qb-bottom-nav" aria-label="主要分頁">
         {tabLinks.map((link) => {

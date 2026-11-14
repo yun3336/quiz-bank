@@ -1,5 +1,16 @@
-const CACHE = "quiz-bank-offline-v3";
-const PRECACHE = ["/", "/practice", "/exam", "/review", "/lab", "/stats", "/offline.html", "/manifest.webmanifest"];
+const CACHE = "quiz-bank-offline-v4";
+const PRECACHE = [
+  "/",
+  "/practice",
+  "/exam",
+  "/review",
+  "/lab",
+  "/stats",
+  "/privacy",
+  "/support",
+  "/offline.html",
+  "/manifest.webmanifest",
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

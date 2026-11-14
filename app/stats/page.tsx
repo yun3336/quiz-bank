@@ -11,6 +11,7 @@ import { REMIND_HOURS, type RemindHour, type RemindPref } from "@/lib/remind";
 import { getChapterStats, getOverview, getStudyStreak, percent } from "@/lib/stats";
 import { allLabs } from "@/lib/lab/labs";
 import {
+  clearLocalQuizBankData,
   exportProgressJson,
   importProgressJson,
   loadProgress,
@@ -18,7 +19,7 @@ import {
   saveRemindPref,
   subscribeProgress,
 } from "@/lib/storage";
-import { cachedCatalog, loadCatalog } from "@/lib/questionClient";
+import { cachedCatalog, loadCatalog, resetCatalogCache } from "@/lib/questionClient";
 import { isOpenWrong, openWrongCount } from "@/lib/review";
 import type { ProgressStore, Question } from "@/lib/types";
 import { useActiveVendor } from "@/lib/useResolvedVendor";
@@ -387,11 +388,25 @@ function BackupPanel() {
     reader.readAsText(file, "utf-8");
   }
 
+  function eraseAll() {
+    const confirmed = window.confirm(
+      "會永久刪除這個瀏覽器裡的作答、模考、實驗、收藏、筆記、提醒、主題與題庫快取，而且無法復原。建議先匯出備份。確定清除？",
+    );
+    if (!confirmed) return;
+    clearLocalQuizBankData();
+    resetCatalogCache();
+    setMessage("已清除這個瀏覽器的題庫本機資料。");
+  }
+
   return (
     <section className="qb-card p-5">
-      <h2 className="font-semibold">備份進度</h2>
+      <h2 className="font-semibold">備份與清除</h2>
       <p className="mt-1 text-sm leading-relaxed text-slate-500">
-        作答、收藏與筆記只存在這個瀏覽器。清快取前先匯出。換電腦請用「匯入並合併」；只有要完全改成備份檔時才用覆蓋。
+        作答、收藏與筆記只存在這個瀏覽器。清快取前先匯出。換電腦請用「匯入並合併」；只有要完全改成備份檔時才用覆蓋。也可一次清除全部本機題庫資料。詳見{" "}
+        <a href="/privacy" data-full-nav className="underline underline-offset-2">
+          隱私政策
+        </a>
+        。
       </p>
       <div className="mt-4 flex flex-wrap gap-2">
         <button type="button" onClick={download} className="rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-medium text-white">
@@ -402,6 +417,13 @@ function BackupPanel() {
         </button>
         <button type="button" onClick={() => pick("replace")} className="rounded-xl border border-slate-200 px-4 py-2.5 text-sm text-slate-600">
           用檔案覆蓋
+        </button>
+        <button
+          type="button"
+          onClick={eraseAll}
+          className="rounded-xl border border-red-200 bg-red-50 px-4 py-2.5 text-sm font-medium text-red-800"
+        >
+          清除全部本機資料
         </button>
         <input
           ref={inputRef}

@@ -8,6 +8,7 @@
     "start": "next start",
     "install:offline": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/install-deps.ps1",
     "audio:generate": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/generate-audio.ps1",
+    "audio:generate:ja": "bash ./scripts/generate-ja-audio.sh",
     "test": "node ./node_modules/typescript/bin/tsc -p tsconfig.test.json && node --test \".tmp-test/tests/*.test.js\""
   },
   "dependencies": {

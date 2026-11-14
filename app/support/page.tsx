@@ -20,7 +20,8 @@ export default function SupportPage() {
           <li>錯題複習（間隔複習）、收藏與筆記</li>
           <li>Cisco IOS／華為 VRP 風格 CLI 實驗（網頁模擬）</li>
           <li>統計、熱力圖與本機進度備份</li>
-          <li>可選擇加入主畫面（PWA）；已開過的頁面可有限度離線瀏覽，批改需連線</li>
+          <li>可選擇加入主畫面（PWA）；網站版已開過的頁面可有限度離線瀏覽，批改通常需連線</li>
+          <li>原生殼（iOS Capacitor 本機包）可在離線完成練習批改（內建本機題庫；口說辨識仍可能需網路）</li>
         </ul>
       </section>
 
@@ -68,7 +69,9 @@ export default function SupportPage() {
           </div>
           <div>
             <h3 className="font-medium text-slate-900">離線顯示「需連線批改」？</h3>
-            <p>題幹或可離線作答，但批改必須連線呼叫伺服端。連線後再提交即可。</p>
+            <p>
+              網站版批改需連線呼叫伺服端。若使用已打包的原生殼且內建離線題庫，練習批改可在離線完成；否則請連線後再提交。
+            </p>
           </div>
           <div>
             <h3 className="font-medium text-slate-900">提醒沒有響？</h3>

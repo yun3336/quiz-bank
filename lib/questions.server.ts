@@ -10,7 +10,8 @@ import phase3Questions from "@/data/phase3-questions.json";
 import phase4Questions from "@/data/phase4-questions.json";
 import phase5Questions from "@/data/phase5-questions.json";
 import { canAccessQuestion } from "./access";
-import { byDifficulty, flattenPickUnits, groupPickUnits, shuffle, type DifficultyFilter } from "./questions";
+import type { DifficultyFilter } from "./questions";
+import { pickQuestionsFromPool } from "./quizPick.shared";
 import type { Question, QuestionType } from "./types";
 import { chapterVendor, questionVendor, type Vendor } from "./vendor";
 
@@ -53,23 +54,7 @@ export function pickQuestions(options: {
   excludeAudio?: boolean;
   difficulty?: DifficultyFilter;
 }): Question[] {
-  let pool = filterQuestions({ vendor: options.vendor, chapter: options.chapter });
-  pool = byDifficulty(pool, options.difficulty);
-  if (options.excludePassage) pool = pool.filter((item) => !item.passageId);
-  if (options.excludeAudio) pool = pool.filter((item) => !item.audioSrc);
-  if (options.types && options.types.length > 0) {
-    pool = pool.filter((item) => options.types?.includes(item.type));
-  }
-  let units = groupPickUnits(pool);
-  if (options.preferTypes && options.preferTypes.length > 0) {
-    const preferred = units.filter((unit) => unit.some((item) => options.preferTypes?.includes(item.type)));
-    const rest = units.filter((unit) => !unit.some((item) => options.preferTypes?.includes(item.type)));
-    units = options.random ? [...shuffle(preferred), ...shuffle(rest)] : [...preferred, ...rest];
-  } else {
-    units = options.random ? shuffle(units) : units;
-  }
-  if (options.count === "all") return flattenPickUnits(units);
-  return flattenPickUnits(units.slice(0, Math.min(options.count, units.length)));
+  return pickQuestionsFromPool(filterQuestions({}), options);
 }
 
 export function questionsByVendor(vendor: Vendor): Question[] {

@@ -32,7 +32,6 @@ import {
   loadCatalog,
   loadQuiz,
   OfflineGradeError,
-  OFFLINE_GRADE_MESSAGE,
 } from "@/lib/questionClient";
 import {
   clearPracticeSession,
@@ -276,7 +275,7 @@ export function PracticeClient({ start }: { start: PracticeStart | null }) {
       setQuiz((list) => list.map((item) => (item.id === result.question.id ? result.question : item)));
       saveAttempt(result.question, selected, result.correct);
     } catch (error) {
-      setGradeError(error instanceof OfflineGradeError ? OFFLINE_GRADE_MESSAGE : "批改失敗，請再試一次。");
+      setGradeError(error instanceof OfflineGradeError ? error.message : "批改失敗，請再試一次。");
     }
   }
 
@@ -293,7 +292,7 @@ export function PracticeClient({ start }: { start: PracticeStart | null }) {
       setQuiz((list) => list.map((item) => (item.id === result.question.id ? result.question : item)));
       setRevealed(true);
     } catch (error) {
-      setGradeError(error instanceof OfflineGradeError ? OFFLINE_GRADE_MESSAGE : "需連線才能看答案。");
+      setGradeError(error instanceof OfflineGradeError ? error.message : "需連線才能看答案。");
     }
   }
 
@@ -305,7 +304,7 @@ export function PracticeClient({ start }: { start: PracticeStart | null }) {
       setQuiz((list) => list.map((item) => (item.id === result.question.id ? result.question : item)));
       saveAttempt(result.question, selected, false);
     } catch (error) {
-      setGradeError(error instanceof OfflineGradeError ? OFFLINE_GRADE_MESSAGE : "批改失敗，請再試一次。");
+      setGradeError(error instanceof OfflineGradeError ? error.message : "批改失敗，請再試一次。");
       saveAttempt(current, selected, false);
     }
   }

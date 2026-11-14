@@ -12,7 +12,7 @@ import { examResumeHref, examStartHref, type ExamStart } from "@/lib/quizStart";
 import { isAnswered } from "@/lib/grade";
 import { stopSpeaking } from "@/lib/languagePractice";
 import { ALL_CHAPTER, type DifficultyFilter } from "@/lib/questions";
-import { gradeExamRemote, loadCatalog, loadQuiz, OfflineGradeError, OFFLINE_GRADE_MESSAGE } from "@/lib/questionClient";
+import { gradeExamRemote, loadCatalog, loadQuiz, OfflineGradeError } from "@/lib/questionClient";
 import { applyReveal } from "@/lib/questionPublic";
 import {
   clearExamSession,
@@ -219,7 +219,7 @@ export function ExamClient({ start }: { start: ExamStart | null }) {
       router.push("/exam/result");
     } catch (error) {
       submittedRef.current = false;
-      setGradeError(error instanceof OfflineGradeError ? OFFLINE_GRADE_MESSAGE : "交卷批改失敗，請連線後再試。");
+      setGradeError(error instanceof OfflineGradeError ? error.message : "交卷批改失敗，請連線後再試。");
     }
   }
 

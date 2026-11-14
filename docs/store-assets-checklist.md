@@ -40,11 +40,12 @@
 - [ ] 字型 CDN（Google Fonts）連線
 - [ ] 無分析／廣告 SDK（若日後加入須更新政策與標籤）
 
-## 平台帳號與建置（非本 Stage）
+## 平台帳號與建置
 
 - [ ] 確認 Apple Developer 會籍有效
 - [ ] （Android）取得 Google Play 開發者帳號
-- [ ] 選定包裝方案後再產 IPA／AAB（本清單不預設 WebView 必過審）
+- [ ] 依 `docs/ios-capacitor.md` 執行 `npm run native:www` → `npx cap sync ios` → Xcode Archive（Linux CI 無法簽名）
+- [ ] 確認送審包為本機 `www`（含離線題庫），而非只開遠端網站
 
 ## 明確不做（除非另開需求）
 

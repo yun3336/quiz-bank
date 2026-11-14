@@ -12,14 +12,14 @@ export default function PrivacyPage() {
     <div className="space-y-8 qb-in">
       <PageHeader
         title="隱私政策"
-        desc="本頁只描述目前產品實際行為。最後更新：2026-11-14。"
+        desc="本頁只描述目前產品實際行為。最後更新：2026-11-14（含原生殼離線批改說明）。"
       />
 
       <section className="space-y-3 text-sm leading-relaxed text-slate-700">
         <h2 className="text-base font-semibold text-slate-900">摘要</h2>
         <p>
-          「題庫刷題」是網頁／PWA 練習工具。目前<strong>沒有登入或帳戶</strong>、<strong>沒有付款</strong>、
-          <strong>沒有分析或廣告 SDK</strong>，也<strong>沒有伺服器端個人帳號資料庫</strong>。作答進度預設只存在你這個瀏覽器。
+          「題庫刷題」是網頁／PWA 練習工具，並可打包為本機原生殼（例如 iOS Capacitor）。目前<strong>沒有登入或帳戶</strong>、<strong>沒有付款</strong>、
+          <strong>沒有分析或廣告 SDK</strong>，也<strong>沒有伺服器端個人帳號資料庫</strong>。作答進度預設只存在你這個裝置／瀏覽器。
         </p>
       </section>
 
@@ -39,11 +39,23 @@ export default function PrivacyPage() {
       </section>
 
       <section className="space-y-3 text-sm leading-relaxed text-slate-700">
-        <h2 className="text-base font-semibold text-slate-900">連線時送出的內容</h2>
+        <h2 className="text-base font-semibold text-slate-900">連線時送出的內容（網站）</h2>
         <p>
-          抽題與批改會呼叫本站 API（例如 <code className="qb-mono text-xs">/api/quiz</code>、
+          在一般網站使用時，抽題與批改會呼叫本站 API（例如 <code className="qb-mono text-xs">/api/quiz</code>、
           <code className="qb-mono text-xs">/api/grade</code>）。請求會帶上題目識別與你選的答案，以便伺服端批改；
-          這些請求<strong>不綁登入帳號</strong>。批改結果會寫回你瀏覽器的本機進度。
+          網站端回傳的題目會去掉正解與解析。這些請求<strong>不綁登入帳號</strong>。批改結果會寫回你瀏覽器的本機進度。
+        </p>
+      </section>
+
+      <section className="space-y-3 text-sm leading-relaxed text-slate-700">
+        <h2 className="text-base font-semibold text-slate-900">原生殼離線批改（本機題庫）</h2>
+        <p>
+          若你使用<strong>打包進裝置的原生殼</strong>（Capacitor www，而非只開啟遠端網站），應用程式會內建完整題庫檔
+          （<code className="qb-mono text-xs">offline-bank.json</code>），其中<strong>包含批改所需的正解與解析</strong>，
+          以便在無網路時完成練習／模考批改。此檔只隨原生包分發，<strong>不會</strong>放在公開網站靜態目錄供一般訪客下載。
+        </p>
+        <p>
+          口說題的麥克風語音辨識在離線時可能不可用；你仍可打字作答並由本機批改。離線批改不會把答案上傳到自有伺服器。
         </p>
       </section>
 

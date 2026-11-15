@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { ExamClient } from "@/components/ExamClient";
 import { parseExamStart, readSearchParams } from "@/lib/quizStart";
@@ -5,6 +6,10 @@ import { VENDOR_COOKIE } from "@/lib/storage";
 import { tryParseVendor } from "@/lib/vendor";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/exam" },
+};
 
 export default async function ExamPage({
   searchParams,

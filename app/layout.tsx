@@ -2,12 +2,14 @@ import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import { AppShell } from "@/components/AppShell";
 import { PwaRegister } from "@/components/PwaRegister";
+import { SITE_URL } from "@/lib/site";
 import { VendorProvider } from "@/lib/useResolvedVendor";
 import { VENDOR_COOKIE } from "@/lib/storage";
 import { tryParseVendor } from "@/lib/vendor";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "題庫刷題",
   description: "計算機、語言、數學、自然科學與職場證照刷題",
   applicationName: "題庫刷題",

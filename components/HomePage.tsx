@@ -7,7 +7,7 @@ import { VendorMark } from "@/components/ui";
 import { allLabs } from "@/lib/lab/labs";
 import { homeHref, type HomeQuery } from "@/lib/homeSearch";
 import { examResumeHref, practiceChapterHref, practiceQuestionHref, practiceResumeHref, practiceTodayHref } from "@/lib/quizStart";
-import { cachedCatalog, loadCatalog } from "@/lib/questionClient";
+import { cachedCatalog, loadCatalog, loadVendorCatalogMeta } from "@/lib/questionClient";
 import { searchQuestions, searchReady, stemSnippet } from "@/lib/questionSearch";
 import { examClockRemaining, formatClock, type ExamSession, type PracticeSession } from "@/lib/session";
 import { getStudyStreak, type StudyStreak } from "@/lib/stats";
@@ -60,6 +60,7 @@ export function HomePage({
   const [practiceSession, setPracticeSession] = useState<PracticeSession | null>(null);
   const [examSession, setExamSession] = useState<ExamSession | null>(null);
   const [catalog, setCatalog] = useState(() => cachedCatalog());
+  const [vendorCounts, setVendorCounts] = useState<Partial<Record<Vendor, number>>>({});
   const searchRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -90,28 +91,43 @@ export function HomePage({
 
   useEffect(() => {
     let cancelled = false;
-    loadCatalog()
-      .then((items) => {
-        if (cancelled) return;
-        setCatalog(items);
-        const vendor = loadLastVendor();
-        if (vendor) setProgress(vendorProgress(vendor, items));
-      })
-      .catch(() => undefined);
+    async function load() {
+      const meta = await loadVendorCatalogMeta();
+      if (cancelled) return;
+      const countsMap: Partial<Record<Vendor, number>> = {};
+      for (const row of meta) countsMap[row.vendor] = row.count;
+      setVendorCounts(countsMap);
+      const vendor = loadLastVendor();
+      if (vendor) {
+        try {
+          const items = await loadCatalog(vendor);
+          if (cancelled) return;
+          setCatalog(items);
+          setProgress(vendorProgress(vendor, items));
+        } catch {
+          /* 離線用快取 */
+        }
+      }
+    }
+    load().catch(() => undefined);
     return () => {
       cancelled = true;
     };
   }, []);
 
+  function vendorTotal(vendor: Vendor): number {
+    return vendorCounts[vendor] ?? questionsByVendor(vendor, catalog).length;
+  }
+
   function counts(vendor: Vendor): string {
-    const total = questionsByVendor(vendor, catalog).length.toLocaleString("zh-Hant");
+    const total = vendorTotal(vendor).toLocaleString("zh-Hant");
     if (vendor === "cisco") return `${total} 題 · ${ciscoLabs} 個 LAB`;
     if (vendor === "huawei") return `${total} 題 · ${huaweiLabs} 個 LAB`;
     return `${total} 題`;
   }
 
   function countLabel(vendor: Vendor): string {
-    return `${questionsByVendor(vendor, catalog).length.toLocaleString("zh-Hant")} 題`;
+    return `${vendorTotal(vendor).toLocaleString("zh-Hant")} 題`;
   }
 
   const todayDone = todayAttemptCount(store.attempts);

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import { AppShell } from "@/components/AppShell";
+import { PendingFlush } from "@/components/PendingFlush";
 import { PwaRegister } from "@/components/PwaRegister";
 import { SITE_URL } from "@/lib/site";
 import { VendorProvider } from "@/lib/useResolvedVendor";
@@ -55,6 +56,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body>
         <VendorProvider initialVendor={vendor}>
           <AppShell>{children}</AppShell>
+          <PendingFlush />
         </VendorProvider>
         <PwaRegister />
       </body>

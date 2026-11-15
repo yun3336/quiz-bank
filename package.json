@@ -9,15 +9,22 @@
     "install:offline": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/install-deps.ps1",
     "audio:generate": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/generate-audio.ps1",
     "audio:generate:ja": "bash ./scripts/generate-ja-audio.sh",
+    "native:www": "node ./scripts/build-capacitor-www.mjs",
+    "native:sync": "npm run native:www && npx cap sync ios",
+    "native:audit-www": "node ./scripts/audit-www-no-answers.mjs",
     "test": "node ./node_modules/typescript/bin/tsc -p tsconfig.test.json && node --test \".tmp-test/tests/*.test.js\""
   },
   "dependencies": {
+    "@capacitor/app": "7.1.0",
+    "@capacitor/core": "7.4.3",
+    "@capacitor/ios": "7.4.3",
     "next": "16.3.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "server-only": "0.0.1"
   },
   "devDependencies": {
+    "@capacitor/cli": "7.4.3",
     "@tailwindcss/postcss": "4.3.3",
     "@types/node": "22.18.0",
     "@types/react": "19.2.18",

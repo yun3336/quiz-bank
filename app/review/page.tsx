@@ -17,7 +17,6 @@ import {
   loadCatalog,
   loadQuiz,
   OfflineGradeError,
-  OFFLINE_GRADE_MESSAGE,
 } from "@/lib/questionClient";
 import { consecutiveCorrect, dueLabel, dueWrongCount, expandForReview, isOpenWrong, openWrongCount, pickReviewQuiz, reviewItems, reviewTypeLabel, WRONG_CLEAR_STREAK, wrongDueDay, type ReviewTab } from "@/lib/review";
 import { loadProgress, recordAttempts, subscribeProgress } from "@/lib/storage";
@@ -126,7 +125,13 @@ function ReviewInner() {
     if (!current || !isAnswered(current, selected)) return;
     setGradeError("");
     try {
-      const result = await gradeRemote(current, selected);
+      const result = await gradeRemote(current, selected, { mode: "practice" });
+      if (result.status === "pending") {
+        setGradeError(result.message);
+        setSubmitted(true);
+        setLastCorrect(true);
+        return;
+      }
       setQuiz((list) => list.map((item) => (item.id === result.question.id ? result.question : item)));
       const attempt: Attempt = {
         questionId: current.id,
@@ -140,7 +145,7 @@ function ReviewInner() {
       setLastCorrect(result.correct);
       setSubmitted(true);
     } catch (error) {
-      setGradeError(error instanceof OfflineGradeError ? OFFLINE_GRADE_MESSAGE : "批改失敗，請再試一次。");
+      setGradeError(error instanceof OfflineGradeError ? error.message : "批改失敗，請再試一次。");
     }
   }
 

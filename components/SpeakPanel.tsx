@@ -50,6 +50,7 @@ export function SpeakPanel({
         {examMode
           ? "口說批改不穩，模考仍從寬比對。請允許麥克風。"
           : "瀏覽器語音辨識可能漏字或聽錯，接近即可。也可手動打出你說的內容。"}
+        離線時語音辨識可能不可用，請改打字；提交後若離線會標示待批改，連線再由伺服端評分。
       </p>
       <div className="flex flex-wrap gap-2">
         <button

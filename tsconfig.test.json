@@ -29,6 +29,10 @@
     "lib/access.ts",
     "lib/questionPublic.ts",
     "lib/localData.ts",
+    "lib/quizPick.shared.ts",
+    "lib/practiceModes.ts",
+    "lib/pendingGrade.ts",
+    "lib/rateLimit.ts",
     "tests/**/*.ts"
   ]
 }

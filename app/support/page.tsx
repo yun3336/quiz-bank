@@ -20,7 +20,8 @@ export default function SupportPage() {
           <li>錯題複習（間隔複習）、收藏與筆記</li>
           <li>Cisco IOS／華為 VRP 風格 CLI 實驗（網頁模擬）</li>
           <li>統計、熱力圖與本機進度備份</li>
-          <li>可選擇加入主畫面（PWA）；已開過的頁面可有限度離線瀏覽，批改需連線</li>
+          <li>可選擇加入主畫面（PWA）；已快取的公開題可離線閱讀</li>
+          <li>離線作答會標示「待批改」，連線後才由伺服端批改（原生殼亦不內建正解）</li>
         </ul>
       </section>
 
@@ -67,8 +68,11 @@ export default function SupportPage() {
             </p>
           </div>
           <div>
-            <h3 className="font-medium text-slate-900">離線顯示「需連線批改」？</h3>
-            <p>題幹或可離線作答，但批改必須連線呼叫伺服端。連線後再提交即可。</p>
+            <h3 className="font-medium text-slate-900">離線／待批改是什麼？</h3>
+            <p>
+              離線提交會暫存作答並顯示待批改／未評分，<strong>不會</strong>計入對錯或統計。連線後會自動或可手動送交伺服端批改。
+              原生 App 與網站皆不內建正解檔。
+            </p>
           </div>
           <div>
             <h3 className="font-medium text-slate-900">提醒沒有響？</h3>

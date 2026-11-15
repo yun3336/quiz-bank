@@ -1,24 +1,11 @@
 import type { Question } from "./types";
 import { normalizeAnswer, revealAnswer } from "./grade";
 import type { DifficultyFilter } from "./questions";
+import type { LanguagePracticeMode } from "./practiceModes";
 import type { Vendor } from "./vendor";
 
 export type { DifficultyFilter };
-
-export type LanguagePracticeMode =
-  | "mixed"
-  | "choice"
-  | "cloze"
-  | "flash"
-  | "match"
-  | "listen"
-  | "speed"
-  | "translate"
-  | "dictation"
-  | "reading"
-  | "hotspot"
-  | "speak"
-  | "audio";
+export type { LanguagePracticeMode } from "./practiceModes";
 
 export type DrillModeInfo = {
   id: LanguagePracticeMode;

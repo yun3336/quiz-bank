@@ -7,6 +7,13 @@ import { defaultDrillMode, type LanguagePracticeMode } from "@/lib/languagePract
 import { pickTodayQuiz } from "@/lib/todayPlan";
 import type { ProgressStore, Question } from "@/lib/types";
 import { tryParseVendor } from "@/lib/vendor";
+import {
+  clampQuizCount,
+  MAX_QUIZ_IDS,
+  RATE_QUIZ_PER_MIN,
+  RATE_WINDOW_MS,
+} from "@/lib/apiLimits";
+import { checkRateLimit, clientKeyFromRequest } from "@/lib/rateLimit";
 
 type QuizBody = {
   kind?: "practice" | "exam" | "today" | "ids";
@@ -26,6 +33,14 @@ function asPublic(items: Question[]): Question[] {
 }
 
 export async function POST(request: Request) {
+  const limited = checkRateLimit(`quiz:${clientKeyFromRequest(request)}`, RATE_QUIZ_PER_MIN, RATE_WINDOW_MS);
+  if (!limited.ok) {
+    return NextResponse.json(
+      { error: "rate-limited", retryAfterSec: limited.retryAfterSec },
+      { status: 429, headers: { "Retry-After": String(limited.retryAfterSec) } },
+    );
+  }
+
   let body: QuizBody;
   try {
     body = (await request.json()) as QuizBody;
@@ -39,12 +54,13 @@ export async function POST(request: Request) {
   }
 
   const chapter = body.chapter?.trim() || ALL_CHAPTER;
-  const count = body.count ?? 10;
+  const count = clampQuizCount(body.count, 10);
   const random = body.random !== false;
   const difficulty = body.difficulty ?? "all";
 
   if (body.kind === "ids" || (body.ids && body.ids.length > 0)) {
-    const picked = (body.ids ?? []).flatMap((id) => {
+    const ids = (body.ids ?? []).slice(0, MAX_QUIZ_IDS);
+    const picked = ids.flatMap((id) => {
       const question = resolveFullQuestion(id);
       return question ? expandPassage(question) : [];
     });

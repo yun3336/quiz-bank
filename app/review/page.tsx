@@ -125,7 +125,13 @@ function ReviewInner() {
     if (!current || !isAnswered(current, selected)) return;
     setGradeError("");
     try {
-      const result = await gradeRemote(current, selected);
+      const result = await gradeRemote(current, selected, { mode: "practice" });
+      if (result.status === "pending") {
+        setGradeError(result.message);
+        setSubmitted(true);
+        setLastCorrect(true);
+        return;
+      }
       setQuiz((list) => list.map((item) => (item.id === result.question.id ? result.question : item)));
       const attempt: Attempt = {
         questionId: current.id,

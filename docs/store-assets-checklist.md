@@ -45,7 +45,8 @@
 - [ ] 確認 Apple Developer 會籍有效
 - [ ] （Android）取得 Google Play 開發者帳號
 - [ ] 依 `docs/ios-capacitor.md` 執行 `npm run native:www` → `npx cap sync ios` → Xcode Archive（Linux CI 無法簽名）
-- [ ] 確認送審包為本機 `www`（含離線題庫），而非只開遠端網站
+- [ ] 確認送審包為本機 `www` UI（**不含**正解題庫），連線批改走 API；而非只開遠端整站 WebView
+- [ ] `npm run native:audit-www` 通過（無 offline-bank 產物）
 
 ## 明確不做（除非另開需求）
 

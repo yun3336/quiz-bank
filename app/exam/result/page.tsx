@@ -31,11 +31,20 @@ async function hydrateSnapshot(snapshot: ExamResultSnapshot): Promise<ExamResult
   const graded = await gradeExamRemote(
     snapshot.items.map((item) => ({ questionId: item.questionId, selected: item.selected })),
   );
+  if (graded.status !== "graded") {
+    return {
+      ...snapshot,
+      items: snapshot.items.map((item) => ({
+        ...item,
+        question: item.question ?? byId.get(item.questionId),
+      })),
+    };
+  }
   return {
     ...snapshot,
     items: snapshot.items.map((item, index) => {
       const base = item.question ?? byId.get(item.questionId);
-      const reveal = graded[index]?.reveal;
+      const reveal = graded.results[index]?.reveal;
       return {
         ...item,
         question: base && reveal ? applyReveal(base, reveal) : base,

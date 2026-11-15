@@ -57,6 +57,7 @@ export function PracticeClient({ start }: { start: PracticeStart | null }) {
   const [chapters, setChapters] = useState([ALL_CHAPTER]);
   const [gradeError, setGradeError] = useState("");
   const [lastCorrect, setLastCorrect] = useState(true);
+  const [pendingUngraded, setPendingUngraded] = useState(false);
   const [phase, setPhase] = useState<Phase>(
     isResume || start?.plan === "today" || start?.go || start?.qid ? "boot" : "setup",
   );
@@ -171,8 +172,10 @@ export function PracticeClient({ start }: { start: PracticeStart | null }) {
     const current = questions[resumeIndex];
     if (current && (session.submitted || session.revealed)) {
       try {
-        const result = await gradeRemote(current, session.selected, { peek: true });
-        questions = questions.map((item) => (item.id === result.question.id ? result.question : item));
+        const result = await gradeRemote(current, session.selected, { peek: true, mode: "practice" });
+        if (result.status === "graded") {
+          questions = questions.map((item) => (item.id === result.question.id ? result.question : item));
+        }
       } catch {
         /* 離線續看題幹，先不揭曉 */
       }
@@ -196,6 +199,8 @@ export function PracticeClient({ start }: { start: PracticeStart | null }) {
     setSelected([]);
     setRevealed(false);
     setSubmitted(false);
+    setPendingUngraded(false);
+    setGradeError("");
     setRemaining(SPEED_SECONDS);
   }
 
@@ -264,6 +269,13 @@ export function PracticeClient({ start }: { start: PracticeStart | null }) {
     if (correct) setCorrectCount((value) => value + 1);
     else setRoundWrong((list) => [...list, question]);
     setLastCorrect(correct);
+    setPendingUngraded(false);
+    setSubmitted(true);
+  }
+
+  function savePending(_question: Question, message: string) {
+    setGradeError(message);
+    setPendingUngraded(true);
     setSubmitted(true);
   }
 
@@ -271,7 +283,11 @@ export function PracticeClient({ start }: { start: PracticeStart | null }) {
     if (!current || !isAnswered(current, selected)) return;
     setGradeError("");
     try {
-      const result = await gradeRemote(current, selected);
+      const result = await gradeRemote(current, selected, { mode: "practice" });
+      if (result.status === "pending") {
+        savePending(result.question, result.message);
+        return;
+      }
       setQuiz((list) => list.map((item) => (item.id === result.question.id ? result.question : item)));
       saveAttempt(result.question, selected, result.correct);
     } catch (error) {
@@ -281,6 +297,7 @@ export function PracticeClient({ start }: { start: PracticeStart | null }) {
 
   function submitFlash(remembered: boolean) {
     if (!current) return;
+    // 閃卡「記得／忘了」是自評，不依賴伺服端正解
     saveAttempt(current, [remembered ? "remember" : "forgot"], remembered);
   }
 
@@ -288,7 +305,11 @@ export function PracticeClient({ start }: { start: PracticeStart | null }) {
     if (!current) return;
     setGradeError("");
     try {
-      const result = await gradeRemote(current, [], { peek: true });
+      const result = await gradeRemote(current, [], { peek: true, mode: "practice" });
+      if (result.status === "pending") {
+        setGradeError(result.message);
+        return;
+      }
       setQuiz((list) => list.map((item) => (item.id === result.question.id ? result.question : item)));
       setRevealed(true);
     } catch (error) {
@@ -300,12 +321,15 @@ export function PracticeClient({ start }: { start: PracticeStart | null }) {
     if (!current || submitted) return;
     setGradeError("");
     try {
-      const result = await gradeRemote(current, selected, { peek: true });
+      const result = await gradeRemote(current, selected, { mode: "practice" });
+      if (result.status === "pending") {
+        savePending(result.question, result.message);
+        return;
+      }
       setQuiz((list) => list.map((item) => (item.id === result.question.id ? result.question : item)));
-      saveAttempt(result.question, selected, false);
+      saveAttempt(result.question, selected, result.correct);
     } catch (error) {
       setGradeError(error instanceof OfflineGradeError ? error.message : "批改失敗，請再試一次。");
-      saveAttempt(current, selected, false);
     }
   }
 
@@ -559,7 +583,13 @@ export function PracticeClient({ start }: { start: PracticeStart | null }) {
       title={`${VENDOR_META[vendor].label}${
         todayPlan ? " · 今日刷" : isDrill ? ` · ${languageModeLabel(method)}` : ""
       }${current.passageId ? " · 閱讀同篇" : ""} · 第 ${index + 1} / ${quiz.length} 題`}
-      meta={isSpeed && !submitted ? undefined : `已對 ${correctCount} 題`}
+      meta={
+        isSpeed && !submitted
+          ? undefined
+          : pendingUngraded
+            ? `待批改（未計分）· 已對 ${correctCount} 題`
+            : `已對 ${correctCount} 題`
+      }
       extraMeta={isSpeed && !submitted ? <SpeedHud remaining={remaining} /> : undefined}
       submitted={submitted}
       canSubmit={method === "flash" ? false : canSubmit}
@@ -617,11 +647,16 @@ export function PracticeClient({ start }: { start: PracticeStart | null }) {
           selected={selected}
           onChange={setSelected}
           disabled={submitted}
-          showResult={submitted}
+          showResult={submitted && !pendingUngraded}
         />
       )}
       {gradeError ? <p className="text-sm text-amber-800">{gradeError}</p> : null}
-      {submitted && method !== "flash" && current && !lastCorrect ? (
+      {submitted && pendingUngraded ? (
+        <p className="rounded-xl bg-amber-50 px-3 py-2 text-sm text-amber-900">
+          狀態：待批改／未評分。連線後會自動送交伺服端；在此之前不會計入對錯或統計。
+        </p>
+      ) : null}
+      {submitted && method !== "flash" && current && !pendingUngraded && !lastCorrect ? (
         <div className="space-y-2">
           <p className="text-sm text-amber-800">
             已列入錯題本，明天會進今日刷。可到{" "}

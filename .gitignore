@@ -21,8 +21,9 @@
 /ios/App/App/public/**
 !/ios/App/App/public/README.txt
 
-# never ship full answer bank on the public web root
+# never ship full answer bank on the public web root or native assets
 /public/offline-bank.json
+/native/offline-bank.json
 
 # production
 /build

@@ -181,14 +181,27 @@ export function ExamClient({ start }: { start: ExamStart | null }) {
     const durationSec = Math.max(1, minutes * 60 - left);
     const latestAnswers = answersRef.current;
     try {
-      const graded = await gradeExamRemote(
-        quiz.map((question) => ({
-          questionId: question.id,
-          selected: latestAnswers[question.id] ?? [],
-        })),
-      );
+      const chapterLabel = chapter === ALL_CHAPTER && vendor ? allChapterLabel(vendor) : chapter;
+      const payload = quiz.map((question) => ({
+        questionId: question.id,
+        selected: latestAnswers[question.id] ?? [],
+      }));
+      const graded = await gradeExamRemote(payload, {
+        startedAt: origin,
+        durationSec,
+        chapter: chapterLabel,
+        total: quiz.length,
+      });
+      if (graded.status === "pending") {
+        clearExamSession();
+        setPhase("setup");
+        setGradeError(
+          `${graded.message} 模考已暫存為待批改，不會記入成績；連線後會自動送交。`,
+        );
+        return;
+      }
       const byId = new Map(quiz.map((question) => [question.id, question]));
-      const items: ExamResultItem[] = graded.map((item) => {
+      const items: ExamResultItem[] = graded.results.map((item) => {
         const base = byId.get(item.questionId);
         return {
           questionId: item.questionId,
@@ -204,7 +217,7 @@ export function ExamClient({ start }: { start: ExamStart | null }) {
         durationSec,
         score,
         total: quiz.length,
-        chapter: chapter === ALL_CHAPTER && vendor ? allChapterLabel(vendor) : chapter,
+        chapter: chapterLabel,
       };
       const attempts: Attempt[] = items.map((item) => ({
         questionId: item.questionId,

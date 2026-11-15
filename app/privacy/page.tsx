@@ -12,7 +12,7 @@ export default function PrivacyPage() {
     <div className="space-y-8 qb-in">
       <PageHeader
         title="隱私政策"
-        desc="本頁只描述目前產品實際行為。最後更新：2026-11-14（含原生殼離線批改說明）。"
+        desc="本頁只描述目前產品實際行為。最後更新：2026-11-15（待批改佇列；原生包不含正解）。"
       />
 
       <section className="space-y-3 text-sm leading-relaxed text-slate-700">
@@ -20,6 +20,7 @@ export default function PrivacyPage() {
         <p>
           「題庫刷題」是網頁／PWA 練習工具，並可打包為本機原生殼（例如 iOS Capacitor）。目前<strong>沒有登入或帳戶</strong>、<strong>沒有付款</strong>、
           <strong>沒有分析或廣告 SDK</strong>，也<strong>沒有伺服器端個人帳號資料庫</strong>。作答進度預設只存在你這個裝置／瀏覽器。
+          正解與解析<strong>不會</strong>打包進網站靜態檔或原生 App 資源；批改只在連線時由伺服端完成。
         </p>
       </section>
 
@@ -31,6 +32,7 @@ export default function PrivacyPage() {
           <li>練習／模考進行中場次、每日目標、主題（淺色／深色）</li>
           <li>上次選的題庫、安裝提示是否隱藏、回來刷提醒偏好</li>
           <li>題目目錄快取（方便再次開啟時少打一點 API）</li>
+          <li>離線「待批改」佇列（作答暫存；連線後送交批改）</li>
           <li>趣味小知識進度；部分提示會暫存於 sessionStorage</li>
         </ul>
         <p>
@@ -48,14 +50,24 @@ export default function PrivacyPage() {
       </section>
 
       <section className="space-y-3 text-sm leading-relaxed text-slate-700">
-        <h2 className="text-base font-semibold text-slate-900">原生殼離線批改（本機題庫）</h2>
+        <h2 className="text-base font-semibold text-slate-900">離線作答與待批改</h2>
         <p>
-          若你使用<strong>打包進裝置的原生殼</strong>（Capacitor www，而非只開啟遠端網站），應用程式會內建完整題庫檔
-          （<code className="qb-mono text-xs">offline-bank.json</code>），其中<strong>包含批改所需的正解與解析</strong>，
-          以便在無網路時完成練習／模考批改。此檔只隨原生包分發，<strong>不會</strong>放在公開網站靜態目錄供一般訪客下載。
+          離線時可繼續閱讀<strong>先前已快取的公開題幹</strong>（不含正解），並把作答暫存於本機「待批改」佇列。
+          這些暫存<strong>不會</strong>計入對錯或統計，介面會標示待批改／未評分。重新連線後會自動（或手動）送交伺服端批改；
+          同一筆暫存以客戶端識別避免重複記分。
         </p>
         <p>
-          口說題的麥克風語音辨識在離線時可能不可用；你仍可打字作答並由本機批改。離線批改不會把答案上傳到自有伺服器。
+          原生殼載入本機 UI 資源，連線批改時會呼叫設定的網站 API（非把整個 App 做成遠端薄殼）。
+          口說題的麥克風語音辨識在離線時可能不可用。
+        </p>
+      </section>
+
+      <section className="space-y-3 text-sm leading-relaxed text-slate-700">
+        <h2 className="text-base font-semibold text-slate-900">抓題／批改限制（如實說明）</h2>
+        <p>
+          伺服端對抓題與批改設有每連線粗略的批量與頻率上限，用以降低自動化大量請求。目前<strong>沒有登入</strong>，
+          限制主要存在於單一伺服程序記憶體，<strong>不是</strong>跨機房／跨實例的強固防爬方案；重啟或分散部署後效果有限。
+          手動或自動化蒐集題幹仍無法完全防止。
         </p>
       </section>
 

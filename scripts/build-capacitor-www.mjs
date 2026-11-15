@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
- * 建置 Capacitor 本機 www（靜態匯出 + 離線題庫）。
- * 不指向 production Vercel URL。
+ * 建置 Capacitor 本機 www（靜態 UI，不含正解題庫）。
+ * 不指向 production 整站 WebView；批改／抽題在連線時呼叫 NEXT_PUBLIC_API_BASE。
  *
- * 步驟：產生 offline-bank → 暫時移走 API／動態路由 → next export → 還原 → 寫入 www/
+ * 步驟：暫時移走 API／proxy → next export → 還原 → 寫入 www/ → 掃描禁止答案洩漏
  */
 import { spawnSync } from "node:child_process";
 import {
@@ -15,6 +15,7 @@ import {
   rm,
   writeFile,
   access,
+  readdir,
 } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -22,8 +23,11 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const wwwDir = path.join(root, "www");
-const nativeBank = path.join(root, "native", "offline-bank.json");
 const publicBank = path.join(root, "public", "offline-bank.json");
+
+/** 預設 API；建置時可覆寫 NEXT_PUBLIC_API_BASE（公開網址，非密鑰） */
+const API_BASE =
+  process.env.NEXT_PUBLIC_API_BASE?.replace(/\/$/, "") || "https://quiz-bank-bice.vercel.app";
 
 function run(command, args, env = {}) {
   const result = spawnSync(command, args, {
@@ -62,6 +66,35 @@ async function restore(entry) {
   await rename(entry.to, entry.from);
 }
 
+async function walkFiles(dir, out = []) {
+  const entries = await readdir(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) await walkFiles(full, out);
+    else out.push(full);
+  }
+  return out;
+}
+
+/** 粗掃：禁止完整題庫檔名與明顯「explanation+answer」結構出現在靜態產物 */
+async function assertNoAnswerLeak(dir) {
+  if (await exists(path.join(dir, "offline-bank.json"))) {
+    throw new Error("leak: www/offline-bank.json must not exist");
+  }
+  const files = await walkFiles(dir);
+  for (const file of files) {
+    const base = path.basename(file).toLowerCase();
+    if (base.includes("offline-bank") || base === "questions.json") {
+      throw new Error(`leak: forbidden artifact ${file}`);
+    }
+    if (!/\.(js|json|html|txt|map)$/i.test(file)) continue;
+    const text = await readFile(file, "utf8");
+    if (text.includes('"offline-bank.json"') && text.includes("generatedAt") && text.includes('"questions"')) {
+      throw new Error(`leak: offline bank payload-like content in ${file}`);
+    }
+  }
+}
+
 const backupRoot = await mkdtemp(path.join(os.tmpdir(), "quiz-bank-cap-"));
 const moved = [];
 /** @type {{ full: string, before: string }[]} */
@@ -69,14 +102,11 @@ const patchBackups = [];
 const originalConfig = await readFile(path.join(root, "next.config.ts"), "utf8");
 
 try {
-  console.log("→ build offline bank");
-  run("node", ["scripts/build-offline-bank.mjs"]);
+  if (await exists(publicBank)) {
+    throw new Error("Refuse to build: public/offline-bank.json already present");
+  }
 
-  console.log("→ stage offline-bank into public/ for static export (temporary)");
-  await cp(nativeBank, publicBank);
-
-  console.log("→ move aside server-only / dynamic routes");
-  // icons/[size] 已是 force-static + generateStaticParams，可一併匯出
+  console.log("→ move aside server-only routes (api + proxy)");
   for (const rel of ["app/api", "proxy.ts"]) {
     moved.push(await moveAside(rel, backupRoot));
   }
@@ -97,7 +127,6 @@ export default nextConfig;
     "utf8",
   );
 
-  // static export 不能在 Server Component await searchParams／cookies：改寫為 client
   const patches = [
     {
       file: "app/layout.tsx",
@@ -236,16 +265,22 @@ export default function ExamPage() {
     await writeFile(full, patch.transform(before), "utf8");
   }
 
-  console.log("→ next build (NATIVE_SHELL static export)");
-  run("npx", ["next", "build"], { NEXT_PUBLIC_NATIVE_SHELL: "1" });
+  console.log(`→ next build (NATIVE_SHELL; API_BASE=${API_BASE})`);
+  run("npx", ["next", "build"], {
+    NEXT_PUBLIC_NATIVE_SHELL: "1",
+    NEXT_PUBLIC_API_BASE: API_BASE,
+  });
 
   console.log("→ copy out/ → www/");
   await rm(wwwDir, { recursive: true, force: true });
   await mkdir(wwwDir, { recursive: true });
   await cp(path.join(root, "out"), wwwDir, { recursive: true });
-  await cp(nativeBank, path.join(wwwDir, "offline-bank.json"));
+
+  console.log("→ audit www for answer-bank leakage");
+  await assertNoAnswerLeak(wwwDir);
 
   console.log(`✓ Capacitor www ready at ${wwwDir}`);
+  console.log(`  Remote API base (online grading only): ${API_BASE}`);
   console.log("  Next: npx cap sync ios   (on macOS with Xcode for archive)");
 } catch (error) {
   console.error(error);
@@ -264,7 +299,6 @@ export default function ExamPage() {
   }
   if (await exists(publicBank)) await rm(publicBank, { force: true });
   await rm(backupRoot, { recursive: true, force: true });
-  // 確保網站 public 不殘留離線包
   if (await exists(publicBank)) {
     console.error("FATAL: public/offline-bank.json still present");
     process.exitCode = 1;

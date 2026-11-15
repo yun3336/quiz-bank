@@ -3,20 +3,13 @@ import type { Attempt, ProgressStore, Question } from "./types";
 import type { LanguagePracticeMode } from "./practiceModes";
 import type { DifficultyFilter } from "./questions";
 import type { Vendor } from "./vendor";
-import {
-  canUseOfflineBank,
-  getOfflineFullQuestion,
-  loadOfflineCatalog,
-  loadOfflineQuiz,
-  resetOfflineBankCache,
-} from "./offlineBank";
-import { canGradeOffline, gradeOffline } from "./offlineGrade";
+import { apiUrl } from "./apiBase";
+import { createPendingId } from "./pendingGrade";
+import { queuePendingExam, queuePendingGrade } from "./pendingGradeStore";
 
 const CATALOG_KEY = "quiz-bank:catalog-v1";
 
-export const OFFLINE_GRADE_MESSAGE = "需連線批改";
-export const OFFLINE_UNSUPPORTED_MESSAGE =
-  "此題離線無法批改（缺本機題庫或題型不支援），請連線後再試。";
+export const OFFLINE_GRADE_MESSAGE = "目前離線：作答已暫存為「待批改」，連線後會自動送交伺服端批改。";
 
 export class OfflineGradeError extends Error {
   constructor(message = OFFLINE_GRADE_MESSAGE) {
@@ -24,6 +17,20 @@ export class OfflineGradeError extends Error {
     this.name = "OfflineGradeError";
   }
 }
+
+export type GradeRemoteResult =
+  | {
+      status: "graded";
+      correct: boolean;
+      question: Question;
+      reveal: GradeReveal;
+    }
+  | {
+      status: "pending";
+      pendingId: string;
+      question: Question;
+      message: string;
+    };
 
 type CatalogCache = {
   all: Question[];
@@ -76,23 +83,38 @@ export function cachedCatalog(vendor?: Vendor): Question[] {
 /** 清除記憶體中的題目目錄快取（本機資料全清時一併呼叫）。 */
 export function resetCatalogCache(): void {
   memory = { all: [], byVendor: {} };
-  resetOfflineBankCache();
+}
+
+export type VendorCatalogMeta = { vendor: Vendor; count: number; chapters: string[] };
+
+export async function loadVendorCatalogMeta(): Promise<VendorCatalogMeta[]> {
+  try {
+    const response = await fetch(apiUrl("/api/catalog"));
+    if (!response.ok) throw new Error("catalog-failed");
+    const data = (await response.json()) as { vendors?: VendorCatalogMeta[] };
+    return Array.isArray(data.vendors) ? data.vendors : [];
+  } catch {
+    return [];
+  }
 }
 
 export async function loadCatalog(vendor?: Vendor): Promise<Question[]> {
   try {
-    const query = vendor ? `?vendor=${encodeURIComponent(vendor)}` : "";
-    const response = await fetch(`/api/catalog${query}`);
+    if (!vendor) {
+      // 未指定 vendor 時 API 不回傳全庫題幹；請用 loadVendorCatalogMeta()
+      return cachedCatalog();
+    }
+    const response = await fetch(apiUrl(`/api/catalog?vendor=${encodeURIComponent(vendor)}`));
     if (!response.ok) throw new Error("catalog-failed");
-    const data = (await response.json()) as { questions?: Question[]; vendors?: { vendor: Vendor; count: number }[] };
+    const data = (await response.json()) as { questions?: Question[] };
     const questions = Array.isArray(data.questions) ? data.questions : [];
     rememberCatalog(questions, vendor);
-    return vendor ? memory.byVendor[vendor] ?? [] : memory.all;
+    return memory.byVendor[vendor] ?? [];
   } catch {
-    if (!(await canUseOfflineBank())) throw new Error("catalog-failed");
-    const questions = await loadOfflineCatalog(vendor);
-    rememberCatalog(questions, vendor);
-    return questions;
+    // 離線：只用先前快取的公開題（無正解）
+    const cached = cachedCatalog(vendor);
+    if (cached.length > 0) return cached;
+    throw new Error("catalog-failed");
   }
 }
 
@@ -109,7 +131,7 @@ export async function loadQuiz(body: {
   store?: ProgressStore;
 }): Promise<Question[]> {
   try {
-    const response = await fetch("/api/quiz", {
+    const response = await fetch(apiUrl("/api/quiz"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
@@ -118,14 +140,25 @@ export async function loadQuiz(body: {
     const data = (await response.json()) as { questions?: Question[] };
     return Array.isArray(data.questions) ? data.questions : [];
   } catch {
-    if (!(await canUseOfflineBank())) throw new Error("quiz-failed");
-    return loadOfflineQuiz(body);
+    // 離線：只能從本機公開快取按 ids／qid 取回已看過的題
+    const pool = cachedCatalog(body.vendor);
+    if (body.qid) {
+      const hit = pool.find((item) => item.id === body.qid);
+      return hit ? [hit] : [];
+    }
+    if (body.ids && body.ids.length > 0) {
+      const set = new Set(body.ids);
+      return pool.filter((item) => set.has(item.id));
+    }
+    if (pool.length === 0) throw new Error("quiz-failed");
+    const count = typeof body.count === "number" ? body.count : Math.min(10, pool.length);
+    return pool.slice(0, count);
   }
 }
 
 async function postGrade(body: unknown): Promise<Response> {
   try {
-    return await fetch("/api/grade", {
+    return await fetch(apiUrl("/api/grade"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
@@ -135,99 +168,102 @@ async function postGrade(body: unknown): Promise<Response> {
   }
 }
 
-async function gradeWithOfflinePack(
-  question: Question,
-  selected: string[],
-  options?: { peek?: boolean; strict?: boolean },
-): Promise<{ correct: boolean; question: Question; reveal: GradeReveal }> {
-  if (!(await canUseOfflineBank())) throw new OfflineGradeError();
-  const full = getOfflineFullQuestion(question.id);
-  if (!full || !canGradeOffline(full)) {
-    throw new OfflineGradeError(OFFLINE_UNSUPPORTED_MESSAGE);
-  }
-  const result = gradeOffline(full, selected, options);
-  return {
-    correct: result.correct,
-    reveal: result.reveal,
-    question: applyReveal(question, result.reveal),
-  };
-}
-
 export async function gradeRemote(
   question: Question,
   selected: string[],
-  options?: { peek?: boolean; strict?: boolean },
-): Promise<{ correct: boolean; question: Question; reveal: GradeReveal }> {
+  options?: { peek?: boolean; strict?: boolean; mode?: "practice" | "exam" },
+): Promise<GradeRemoteResult> {
+  const mode = options?.mode ?? "practice";
   try {
+    const clientRequestId = createPendingId();
     const response = await postGrade({
       questionId: question.id,
       selected,
       peek: options?.peek,
       mode: options?.strict ? "strict" : "loose",
+      clientRequestId,
     });
     if (response.ok) {
       const data = (await response.json()) as { correct: boolean; reveal: GradeReveal };
       return {
+        status: "graded",
         correct: data.correct,
         reveal: data.reveal,
         question: applyReveal(question, data.reveal),
       };
     }
-    if (response.status === 0 || response.status >= 500) {
-      return gradeWithOfflinePack(question, selected, options);
+    if (response.status === 0 || response.status >= 500 || response.status === 429) {
+      throw new OfflineGradeError();
     }
     throw new Error("grade-failed");
   } catch (error) {
     if (error instanceof Error && error.message === "grade-failed") throw error;
-    if (error instanceof OfflineGradeError && error.message === OFFLINE_UNSUPPORTED_MESSAGE) throw error;
-    // 網路失敗（含 postGrade 拋出的 OfflineGradeError）→ 嘗試本機離線包
-    return gradeWithOfflinePack(question, selected, options);
+    if (options?.peek) {
+      // 偷看解析必須連線；不佇列假解析
+      throw new OfflineGradeError("需連線才能看解析。");
+    }
+    const pending = queuePendingGrade({
+      questionId: question.id,
+      selected,
+      mode,
+      peek: options?.peek,
+      strict: options?.strict,
+      at: Date.now(),
+    });
+    return {
+      status: "pending",
+      pendingId: pending.id,
+      question,
+      message: OFFLINE_GRADE_MESSAGE,
+    };
   }
 }
 
 export async function gradeExamRemote(
   items: { questionId: string; selected: string[] }[],
-): Promise<{ questionId: string; selected: string[]; correct: boolean; reveal: GradeReveal }[]> {
+  meta?: { startedAt: number; durationSec: number; chapter: string; total: number },
+): Promise<
+  | { status: "graded"; results: { questionId: string; selected: string[]; correct: boolean; reveal: GradeReveal }[] }
+  | { status: "pending"; pendingId: string; message: string }
+> {
   try {
-    const response = await postGrade({ items });
+    const clientRequestId = createPendingId();
+    const response = await postGrade({ items, clientRequestId });
     if (!response.ok) throw new OfflineGradeError();
     const data = (await response.json()) as {
       results: { questionId: string; correct: boolean; reveal: GradeReveal }[];
     };
     const byId = new Map((data.results ?? []).map((item) => [item.questionId, item]));
-    return items.map((item) => {
-      const hit = byId.get(item.questionId);
-      return {
-        questionId: item.questionId,
-        selected: item.selected,
-        correct: hit?.correct ?? false,
-        reveal: hit?.reveal ?? {
-          explanation: "",
-          revealText: "",
-          lab: null,
-        },
-      };
-    });
-  } catch {
-    if (!(await canUseOfflineBank())) throw new OfflineGradeError();
-    return items.map((item) => {
-      const full = getOfflineFullQuestion(item.questionId);
-      if (!full || !canGradeOffline(full)) {
+    return {
+      status: "graded",
+      results: items.map((item) => {
+        const hit = byId.get(item.questionId);
         return {
           questionId: item.questionId,
           selected: item.selected,
-          correct: false,
-          reveal: { explanation: "", revealText: "", lab: null },
+          correct: hit?.correct ?? false,
+          reveal: hit?.reveal ?? {
+            explanation: "",
+            revealText: "",
+            lab: null,
+          },
         };
-      }
-      const graded = gradeOffline(full, item.selected);
-      return {
-        questionId: item.questionId,
-        selected: item.selected,
-        correct: graded.correct,
-        reveal: graded.reveal,
-      };
+      }),
+    };
+  } catch {
+    const pending = queuePendingExam({
+      items,
+      startedAt: meta?.startedAt ?? Date.now(),
+      durationSec: meta?.durationSec ?? 0,
+      chapter: meta?.chapter ?? "",
+      total: meta?.total ?? items.length,
+      at: Date.now(),
     });
+    return {
+      status: "pending",
+      pendingId: pending.id,
+      message: OFFLINE_GRADE_MESSAGE,
+    };
   }
 }
 

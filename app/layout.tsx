@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { cookies } from "next/headers";
 import { AppShell } from "@/components/AppShell";
 import { PwaRegister } from "@/components/PwaRegister";
@@ -57,6 +58,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <AppShell>{children}</AppShell>
         </VendorProvider>
         <PwaRegister />
+        <Analytics />
       </body>
     </html>
   );

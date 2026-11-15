@@ -84,6 +84,14 @@ export function AppShell({ children }: { children: ReactNode }) {
                   );
                 })}
             </nav>
+            <Link
+              href="/contact"
+              data-full-nav
+              className="inline-flex min-h-11 items-center rounded-full px-2.5 text-xs text-slate-400 transition-colors hover:bg-white hover:text-slate-700"
+              aria-current={pathname === "/contact" || pathname.startsWith("/contact/") ? "page" : undefined}
+            >
+              回報
+            </Link>
             <ThemeToggle />
           </div>
         </div>
@@ -95,11 +103,15 @@ export function AppShell({ children }: { children: ReactNode }) {
       >
         {children}
       </main>
-      <footer className="mx-auto hidden w-full max-w-5xl px-4 pb-[max(2rem,env(safe-area-inset-bottom))] text-center text-xs text-slate-400 md:block">
+      <footer className="mx-auto w-full max-w-5xl px-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] text-center text-xs text-slate-400 md:pb-[max(2rem,env(safe-area-inset-bottom))]">
         作答進度只存在這個瀏覽器，可在統計頁備份
         <span className="qb-install-hint">
           。可用瀏覽器選單加入主畫面；連線時打開過的頁面，之後能離線刷
         </span>
+        {" · "}
+        <Link href="/contact" data-full-nav className="underline decoration-slate-300 underline-offset-2 hover:text-slate-600">
+          回報問題
+        </Link>
       </footer>
       <nav className="qb-bottom-nav" aria-label="主要分頁">
         {tabLinks.map((link) => {

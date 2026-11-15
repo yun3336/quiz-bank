@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 
 /** Only routes that already return HTTP 200 on production. */
-const PUBLIC_PATHS = ["/", "/practice", "/review", "/stats", "/exam", "/lab"] as const;
+const PUBLIC_PATHS = ["/", "/practice", "/review", "/stats", "/exam", "/lab", "/contact"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return PUBLIC_PATHS.map((path) => ({

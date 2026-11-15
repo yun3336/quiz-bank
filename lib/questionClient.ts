@@ -51,6 +51,11 @@ export function cachedCatalog(vendor?: Vendor): Question[] {
   return cache.all;
 }
 
+/** 清除記憶體中的題目目錄快取（本機資料全清時一併呼叫）。 */
+export function resetCatalogCache(): void {
+  memory = { all: [], byVendor: {} };
+}
+
 export async function loadCatalog(vendor?: Vendor): Promise<Question[]> {
   const query = vendor ? `?vendor=${encodeURIComponent(vendor)}` : "";
   const response = await fetch(`/api/catalog${query}`);

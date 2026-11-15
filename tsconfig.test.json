@@ -28,6 +28,7 @@
     "lib/questions.ts",
     "lib/access.ts",
     "lib/questionPublic.ts",
+    "lib/localData.ts",
     "tests/**/*.ts"
   ]
 }

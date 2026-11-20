@@ -1,14 +1,10 @@
-import type { Metadata } from "next";
 import { HomePage } from "@/components/HomePage";
 import { filterHomeVendors, type HomeQuery } from "@/lib/homeSearch";
+import { SITE_HOME_URL } from "@/lib/site";
 import { getTrivia, parseTriviaGuess, pickTrivia } from "@/lib/trivia";
 import { tryParseVendor } from "@/lib/vendor";
 
 export const dynamic = "force-dynamic";
-
-export const metadata: Metadata = {
-  alternates: { canonical: "/" },
-};
 
 export default async function Page({
   searchParams,
@@ -32,13 +28,20 @@ export default async function Page({
   const searchQuery = params.q?.trim() ?? "";
 
   return (
-    <HomePage
-      trivia={trivia}
-      guess={guess !== null && fromId ? guess : null}
-      filter={filter}
-      homeQuery={homeQuery}
-      searchQuery={searchQuery}
-      vendors={filterHomeVendors(searchQuery)}
-    />
+    <>
+      {/*
+        Next.js Metadata API strips the homepage trailing slash (pathname "/" → origin).
+        A native <link> is hoisted into <head> and preserves the GSC inspection URL.
+      */}
+      <link rel="canonical" href={SITE_HOME_URL} />
+      <HomePage
+        trivia={trivia}
+        guess={guess !== null && fromId ? guess : null}
+        filter={filter}
+        homeQuery={homeQuery}
+        searchQuery={searchQuery}
+        vendors={filterHomeVendors(searchQuery)}
+      />
+    </>
   );
 }
